@@ -3,8 +3,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
-const PORT = process.env.PORT || 3001;
-
+const PORT = process.env.PORT || 1992;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -19,6 +18,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hippocrates");
 
 // Start the API server
 app.listen(PORT, function() {
-  console.log(`🏥 Running now at PORT ${PORT} `);
+  console.log(`🏥 Running now at PORT ${PORT}`);
 });
 
