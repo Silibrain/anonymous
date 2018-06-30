@@ -18,6 +18,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hippocrates");
 
 // Start the API server
 app.listen(PORT, function() {
-  console.log(`🏥 Running now at PORT ${PORT}`);
+  console.log(`👨‍💻 ✅ -> 💻 🏃‍♂️ @ ⚓️  = ${PORT}`);
 });
 
