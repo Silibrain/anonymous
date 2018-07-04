@@ -7,7 +7,7 @@ const inventoriesRoutes = require("./inventories");
 
 router.use("/administrators", administratorsRoutes);
 router.use("/patients", patientsRoutes);
-router.use("/practiocioners", practicionersRoutes);
+router.use("/practicioners", practicionersRoutes);
 router.use("/procedures", proceduresRoutes);
 router.use("/inventories", inventoriesRoutes);
 
