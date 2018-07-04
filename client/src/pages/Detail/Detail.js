@@ -16,9 +16,7 @@ class Detail extends Component {
       <Container fluid>
         <Row>
           <Col size="md-12">
-            <Jumbotron>
-
-            </Jumbotron>        
+            <Jumbotron />
           </Col>
         </Row>
       </Container>
@@ -27,5 +25,3 @@ class Detail extends Component {
 }
 
 export default Detail;
-
-
