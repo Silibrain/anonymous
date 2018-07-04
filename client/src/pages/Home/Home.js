@@ -4,7 +4,7 @@ class Jumbotron extends React.Component {
         <div className="jumbotron">
           <h1>{this.props.mainText}</h1>
           <p>{this.props.subText}</p>
-          <PrimaryButton buttonText='Learn more'/>
+          <PrimaryButton buttonText='Patients'/>
         </div>
       )
     }
