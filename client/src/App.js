@@ -1,7 +1,7 @@
 import React from "react";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
+import Nav from "./components/NavBar";
 import { BrowserRouter as Router, Route , Switch } from "react-router-dom";
 
 
