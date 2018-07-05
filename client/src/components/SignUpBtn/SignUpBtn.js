@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { registerUser } from "../../actions/authActions";
+import { signUpUser } from "../../actions/authActions";
 import TextFieldGroup from "../common/TextFieldGroup";
 
-class Register extends Component {
+class Signup extends Component {
   constructor() {
     super();
     this.state = {
@@ -22,7 +22,7 @@ class Register extends Component {
 
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
-      this.props.history.push("/dashboard");
+      this.props.history.push("/components/jumbotron");
     }
   }
 
@@ -46,20 +46,20 @@ class Register extends Component {
       password2: this.state.password2
     };
 
-    this.props.registerUser(newUser, this.props.history);
+    this.props.signUpUser(newUser, this.props.history);
   }
 
   render() {
     const { errors } = this.state;
 
     return (
-      <div className="register">
+      <div className="signup">
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Sign Up</h1>
+              <h1 className="display-4 text-center">Sign-up</h1>
               <p className="lead text-center">
-                Create your DevConnector account
+                Create your Hippocrates Account
               </p>
               <form noValidate onSubmit={this.onSubmit}>
                 <TextFieldGroup
@@ -76,7 +76,6 @@ class Register extends Component {
                   value={this.state.email}
                   onChange={this.onChange}
                   error={errors.email}
-                  info="This site uses Gravatar so if you want a profile image, use a Gravatar email"
                 />
                 <TextFieldGroup
                   placeholder="Password"
@@ -104,8 +103,8 @@ class Register extends Component {
   }
 }
 
-Register.propTypes = {
-  registerUser: PropTypes.func.isRequired,
+Signup.propTypes = {
+  signUpUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
@@ -117,5 +116,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { registerUser }
-)(withRouter(Register));
+  { signUpUser }
+)(withRouter(Signup));
