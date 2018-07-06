@@ -11,6 +11,8 @@ class StaffAdministrationMenu extends Component {
     render() {
       return (
         <Wrapper>
+
+        <NavBar></NavBar>
         
         </Wrapper>
       );

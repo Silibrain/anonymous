@@ -12,6 +12,8 @@ class PracticionersMenu extends Component {
       return (
         <Wrapper>
         
+        <NavBar></NavBar>
+
         </Wrapper>
       );
     }

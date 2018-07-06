@@ -12,6 +12,8 @@ class PatientsDetail extends Component {
       return (
         <Wrapper>
         
+        <NavBar></NavBar>
+
         </Wrapper>
       );
     }

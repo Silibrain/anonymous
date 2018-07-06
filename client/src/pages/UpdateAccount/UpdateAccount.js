@@ -11,6 +11,8 @@ class UpdateAccount extends Component {
     render() {
       return (
         <Wrapper>
+
+        <NavBar></NavBar>
         
         </Wrapper>
       );
