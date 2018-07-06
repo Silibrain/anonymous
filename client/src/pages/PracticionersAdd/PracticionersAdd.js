@@ -12,6 +12,8 @@ class PracticionersAdd extends Component {
     render() {
       return (
         <Wrapper>
+
+        <NavBar></NavBar>
         
         </Wrapper>
       );

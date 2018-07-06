@@ -11,6 +11,8 @@ class ReportsMenu extends Component {
     render() {
       return (
         <Wrapper>
+
+        <NavBar></NavBar>
         
         </Wrapper>
       );

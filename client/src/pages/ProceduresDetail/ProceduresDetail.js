@@ -15,6 +15,8 @@ class ProceduresDetail extends Component {
       return (
         <Wrapper>
         
+        <NavBar></NavBar>
+
         </Wrapper>
       );
     }

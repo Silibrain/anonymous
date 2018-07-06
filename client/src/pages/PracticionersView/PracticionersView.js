@@ -12,6 +12,8 @@ class PracticionersView extends Component {
       return (
         <Wrapper>
         
+        <NavBar></NavBar>
+
         </Wrapper>
       );
     }

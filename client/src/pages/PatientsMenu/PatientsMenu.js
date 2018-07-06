@@ -11,6 +11,8 @@ class PatientsMenu extends Component {
     render() {
       return (
         <Wrapper>
+
+        <NavBar></NavBar>
         
         </Wrapper>
       );

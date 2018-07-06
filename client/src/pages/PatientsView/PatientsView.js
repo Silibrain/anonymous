@@ -11,6 +11,8 @@ class PatientsView extends Component {
     render() {
       return (
         <Wrapper>
+
+           <NavBar></NavBar>
         
         </Wrapper>
       );

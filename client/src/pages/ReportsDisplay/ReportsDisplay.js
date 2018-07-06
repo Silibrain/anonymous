@@ -12,6 +12,8 @@ class ReportsDisplay extends Component {
       return (
         <Wrapper>
         
+        <NavBar></NavBar>
+
         </Wrapper>
       );
     }
