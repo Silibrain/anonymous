@@ -1,1 +1,1 @@
-export { default } from "./StaffAdmnisitrationMenu";
+export { default } from "./StaffAdministrationMenu";

@@ -9,6 +9,6 @@ router
   .route("/:id")
   .get(patientsController.findById)
   .put(patientsController.update)
-  .delete(patientesController.remove);
+  .delete(patientsController.remove);
 
 module.exports = router;
