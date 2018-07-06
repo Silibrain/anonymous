@@ -3,6 +3,7 @@ import PracticionersFormInput from "../../components/PracticionersFormInput/Prac
 import SubmitPracticionersBtn from "../../components/SubmitPracticionersBtn/SubmitPracticionersBtn"
 // import API from "../../utils/API"
 import Wrapper from "../../components/Wrapper/Wrapper";
+import NavBar from "../../components/NavBar/NavBar";
 
 class PracticionersAdd extends Component {
     state = {
@@ -20,4 +21,4 @@ class PracticionersAdd extends Component {
     }
   }
   
-  export default PatientsDetail;
+  export default PracticionersAdd;
