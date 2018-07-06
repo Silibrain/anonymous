@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Wrapper from "../../components/Wrapper/Wrapper";
 import NavBar from "../../components/NavBar/NavBar";
 import InventoryFormInput from "../../components/InventoryFormInput/InventoryFormInput";
-import SubmitInventoryBtn from "../../components/SubmitInventoryBtn/SubmitInventoryBtn"
+import SubmitInventoryBtn from "../../components/SubmitInventoryBtn/SubmitInventoryBtn";
 
 class InventoryAdd extends Component {
     state = {
