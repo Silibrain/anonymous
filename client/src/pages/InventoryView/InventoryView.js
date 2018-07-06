@@ -12,8 +12,9 @@ class InventoryView extends Component {
     render() {
       return (
         <Wrapper>
-        
         <NavBar></NavBar>
+        <List></List>
+
 
         </Wrapper>
       );

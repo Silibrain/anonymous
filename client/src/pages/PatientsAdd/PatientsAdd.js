@@ -11,7 +11,6 @@ class PatientsAdd extends Component {
     render() {
       return (
         <Wrapper>
-
         <NavBar></NavBar>
         
         </Wrapper>
