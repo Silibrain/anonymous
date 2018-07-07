@@ -7,4 +7,4 @@ const DeletePatientBtn = props => (
   </span>
 );
 
-    
+export default DeletePatientBtn;

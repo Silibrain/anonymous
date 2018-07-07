@@ -7,4 +7,4 @@ const PatientBtn = props => (
   </span>
 );
 
-    
+export default PatientBtn;

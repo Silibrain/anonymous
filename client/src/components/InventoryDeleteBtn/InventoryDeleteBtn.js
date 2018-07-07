@@ -7,4 +7,4 @@ const DelinBtn = props => (
   </span>
 );
 
-    
+export default DelinBtn;

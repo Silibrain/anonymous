@@ -7,4 +7,4 @@ const ViewioBtn = props => (
   </span>
 );
 
-    
+export default ViewioBtn;

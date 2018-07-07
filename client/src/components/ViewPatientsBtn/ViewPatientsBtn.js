@@ -7,4 +7,4 @@ const ViewPatientsBtn = props => (
   </span>
 );
 
-    
+export default ViewPatientsBtn;

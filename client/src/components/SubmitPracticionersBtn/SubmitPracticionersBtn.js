@@ -1,5 +1,5 @@
 import React from "react";
-import "./SubmitPracticionerBtn.css";
+import "./SubmitPracticionersBtn.css";
 
 const SubPracticionerBtn = props => (
   <span className="subpracticioner-btn" {...props}>
@@ -7,4 +7,4 @@ const SubPracticionerBtn = props => (
   </span>
 );
 
-    
+export default SubPracticionerBtn;

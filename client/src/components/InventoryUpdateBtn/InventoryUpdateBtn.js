@@ -6,3 +6,5 @@ const UpdateInventory = props => (
     Update Inventory
   </span>
 );
+
+export default UpdateInventory;

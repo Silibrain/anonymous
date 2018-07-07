@@ -7,4 +7,4 @@ const SubInventoryBtn = props => (
   </span>
 );
 
-    
+export default SubInventoryBtn;

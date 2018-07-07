@@ -7,4 +7,4 @@ const ViewProceduresBtn = props => (
   </span>
 );
 
-    
+export default ViewProceduresBtn;

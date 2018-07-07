@@ -7,4 +7,4 @@ const AddproBtn = props => (
   </span>
 );
 
-    
+export default AddproBtn;

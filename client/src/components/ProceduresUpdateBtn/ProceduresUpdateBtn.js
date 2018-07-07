@@ -7,4 +7,4 @@ const UpdateProceduresBtn = props => (
   </span>
 );
 
-    
+export default UpdateProceduresBtn;

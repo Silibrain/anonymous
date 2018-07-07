@@ -7,4 +7,4 @@ const ViewPracticionersBtn = props => (
   </span>
 );
 
-    
+export default ViewPracticionersBtn;
