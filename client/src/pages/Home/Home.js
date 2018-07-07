@@ -6,17 +6,15 @@ import LogInBtn from "../../components/LogInBtn/LogInBtn";
 import SignUpBtn from "../../components/SignUpBtn/SignUpBtn";
 
 class Home extends Component {
-  
-    render() {
-      return (
-        <Wrapper>
-          <Jumbotron></Jumbotron>
-          <LogInBtn></LogInBtn>
-          <SignUpBtn></SignUpBtn> 
-        </Wrapper>
-      );
-    }
+  render() {
+    return (
+      <Wrapper>
+        <Jumbotron />
+        <LogInBtn />
+        <SignUpBtn />
+      </Wrapper>
+    );
   }
-  
-  export default Home;
-  
+}
+
+export default Home;

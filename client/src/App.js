@@ -3,6 +3,7 @@ import NoMatch from "./pages/NoMatch";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar";
 
+import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
 import LogIn from "./pages/LogIn";
@@ -35,7 +36,6 @@ import ReportsDisplay from "./pages/ReportsDisplay";
 
 import StatisticsMenu from "./pages/StatisticsMenu";
 
-
 const App = () => (
   <Router>
     <div>
@@ -63,7 +63,11 @@ const App = () => (
         <Route exact path="/procedures/view" component={ProceduresView} />
 
         <Route exact path="/patients/view/:id" component={PatientsDetail} />
-        <Route exact path="/practicioners/view/:id" component={PracticionersDetail} />
+        <Route
+          exact
+          path="/practicioners/view/:id"
+          component={PracticionersDetail}
+        />
         <Route exact path="/inventory/view/:id" component={InventoryDetail} />
         <Route exact path="/procedures/view/:id" component={ProceduresDetail} />
 
@@ -74,6 +78,7 @@ const App = () => (
 
         <Route component={NoMatch} />
       </Switch>
+      <Footer />
     </div>
   </Router>
 );
