@@ -7,4 +7,5 @@ const ProceduresBtn = props => (
   </span>
 );
 
+export default ProceduresBtn
     

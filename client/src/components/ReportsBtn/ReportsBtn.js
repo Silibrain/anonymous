@@ -7,4 +7,6 @@ const ReportsBtn = props => (
   </span>
 );
 
+export default ReportsBtn
+
     

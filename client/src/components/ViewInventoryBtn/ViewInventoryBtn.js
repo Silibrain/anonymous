@@ -7,4 +7,6 @@ const ViewInventoryBtn = props => (
   </span>
 );
 
+export default ViewInventoryBtn
+
     

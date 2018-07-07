@@ -1,10 +1,12 @@
 import React from "react";
 import "./PatientUpdateBtn.css";
 
-const UpdatePatientsBtn = props => (
+const PatientsUpdateBtn = props => (
   <span className="updatepatients-btn" {...props}>
     Update Patients
   </span>
 );
+
+export default PatientsUpdateBtn
 
     

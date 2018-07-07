@@ -1,8 +1,10 @@
 import React from "react";
 import "./DeleteUserBtn.css";
 
-const DeleteuserBtn = props => (
+const DeleteUserBtn = props => (
   <span className="deleteuser-btn" {...props}>
     Delete Users
   </span>
 );
+
+export default DeleteUserBtn;

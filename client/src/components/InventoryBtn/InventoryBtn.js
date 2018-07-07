@@ -1,10 +1,10 @@
 import React from "react";
 import "./InventoryBtn.css";
 
-const ViewioBtn = props => (
+const InventoryBtn = props => (
   <span className="viewi-btn" {...props}>
     View Inventory
   </span>
 );
 
-    
+export default InventoryBtn

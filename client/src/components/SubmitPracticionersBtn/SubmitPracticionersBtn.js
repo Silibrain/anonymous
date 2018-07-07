@@ -1,10 +1,11 @@
 import React from "react";
-import "./SubmitPracticionerBtn.css";
+import "./SubmitPracticionersBtn.css";
 
-const SubPracticionerBtn = props => (
+const SubmitPracticionersBtn = props => (
   <span className="subpracticioner-btn" {...props}>
     Procedures
   </span>
 );
 
+export default SubmitPracticionersBtn
     

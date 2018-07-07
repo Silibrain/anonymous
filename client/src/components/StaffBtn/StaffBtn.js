@@ -7,4 +7,5 @@ const StaffBtn = props => (
   </span>
 );
 
+export default StaffBtn
     

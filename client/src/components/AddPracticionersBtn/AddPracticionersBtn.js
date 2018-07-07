@@ -1,10 +1,12 @@
 import React from "react";
 import "./AddPracticionersBtn.css";
 
-const AddprBtn = props => (
+const AddPracticionersBtn = props => (
   <span className="addpr-btn" {...props}>
     Add Practicioners
   </span>
 );
+
+export default AddPracticionersBtn;
 
     

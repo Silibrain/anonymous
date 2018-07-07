@@ -1,10 +1,10 @@
 import React from "react";
 import "./PatientDeleteBtn.css";
 
-const DeletePatientBtn = props => (
+const PatientDeleteBtn = props => (
   <span className="deletepatient-btn" {...props}>
     Delete Patient
   </span>
 );
 
-    
+export default PatientDeleteBtn

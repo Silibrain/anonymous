@@ -7,4 +7,6 @@ const ProceduresDeleteBtn = props => (
   </span>
 );
 
+export default ProceduresDeleteBtn
+
     

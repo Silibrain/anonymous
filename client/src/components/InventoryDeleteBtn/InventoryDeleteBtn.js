@@ -1,10 +1,11 @@
 import React from "react";
 import "./InventoryDeleteBtn.css";
 
-const DelinBtn = props => (
+const InventoryDeleteBtn = props => (
   <span className="delin-btn" {...props}>
     Delete Item
   </span>
 );
 
+export default InventoryDeleteBtn
     
