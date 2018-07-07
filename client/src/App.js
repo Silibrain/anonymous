@@ -42,6 +42,7 @@ const App = () => (
       <NavBar />
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/" component={Jumbotron} />
         <Route exact path="/signin" component={LogIn} />
         <Route exact path="/signup" component={CreateAccount} />
 

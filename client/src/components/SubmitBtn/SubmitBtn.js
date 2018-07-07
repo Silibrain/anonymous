@@ -7,4 +7,4 @@ const SubmitBtn = props => (
   </span>
 );
 
-    
+export default SubmitBtn;

@@ -6,3 +6,5 @@ const DeleteuserBtn = props => (
     Delete Users
   </span>
 );
+
+export default DeleteuserBtn;

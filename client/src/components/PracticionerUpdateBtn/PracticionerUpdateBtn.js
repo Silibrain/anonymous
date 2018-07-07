@@ -7,4 +7,4 @@ const UpdatePracticionerBtn = props => (
   </span>
 );
 
-    
+export default UpdatePracticionerBtn;
