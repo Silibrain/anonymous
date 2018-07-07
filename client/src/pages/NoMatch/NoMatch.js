@@ -1,11 +1,11 @@
 import React from "react";
-import { Col, Row, Container } from "../../components/Grid";
+import Wrapper from "../../components/Wrapper/Wrapper";
 import Jumbotron from "../../components/Jumbotron";
+import NavBar from "../../components/NavBar/NavBar";
 
 const NoMatch = () => (
-  <Container fluid>
-    <Row>
-      <Col size="md-12">
+  <Wrapper>
+      <NavBar></NavBar>
         <Jumbotron>
           <h1>404 Page Not Found</h1>
           <h1>
@@ -13,10 +13,8 @@ const NoMatch = () => (
                 🚫
             </span>
           </h1>
-        </Jumbotron>
-      </Col>
-    </Row>
-  </Container>
+        </Jumbotron>  
+  </Wrapper>
 );
 
 export default NoMatch;

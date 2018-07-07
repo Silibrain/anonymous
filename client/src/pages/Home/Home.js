@@ -1,12 +1,22 @@
-class Jumbotron extends React.Component {
+import React, { Component } from "react";
+// import API from "../../utils/API"
+import Wrapper from "../../components/Wrapper/Wrapper";
+import Jumbotron from "../../components/Jumbotron/Jumbotron";
+import LogInBtn from "../../components/LogInBtn/LogInBtn";
+import SignUpBtn from "../../components/SignUpBtn/SignUpBtn";
+
+class Home extends Component {
+  
     render() {
       return (
-        <div className="jumbotron">
-          <h1>{this.props.mainText}</h1>
-          <p>{this.props.subText}</p>
-          <PrimaryButton buttonText='Patients'/>
-        </div>
-      )
+        <Wrapper>
+          <Jumbotron></Jumbotron>
+          <LogInBtn></LogInBtn>
+          <SignUpBtn></SignUpBtn> 
+        </Wrapper>
+      );
     }
   }
-  React.render(<Jumbotron mainText="Hello, world!" subText="this is the subtext"/>, document.getElementById('main'));
+  
+  export default Home;
+  
