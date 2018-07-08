@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
+import Jumbotron from "./components/Jumbotron";
 import LogIn from "./pages/LogIn";
 import CreateAccount from "./pages/CreateAccount";
 
@@ -42,7 +43,7 @@ const App = () => (
       <NavBar />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/" component={Jumbotron} />
+        <Route exact path="/jumbotron" component={Jumbotron} />
         <Route exact path="/signin" component={LogIn} />
         <Route exact path="/signup" component={CreateAccount} />
 
