@@ -1,7 +1,7 @@
 import React from "react";
-import "./PatientsCard.css";
+import "./ItemCard.css";
 
-const PatientsCard = props => (
+const ItemCard = props => (
 
 <div className="card">
   <h5 className="card-header"></h5>
@@ -14,4 +14,4 @@ const PatientsCard = props => (
 
 );
 
-export default PatientsCard
+export default ItemCard

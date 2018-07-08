@@ -1,15 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 
+export const ReportsContainer = ({ fluid, children }) => (
+  <div className={`container${fluid ? "-fluid" : ""}`}>
+    {children}
+  </div>
+);
 
-class ReportsContainer extends Component {
-
- 
-  render() {
-    
-
-  }
-}
-
-
-
-export default ReportsContainer;
+export default ReportsContainer
