@@ -1,78 +1,31 @@
 const express = require("express");
-const session = require("express-session");
-const bodyParser = require("body-parser");
+const app = express();
+const PORT = process.env.PORT || 8000;
 const mongoose = require("mongoose");
 const passport = require("passport");
-LocalStrategy = require("passport-local").Strategy;
-const flash = require("express-flash-messages");
-const Validator = require("validator");
+const flash = require("connect-flash");
+const axios = require("axios");
+const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
-const routes = require("./routes");
-const app = express();
-const PORT = process.env.PORT || 1992;
+const bodyParser = require("body-parser");
+const session = require("express-session");
 
-const db = require("./models");
-require("./config/passport")(passport); //pass passport for configuration
-// body-parser for AJAX
+const MONGODB_URI = require("./config/keys");
+
+
+// configuration ===============================================================
+
+require("./config/passport")(passport); // pass passport for configuration
+
+// Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
 app.use(bodyParser.json());
 
-// app.engine("", ({ : ""}));
-// app.set("", "");
-
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
-
-// DB Config
-//const db = require("./config/keys").mongoURI;
-
-// Connect to MongoDB
-mongoose
-  .connect(db)
-  .then(() => console.log("MongoDB Connected"))
-  .catch(err => console.log(err));
-
-app.use(
-  session({
-    key: "user_sid",
-    secret: "mM6MNDxu8WUrLwUZuj6cwQwGg",
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-      expires: 600000,
-      httpOnly: false
-    }
-  })
-);
-
-app.use(cookieParser());
-app.use(flash());
-app.use(passport.initialize());
-app.use(passport.session()); //persistent login sessions
-app.use(flash());
-app.use(Validator());
-
-// require("./controllers/...")();
-
-require("./controllers/inventoryController")(app, passport);
-require("./controllers/patientsController")(app, passport);
-require("./controllers/practicionersController")(app, passport);
-require("./controllers/proceduresController")(app, passport);
-require("./controllers/staffController")(app, passport);
-require("./routes/administrators")(app, passport);
-
-require("./routes/index")(app, passport);
-require("./routes/inventories")(app, passport);
-require("./routes/patients")(app, passport);
-require("./routes/practicioners")(app, passport);
-require("./routes/procedures")(app, passport);
-
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hippocrates");
-
-// Enable CORS
+// Enable CORS so that browsers don't block requests.
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Headers", "http://localhost:3000");
+  //access-control-allow-origin http://localhost:3000
+  res.header("Access-Control-Allow-Origin", "http://localhost:1992");
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",
@@ -82,6 +35,55 @@ app.use((req, res, next) => {
   next();
 });
 
+// Serve up static assets
+app.use(express.static("client/build"));
+
+// set up our express application
+app.use(morgan("dev")); // log every request to the console
+app.use(cookieParser()); // read cookies (needed for auth)
+app.use(bodyParser()); // get information from html forms
+
+// required for passport
+app.use(
+  session({
+    key: "user_sid",
+    resave: true,
+    secret: "mM6MNDxu8WUrLwUZuj6cwQwGg",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      expires: 600000,
+      httpOnly: false
+    }
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+app.use(flash()); // use connect-flash for flash messages stored in session
+
+// routes ======================================================================
+require("./routes/index.js")(app, passport, axios); // load our routes and pass in our app and fully configured passport
+require("./routes/api/administrators.js")(app, passport, axios);
+require("./routes/api/auth.js")(app, passport, axios);
+require("./routes/api/index.js")(app, passport, axios);
+require("./routes/api/inventories.js")(app, passport, axios);
+require("./routes/api/patients.js")(app, passport, axios);
+require("./routes/api/practicioners.js")(app, passport, axios);
+require("./routes/api/procedures.js")(app, passport, axios);
+
+
+// mongoDB connection =========================================================
+// Set up promises with mongoose
+mongoose.Promise = global.Promise;
+// Connect to the Mongo DB
+mongoose.connect(
+  MONGODB_URI || "mongodb://localhost/hippocrates",
+  {
+    useMongoClient: true
+  }
+);
+
+// launch ======================================================================
 // Start the API server
 app.listen(PORT, function() {
   console.log(`👨‍💻 ✅ -> 💻 🏃‍♂️ ♀ @ ⚓️  = ${PORT}`);
