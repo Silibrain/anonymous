@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API"
+import SearchForm from "../../components/SearchForm/SearchForm";
 import Wrapper from "../../components/Wrapper/Wrapper";
 import PatientsFormInput from "../../components/PatientsFormInput/PatientsFormInput";
 import SubmitPatientsBtn from  "../../components/SubmitPatientsBtn/SubmitPatientsBtn";
@@ -96,16 +97,16 @@ class PatientsAdd extends Component {
       patientResults = this.state.results.map((patient, index) =>{
         return <List key={patient._id} name={patient.name} age={patient.age} weight={patient.weight} height={patient.height} temperature={patient.temperature} pulse={patient.pulse} respiratory={patient.respiratory} pressure={patient.pressure} symptoms={patient.symptoms} diagnosis={patient.diagnosis} drugs={patient.drugs} inDate={patient.inDate} outDate={patient.outDate} action={this.handlePatientSaved} title="Save" />
       });
+    }
       return (
         <Wrapper>
         <Jumbotron title="Add Patient">
-        <UserForm submit={this.handleFormSubmit} changed={this.handleInputChange} labels={this.state.labels} />
+        <SearchForm submit={this.handleFormSubmit} changed={this.handleInputChange} labels={this.state.labels} />
         </Jumbotron>
-        <List title ="Patient Results">{patientResults}</List>
+        {/* <PatientsForm title ="Patient Results">{patientResults}</PatientsForm> */}
         </Wrapper>
       );
     }
   }
-}
-  
+
 export default PatientsAdd
