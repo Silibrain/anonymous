@@ -31,4 +31,5 @@ class PatientsView extends Component {
     }
   }
   
+  
   export default PatientsView;
