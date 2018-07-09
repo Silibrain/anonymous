@@ -7,15 +7,29 @@ import SubmitPatientsBtn from  "../../components/SubmitPatientsBtn/SubmitPatient
 
 class PatientsAdd extends Component {
     state = {
-      item: {}
+      item: [
+        {id: "Name", val:""},
+        {id: "Age", val:""},
+        {id: "Weight", val: ""},
+        {id: "Height", val:""},
+        {id: "Temperature", val:""},
+        {id: "Pulse", val: ""},
+        {id: "Respiratory Rate", val:""},
+        {id: "Pressure", val:""},
+        {id: "Symptoms", val: ""},
+        {id: "Diagnosis", val:""},
+        {id: "Drugs", val:""},
+        {id: "Check in Date", val: ""},
+        {id: "Check out Date", val: ""},
+      ],
     };
   
     render() {
       return (
         <Wrapper>
-        <PatientsFormInput></PatientsFormInput>
-        <SubmitPatientsBtn></SubmitPatientsBtn>
-
+        <Panel title="Add Patient">
+        <PatientsFormInput submit={this.handleFormSubmit} changed={this.handleInputChange} labels={this.state.labels} />
+        </Panel>
         </Wrapper>
       );
     }

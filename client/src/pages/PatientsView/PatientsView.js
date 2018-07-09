@@ -5,13 +5,27 @@ import List from  "../../components/List/List";
 
 class PatientsView extends Component {
     state = {
-      item: {}
+      item: [
+        {id: "Name", val:""},
+        {id: "Age", val:""},
+        {id: "Weight", val: ""},
+        {id: "Height", val:""},
+        {id: "Temperature", val:""},
+        {id: "Pulse", val: ""},
+        {id: "Respiratory Rate", val:""},
+        {id: "Pressure", val:""},
+        {id: "Symptoms", val: ""},
+        {id: "Diagnosis", val:""},
+        {id: "Drugs", val:""},
+        {id: "Check in Date", val: ""},
+        {id: "Check out Date", val: ""},
+      ],
     };
   
     render() {
       return (
         <Wrapper>
-        <List></List>
+        <List name={patient._id} age={patient._id} weight={patient.headline.main} height={patient.source} date={patient.pub_date} URL={patient.web_url} action={this.handleArticleSaved} title="Save" />
         </Wrapper>
       );
     }
