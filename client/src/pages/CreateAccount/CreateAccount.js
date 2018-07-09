@@ -6,12 +6,13 @@ import Wrapper from "../../components/Wrapper/Wrapper";
 class CreateAccount extends Component {
     state = {
       labels: [
-          {id:"Name", val:""},
-          {id:"Title", val:""},
-          {id:"Role", val:""},
-          {id: "Fees", val: ""},
-          {id: "Bio", val: ""},
-          {id: "Start Date", val: Date.now()}
+        {id:"Name", val:""},
+        {id:"Title", val:""},
+        {id:"Role", val:""},
+        {id: "Phone", val: ""},
+        {id: "Bio", val: ""},
+        {id:"Email", val:""},
+        {id: "Password", val: ""}
       ],
       results: [],
       show: false,
@@ -29,15 +30,16 @@ class CreateAccount extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        API.getUsers(this.state.labels[0].val, this.state.labels[1].val, this.state.labels[2].val).then(res =>{
+        API.getUsers(this.state.labels[0].val, this.state.labels[1].val, this.state.labels[2].val,this.state.labels[3].val, this.state.labels[4].val, this.state.labels[5].val, this.state.labels[6].val).then(res =>{
             this.setState({
                 labels: [
                     {id:"Name", val:""},
                     {id:"Title", val:""},
                     {id:"Role", val:""},
-                    {id: "Fees", val: ""},
+                    {id: "Phone", val: ""},
                     {id: "Bio", val: ""},
-                    {id: "Start Date", val: Date.now()}
+                    {id:"Email", val:""},
+                    {id: "Password", val: ""}
                 ],
                 results: res.data.response.docs,
                 showResults: true

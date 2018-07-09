@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import API from "../../utils/API"
 import Wrapper from "../../components/Wrapper/Wrapper";
 import Jumbotron from "../../components/Jumbotron/Jumbotron";
 import LogInBtn from "../../components/LogInBtn/LogInBtn";
