@@ -104,5 +104,6 @@ class PatientsAdd extends Component {
       );
     }
   }
+}
   
-  export default PatientsAdd;
+export default PatientsAdd
