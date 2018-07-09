@@ -25,7 +25,7 @@ class PatientsView extends Component {
     render() {
       return (
         <Wrapper>
-        <List name={patient._id} age={patient._id} weight={patient.headline.main} height={patient.source} date={patient.pub_date} URL={patient.web_url} action={this.handleArticleSaved} title="Save" />
+        <List key={patient._id} name={patient.name} age={patient.age} weight={patient.weight} height={patient.height} temperature={patient.temperature} pulse={patient.pulse} respiratory={patient.respiratory} pressure={patient.pressure} symptoms={patient.symptoms} diagnosis={patient.diagnosis} drugs={patient.drugs} inDate={patient.inDate} outDate={patient.outDate} action={this.handlePatientSaved} title="Save" />
         </Wrapper>
       );
     }

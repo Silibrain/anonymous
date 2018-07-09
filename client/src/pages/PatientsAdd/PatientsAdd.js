@@ -89,12 +89,17 @@ class PatientsAdd extends Component {
     }
   
     render() {
+    let patientResults = "Please enter all fields."
+    if(this.state.showResults){
+      patientResults = this.state.results.map((patient, index) =>{
+        return <PatientsView/>
+      });
       return (
         <Wrapper>
         <Panel title="Add Patient">
         <UserForm submit={this.handleFormSubmit} changed={this.handleInputChange} labels={this.state.labels} />
         </Panel>
-        <PatientsView></PatientsView>
+        <PatientsView title ="Patient Results">{patientResults}</PatientsView>
         </Wrapper>
       );
     }
