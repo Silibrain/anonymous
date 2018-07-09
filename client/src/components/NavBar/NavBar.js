@@ -31,39 +31,39 @@ const Nav = () => (
                 <a className="nav-link active" href="index.html">Home</a>
               </li>
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Patients</a>
+                <a className="nav-link dropdown-toggle" href="/patients" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Patients</a>
                 <div className="dropdown-menu" aria-labelledby="dropdown04">
-                  <a className="dropdown-item" href="">Add</a>
-                  <a className="dropdown-item" href="">View</a>
+                  <a className="dropdown-item" href="/patients/add">Add</a>
+                  <a className="dropdown-item" href="/patients/view">View</a>
                 </div>
 
               </li>
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Practicioners</a>
+                <a className="nav-link dropdown-toggle" href="/practicioners" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Practicioners</a>
                 <div className="dropdown-menu" aria-labelledby="dropdown05">
-                  <a className="dropdown-item" href="">Add</a>
-                  <a className="dropdown-item" href="">View</a>
+                  <a className="dropdown-item" href="/practicioners/add">Add</a>
+                  <a className="dropdown-item" href="/practicioners/view">View</a>
                 </div>
               </li>
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="" id="dropdown06" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Inventory</a>
+                <a className="nav-link dropdown-toggle" href="/inventory" id="dropdown06" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Inventory</a>
                 <div className="dropdown-menu" aria-labelledby="dropdown06">
-                  <a className="dropdown-item" href="">Add</a>
-                  <a className="dropdown-item" href="">View</a>
+                  <a className="dropdown-item" href="/inventory/add">Add</a>
+                  <a className="dropdown-item" href="/inventory/view">View</a>
                 </div>
               </li>
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Procedures + Exams</a>
+                <a className="nav-link dropdown-toggle" href="/procedures" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Procedures + Exams</a>
                 <div className="dropdown-menu" aria-labelledby="dropdown07">
-                  <a className="dropdown-item" href="">Add</a>
-                  <a className="dropdown-item" href="">View</a>
+                  <a className="dropdown-item" href="/procedures/add">Add</a>
+                  <a className="dropdown-item" href="/procedures/view">View</a>
                 </div>
               </li>
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Staff + Administration</a>
+                <a className="nav-link dropdown-toggle" href="/staff" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Staff + Administration</a>
                 <div className="dropdown-menu" aria-labelledby="dropdown08">
-                  <a className="dropdown-item" href="">Reports</a>
-                  <a className="dropdown-item" href="">Stats</a>
+                  <a className="dropdown-item" href="/staff/reports">Reports</a>
+                  <a className="dropdown-item" href="/staff/graphs">Stats</a>
                 </div>
               </li>
             </ul>
