@@ -6,16 +6,14 @@ const Nav = () => (
       <div className="top-bar">
         <div className="container">
           <div className="row">
+            <img src="favicon.ico" alt="" height="75px"/>
             <div className="col-md-6 col-sm-6 col-5">
               <ul className="social list-unstyled">
-                <li><a href=""><span className="fa fa-facebook"></span></a></li>
-                <li><a href=""><span className="fa fa-twitter"></span></a></li>
-                <li><a href=""><span className="fa fa-instagram"></span></a></li>
               </ul>
             </div>
             <div className="col-md-6 col-sm-6 col-7 text-right">
               <p className="mb-0">
-                <a href="" className="cta-btn" data-toggle="modal" data-target="#modalAppointment">Make an Appointment</a></p>
+              </p>
             </div>
           </div>
         </div>
@@ -33,29 +31,40 @@ const Nav = () => (
                 <a className="nav-link active" href="index.html">Home</a>
               </li>
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="services.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+                <a className="nav-link dropdown-toggle" href="" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Patients</a>
                 <div className="dropdown-menu" aria-labelledby="dropdown04">
-                  <a className="dropdown-item" href="">Institute</a>
-                  <a className="dropdown-item" href="">Departments</a>
-                  <a className="dropdown-item" href="services.html">Services</a>
+                  <a className="dropdown-item" href="">Add</a>
+                  <a className="dropdown-item" href="">View</a>
                 </div>
 
               </li>
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="doctors.html" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Doctors</a>
+                <a className="nav-link dropdown-toggle" href="" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Practicioners</a>
                 <div className="dropdown-menu" aria-labelledby="dropdown05">
-                  <a className="dropdown-item" href="doctors.html">Find Doctors</a>
-                  <a className="dropdown-item" href="">Practitioner</a>
+                  <a className="dropdown-item" href="">Add</a>
+                  <a className="dropdown-item" href="">View</a>
                 </div>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="news.html">News</a>
+              <li className="nav-item dropdown">
+                <a className="nav-link dropdown-toggle" href="" id="dropdown06" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Inventory</a>
+                <div className="dropdown-menu" aria-labelledby="dropdown06">
+                  <a className="dropdown-item" href="">Add</a>
+                  <a className="dropdown-item" href="">View</a>
+                </div>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="about.html">About</a>
+              <li className="nav-item dropdown">
+                <a className="nav-link dropdown-toggle" href="" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Procedures + Exams</a>
+                <div className="dropdown-menu" aria-labelledby="dropdown07">
+                  <a className="dropdown-item" href="">Add</a>
+                  <a className="dropdown-item" href="">View</a>
+                </div>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="contact.html">Contact</a>
+              <li className="nav-item dropdown">
+                <a className="nav-link dropdown-toggle" href="" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Staff + Administration</a>
+                <div className="dropdown-menu" aria-labelledby="dropdown08">
+                  <a className="dropdown-item" href="">Reports</a>
+                  <a className="dropdown-item" href="">Stats</a>
+                </div>
               </li>
             </ul>
           </div>
