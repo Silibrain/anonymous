@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import UserForm from "../../components/UserForm/UserForm";
 import Wrapper from "../../components/Wrapper/Wrapper";
-import NavBar from "../../components/NavBar/NavBar";
 
 class CreateAccount extends Component {
     state = {
@@ -50,8 +49,6 @@ class CreateAccount extends Component {
     render() {
       return (
         <Wrapper>
-
-        <NavBar></NavBar>
      
         <UserForm submit={this.handleFormSubmit} changed={this.handleInputChange} labels={this.state.labels} />
     
