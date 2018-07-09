@@ -1,8 +1,13 @@
+require("dotenv").config();
 const JwtStrategy = require("passport-jwt").Strategy;
+const LocalStrategy = require("passport-local");
+const GoogleStrategy = require("passport-google-oauth20");
 const ExtractJwt = require("passport-jwt").ExtractJwt;
+const bcrypt = require("bcrypt-nodejs");
 const mongoose = require("mongoose");
-const User = mongoose.model("users");
+const User = require("../models/user");
 const keys = require("../config/keys");
+const keysProd = require("../config/keys_prod");
 
 const opts = {};
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
