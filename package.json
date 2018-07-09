@@ -37,6 +37,7 @@
     "passport-http": "^0.3.0",
     "passport-local": "^1.0.0",
     "react-router": "4.0.0-alpha.6",
+    "validator": "^10.4.0",
     "webpack": "^4.15.1",
     "webpack-cli": "^3.0.8"
   }

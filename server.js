@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const passport = require("passport");
 LocalStrategy = require("passport-local").Strategy;
 const flash = require("express-flash-messages");
-const Validator = require(validator);
+const Validator = require("validator");
 const cookieParser = require("cookie-parser");
 const routes = require("./routes");
 const app = express();
@@ -25,7 +25,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // DB Config
-const db = require("./config/keys").mongoURI;
+//const db = require("./config/keys").mongoURI;
 
 // Connect to MongoDB
 mongoose
