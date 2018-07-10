@@ -5,7 +5,7 @@
 
 // class PatientsView extends Component {
 //     state = {
-//       item: [
+//       labels: [
 //         {id: "Name", val:""},
 //         {id: "Age", val:""},
 //         {id: "Weight", val: ""},
