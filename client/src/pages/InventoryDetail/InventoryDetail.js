@@ -15,7 +15,7 @@ class InventoryDetail extends Component {
       this.getInventoryDetail();
     }
 
-    getInventoryDetail(){
+    getInventory(){
       API.getInventory()
       .then(res => this.setState({savedInventory: res.data}))
       .catch(err => console.log(err));
