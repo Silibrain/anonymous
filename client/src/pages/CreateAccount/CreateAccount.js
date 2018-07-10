@@ -30,7 +30,7 @@ class CreateAccount extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        API.getUsers(this.state.labels[0].val, this.state.labels[1].val, this.state.labels[2].val,this.state.labels[3].val, this.state.labels[4].val, this.state.labels[5].val, this.state.labels[6].val).then(res =>{
+        API.saveUser(this.state.labels[0].val, this.state.labels[1].val, this.state.labels[2].val,this.state.labels[3].val, this.state.labels[4].val, this.state.labels[5].val, this.state.labels[6].val).then(res =>{
             this.setState({
                 labels: [
                     {id:"Name", val:""},
