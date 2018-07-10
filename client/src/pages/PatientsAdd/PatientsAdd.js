@@ -1,11 +1,15 @@
 import React, { Component } from "react";
-// import API from "../../utils/API"
+import API from "../../utils/API"
+import SearchForm from "../../components/SearchForm/SearchForm";
 import Wrapper from "../../components/Wrapper/Wrapper";
 import PatientsFormInput from "../../components/PatientsFormInput/PatientsFormInput";
 import SubmitPatientsBtn from  "../../components/SubmitPatientsBtn/SubmitPatientsBtn";
 import UserForm from "../../components/UserForm/UserForm";
+
 import API from "../../utils/API";
 import Jumbotron from "../../components/Jumbotron/Jumbotron";
+
+import List from "../../components/List/List";
 
 // import PatientsView from "../pages/PatientsView.js";
 
@@ -94,8 +98,9 @@ class PatientsAdd extends Component {
     let patientResults = "Please enter all fields."
     if(this.state.showResults){
       patientResults = this.state.results.map((patient, index) =>{
-        // return <PatientsView/>
+//         return <List key={patient._id} name={patient.name} age={patient.age} weight={patient.weight} height={patient.height} temperature={patient.temperature} pulse={patient.pulse} respiratory={patient.respiratory} pressure={patient.pressure} symptoms={patient.symptoms} diagnosis={patient.diagnosis} drugs={patient.drugs} inDate={patient.inDate} outDate={patient.outDate} action={this.handlePatientSaved} title="Save" />
       });
+    }
       return (
         <Wrapper>
         <Jumbotron title="Add Patient"></Jumbotron>
@@ -105,7 +110,9 @@ class PatientsAdd extends Component {
       );
     }
   }
+
 }
   
   export default PatientsAdd;
+
 

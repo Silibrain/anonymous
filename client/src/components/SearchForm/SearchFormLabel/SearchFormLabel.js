@@ -1,6 +1,7 @@
 import React from 'react';
 import Aux from '../../../hoc:Auxiliary/Auxiliary';
-const UserFormLabel = (props) => (
+
+const SearchFormLabel = (props) => (
     <Aux>
         <label htmlFor={props.name}>{props.name}:</label>
         <input
@@ -12,4 +13,5 @@ const UserFormLabel = (props) => (
         <br></br>
         </Aux>
 );
-export default UserFormLabel
+
+export default SearchFormLabel

@@ -1,7 +1,9 @@
 import React from 'react';
-const UserButton = (props) => (
+
+const SearchButton = (props) => (
     <button onClick={props.clicked} className="btn btn-primary">
-    Submit
+    Search
     </button>
 );
-export default UserButton;
+
+export default SearchButton;
