@@ -3,7 +3,7 @@ const router = express.Router();
 const path = require("path");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
-const GoogleStrategy = require("passport-google-oauth20");
+//const GoogleStrategy = require("passport-google-oauth20");
 const User = require("../models/user.js");
 
 router.get("./user", (req, res) => {
@@ -103,19 +103,19 @@ router.get("/logout", function(req, res) {
   });
 });
 
-// Google Authentication
-router.get(
-  "/google",
-  passport.authenticate("google", {
-    scope: ["profile", "email"]
-  })
-);
+// // Google Authentication
+// router.get(
+//   "/google",
+//   passport.authenticate("google", {
+//     scope: ["profile", "email"]
+//   })
+// );
 
-// Google Authentication Callback
-router.get("/google/callback", passport.authenticate("google"), (req, res) => {
-  res.cookie("user_id", req.user.dataValues.id);
-  res.cookie("user_name", req.user.dataValues.userName);
-  return res.redirect("/");
-});
+// // Google Authentication Callback
+// router.get("/google/callback", passport.authenticate("google"), (req, res) => {
+//   res.cookie("user_id", req.user.dataValues.id);
+//   res.cookie("user_name", req.user.dataValues.userName);
+//   return res.redirect("/");
+// });
 
 module.exports = router;

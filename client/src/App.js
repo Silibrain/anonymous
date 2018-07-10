@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import NoMatch from "./pages/NoMatch";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar";
@@ -35,9 +35,37 @@ import ReportsDisplay from "./pages/ReportsDisplay";
 
 import StatisticsMenu from "./pages/StatisticsMenu";
 
+import helpers from "./utils/helpers.js";
 
-const App = () => (
-  <Router>
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    // Assign state itself, and a default value for items
+    this.state = {};
+  }
+
+  componentDidMount() {
+    var t = this;
+    helpers.getStatus(t);
+  }
+
+  render() {
+    var isLoggedIn = document.cookie.length > 0;
+    console.log("\n#####isLoggedIn", isLoggedIn, this.state.status);
+
+    if (this.state.status === false) {
+      return (
+        <Router>
+          <Switch>
+            <Route path="/" component={Home} />
+          </Switch>
+        </Router>
+      );
+    }
+
+    return (
+    <Router>
     <div>
       <NavBar />
       <Switch>
@@ -76,6 +104,8 @@ const App = () => (
       </Switch>
     </div>
   </Router>
-);
+    );
+  }
+}
 
 export default App;
