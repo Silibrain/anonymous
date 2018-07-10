@@ -2,7 +2,7 @@
   "name": "hippocrates",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8080",
+  "proxy": "http://localhost:8000",
   "dependencies": {
     "axios": "^0.17.1",
     "fetch": "^1.1.0",
@@ -14,7 +14,7 @@
     "react-google-maps": "^9.4.1",
     "react-responsive-modal": "^2.0.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.17",
+    "react-scripts": "^1.1.4",
     "recompose": "^0.26.0"
   },
   "scripts": {
@@ -22,5 +22,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "main": "index.js",
+  "license": "MIT"
 }

@@ -28,7 +28,7 @@ const Nav = () => (
           <div className="collapse navbar-collapse" id="navbarsExample05">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <a className="nav-link active" href="index.html">Home</a>
+                <a className="nav-link active" href="/">Home</a>
               </li>
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="/patients" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Patients</a>
