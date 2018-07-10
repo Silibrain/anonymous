@@ -5,9 +5,12 @@ import Wrapper from "../../components/Wrapper/Wrapper";
 import PatientsFormInput from "../../components/PatientsFormInput/PatientsFormInput";
 import SubmitPatientsBtn from  "../../components/SubmitPatientsBtn/SubmitPatientsBtn";
 import UserForm from "../../components/UserForm/UserForm";
-import app from "../../utils/PatientsAPI";
+
+import API from "../../utils/API";
 import Jumbotron from "../../components/Jumbotron/Jumbotron";
+
 import List from "../../components/List/List";
+
 // import PatientsView from "../pages/PatientsView.js";
 
 class PatientsAdd extends Component {
@@ -43,7 +46,7 @@ class PatientsAdd extends Component {
 
     handleFormSubmit = event => {
       event.preventDefault();
-      app.getPatient(this.state.item[0].val, this.state.item[1].val, this.state.item[2].val, this.state.item[3].val, this.state.item[4].val, this.state.item[5].val, this.state.item[6].val, this.state.item[7].val, this.state.item[8].val, this.state.item[9].val, this.state.item[10].val, this.state.item[11].val, this.state.item[12].val).then(res => {
+      API.getArticles(this.state.item[0].val, this.state.item[1].val, this.state.item[2].val, this.state.item[3].val, this.state.item[4].val, this.state.item[5].val, this.state.item[6].val, this.state.item[7].val, this.state.item[8].val, this.state.item[9].val, this.state.item[10].val, this.state.item[11].val, this.state.item[12].val).then(res => {
         this.setState({
           item: [
             {id: "Name", val:""},
@@ -95,18 +98,21 @@ class PatientsAdd extends Component {
     let patientResults = "Please enter all fields."
     if(this.state.showResults){
       patientResults = this.state.results.map((patient, index) =>{
-        return <List key={patient._id} name={patient.name} age={patient.age} weight={patient.weight} height={patient.height} temperature={patient.temperature} pulse={patient.pulse} respiratory={patient.respiratory} pressure={patient.pressure} symptoms={patient.symptoms} diagnosis={patient.diagnosis} drugs={patient.drugs} inDate={patient.inDate} outDate={patient.outDate} action={this.handlePatientSaved} title="Save" />
+//         return <List key={patient._id} name={patient.name} age={patient.age} weight={patient.weight} height={patient.height} temperature={patient.temperature} pulse={patient.pulse} respiratory={patient.respiratory} pressure={patient.pressure} symptoms={patient.symptoms} diagnosis={patient.diagnosis} drugs={patient.drugs} inDate={patient.inDate} outDate={patient.outDate} action={this.handlePatientSaved} title="Save" />
       });
     }
       return (
         <Wrapper>
-        <Jumbotron title="Add Patient">
-        <SearchForm submit={this.handleFormSubmit} changed={this.handleInputChange} labels={this.state.labels} />
-        </Jumbotron>
-        {/* <PatientsForm title ="Patient Results">{patientResults}</PatientsForm> */}
+        <Jumbotron title="Add Patient"></Jumbotron>
+        <UserForm submit={this.handleFormSubmit} changed={this.handleInputChange} labels={this.state.labels} />
+        {/* <PatientsView title ="Patient Results">{patientResults}</PatientsView> */}
         </Wrapper>
       );
     }
   }
 
-export default PatientsAdd
+}
+  
+  export default PatientsAdd;
+
+

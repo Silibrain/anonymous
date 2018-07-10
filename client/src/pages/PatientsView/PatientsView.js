@@ -20,10 +20,7 @@
 //         {id: "Check in Date", val: ""},
 //         {id: "Check out Date", val: ""},
 //       ],
-//     };
-  
-
-    
+//     };  
 //     render() {
 //       return (
 //         <Wrapper>
@@ -32,6 +29,6 @@
 //       );
 //     }
 //   }
-  
+
   
 //   export default PatientsView;
