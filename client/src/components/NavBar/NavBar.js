@@ -6,7 +6,7 @@ const Nav = () => (
       <div className="top-bar">
         <div className="container">
           <div className="row">
-            <img src="logowhite.png" alt="" height="75px"/>
+            <img src="logowhite.png" href="/" alt="" height="75px"/>
             <div className="col-md-6 col-sm-6 col-5">
               <ul className="social list-unstyled">
               </ul>
