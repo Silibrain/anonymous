@@ -82,7 +82,7 @@ class ProceduresAdd extends Component {
   let procedureResults = "Please enter all fields."
   if(this.state.showResults){
     procedureResults = this.state.results.map((procedure, index) =>{
-      return <List key={procedure._id} name={procedure.name} age={procedure.type} weight={procedure.location} height={procedure.result} temperature={procedure.avgtime} pulse={procedure.capex} respiratory={procedure.opex} respiratory={procedure.entryDate} respiratory={procedure.exitDate} action={this.handleProcedureSaved} title="Save" />
+      return <List key={procedure._id} name={procedure.name} type={procedure.type} location={procedure.location} result={procedure.result} avgtime={procedure.avgtime} capex={procedure.capex} opex={procedure.opex} entryDate={procedure.entryDate} exitDate={procedure.exitDate} action={this.handleProcedureSaved} title="Save" />
     });
   }
     return (
