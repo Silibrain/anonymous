@@ -10,10 +10,26 @@ class InventoryDetail extends Component {
     state = {
       item: {}
     };
+
+    componentDidMount(){
+      this.getInventoryDetail();
+    }
+
+    getInventoryDetail(){
+      API.getInventory()
+      .then(res => this.setState({savedInventory: res.data}))
+      .catch(err => console.log(err));
+    }
+
+    deleteInventoryDetail = (event, id) => {
+      API.deleteInventory(id)
+      .then(res => this.getInventoryDetail())
+      .catch(err => console.log(err));
+    }
   
     render() {
       return (
-        <Wrapper>
+        <Wrapper>          
         <InventoryFormInput></InventoryFormInput>
         <InventoryDeleteBtn></InventoryDeleteBtn>
         <InventoryUpdateBtn></InventoryUpdateBtn>
