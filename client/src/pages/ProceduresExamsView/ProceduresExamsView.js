@@ -11,10 +11,10 @@ class ProceduresExamsView extends Component {
   };  
 
   componentDidMount(){
-      this.getProceduressHandler();
+      this.getProceduresHandler();
     }
   
-    getProceduressHandler(){
+    getProceduresHandler(){
       API.getProcedures()
       .then(res => this.setState({procedures: res.data}))
       .catch(err => console.log(err));
@@ -22,12 +22,12 @@ class ProceduresExamsView extends Component {
   
     deleteProceduresHandler = (event, id) => {
       API.deleteProcedures(id)
-      .then(res => this.getProceduressHandler())
+      .then(res => this.getProceduresHandler())
       .catch(err => console.log(err));
     }
 
     render() {
-      let saved = <p> Currently, no Proceduress to Display!</p>
+      let saved = <p> Currently, no Procedures to Display!</p>
   
       if(this.state.procedures.length > 0){
         saved = this.state.procedures.map((procedure, index) => {
