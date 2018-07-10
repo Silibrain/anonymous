@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import API from "../../utils/API"
+// import API from "../../utils/InventoryAPI";
 import Wrapper from "../../components/Wrapper/Wrapper";
 import InventoryFormInput from "../../components/InventoryFormInput/InventoryFormInput";
 import SubmitInventoryBtn from "../../components/SubmitInventoryBtn/SubmitInventoryBtn";

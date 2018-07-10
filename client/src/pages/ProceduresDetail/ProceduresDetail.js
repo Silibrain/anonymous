@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import API from "../../utils/API"
+import API from "../../utils/ProceduresAPI";
 import Wrapper from "../../components/Wrapper/Wrapper";
 import ProceduresFormInput from "../../components/ProceduresFormInput/ProceduresFormInput";
 import ProceduresDeleteBtn from "../../components/ProceduresDeleteBtn/ProceduresDeleteBtn";
@@ -10,6 +10,21 @@ class ProceduresDetail extends Component {
     state = {
       item: {}
     };
+    componentDidMount(){
+      this.getProcedures();
+    }
+
+    getProcedures(){
+      API.getProcedures()
+      .then(res => this.setState({saveProcedures: res.data}))
+      .catch(err => console.log(err));
+    }
+
+    deleteProcedures = (event, id) => {
+      API.deleteProcedures(id)
+      .then(res => this.getProcedures())
+      .catch(err => console.log(err));
+    }
   
     render() {
       return (
