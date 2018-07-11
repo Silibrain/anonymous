@@ -2,9 +2,7 @@ import React from "react";
 import "./AddProceduresBtn.css";
 
 const AddProceduresBtn = props => (
-  <span className="addpro-btn" {...props}>
-    Add Procedures
-  </span>
+  <button type="button" className="btn btn-outline-info" onClick={( window.location = '/procedures/add')}>Add</button>
 );
 
 export default AddProceduresBtn;

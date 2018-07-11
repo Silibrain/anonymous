@@ -29,8 +29,10 @@ class CreateAccount extends Component {
     }
 
     handleFormSubmit = event => {
+        console.log("handle form called")
         event.preventDefault();
         API.saveUser(this.state.labels[0].val, this.state.labels[1].val, this.state.labels[2].val,this.state.labels[3].val, this.state.labels[4].val, this.state.labels[5].val, this.state.labels[6].val).then(res =>{
+            console.log("api call sent")
             this.setState({
                 labels: [
                     {id:"Name", val:""},
@@ -44,6 +46,7 @@ class CreateAccount extends Component {
                 results: res.data.response.docs,
                 showResults: true
             });
+            console.log("this are the results sent:", this.setState.results)
         })
         .catch(err => this.setState({error: err.message}));
     }

@@ -58,7 +58,7 @@ class App extends Component {
       return (
         <Router>
           <Switch>
-            <Route path="/" component={Home} />
+            <Route exact path="/" component={Home} />
           </Switch>
         </Router>
       );
@@ -90,10 +90,10 @@ class App extends Component {
         <Route exact path="/inventory/view" component={InventoryView} />
         <Route exact path="/procedures/view" component={ProceduresView} />
 
-        <Route exact path="/patients/view/:id" component={PatientsDetail} />
+        {/* <Route exact path="/patients/view/:id" component={PatientsDetail} />
         <Route exact path="/practicioners/view/:id" component={PracticionersDetail} />
         <Route exact path="/inventory/view/:id" component={InventoryDetail} />
-        <Route exact path="/procedures/view/:id" component={ProceduresDetail} />
+        <Route exact path="/procedures/view/:id" component={ProceduresDetail} /> */}
 
         <Route exact path="/staff/reports" component={ReportsMenu} />
         <Route exact path="/staff/reports/display" component={ReportsDisplay} />
