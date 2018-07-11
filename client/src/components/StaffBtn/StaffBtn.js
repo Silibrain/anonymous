@@ -1,7 +1,7 @@
 import React from "react";
 import "./StaffBtn.css";
 
-const StaffBtn = props => (
+const StaffBtn = () => (
   <button type="button" className="btn btn-outline-info" onClick={( window.location = '/staff')}>View</button>
 );
 

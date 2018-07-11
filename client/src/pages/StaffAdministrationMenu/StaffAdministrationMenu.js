@@ -6,10 +6,7 @@ import StatsBtn  from "../../components/StatsBtn/StatsBtn";
 
 
 class StaffAdministrationMenu extends Component {
-    state = {
-      item: {}
-    };
-  
+
     render() {
       return (
         <Wrapper>

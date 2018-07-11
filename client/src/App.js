@@ -25,10 +25,10 @@ import PracticionersView from "./pages/PracticionersView";
 import InventoryView from "./pages/InventoryView";
 import ProceduresView from "./pages/ProceduresExamsView";
 
-import PatientsDetail from "./pages/PatientDetail";
-import PracticionersDetail from "./pages/PracticionersDetail";
-import InventoryDetail from "./pages/InventoryDetail";
-import ProceduresDetail from "./pages/ProceduresDetail";
+// import PatientsDetail from "./pages/PatientDetail";
+// import PracticionersDetail from "./pages/PracticionersDetail";
+// import InventoryDetail from "./pages/InventoryDetail";
+// import ProceduresDetail from "./pages/ProceduresDetail";
 
 import ReportsMenu from "./pages/ReportsMenu";
 import ReportsDisplay from "./pages/ReportsDisplay";

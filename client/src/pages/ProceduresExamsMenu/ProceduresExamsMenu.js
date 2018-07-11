@@ -1,25 +1,22 @@
-// import React, { Component } from "react";
-// // import API from "../../utils/API"
-// import Wrapper from "../../components/Wrapper/Wrapper";
-// import AddProceduresBtn from "../../components/AddProceduresBtn/AddProceduresBtn";
-// import ViewProceduresBtn from "../../components/ViewProceduresBtn/ViewProceduresBtn";
+import React, { Component } from "react";
+// import API from "../../utils/API"
+import Wrapper from "../../components/Wrapper/Wrapper";
+import AddProceduresBtn from "../../components/AddProceduresBtn/AddProceduresBtn";
+import ViewProceduresBtn from "../../components/ViewProceduresBtn/ViewProceduresBtn";
 
 
-// class ProceduresExamsMenu extends Component {
-//     state = {
-//       item: {}
-//     };
-  
-//     render() {
-//       return (
-//         <Wrapper>
-//         <AddProceduresBtn></AddProceduresBtn>
-//         <ViewProceduresBtn></ViewProceduresBtn>
+class ProceduresExamsMenu extends Component {
+
+    render() {
+      return (
+        <Wrapper>
+        <AddProceduresBtn></AddProceduresBtn>
+        <ViewProceduresBtn></ViewProceduresBtn>
         
         
-//         </Wrapper>
-//       );
-//     }
-//   }
+        </Wrapper>
+      );
+    }
+  }
   
-//   export default ProceduresExamsMenu;
+  export default ProceduresExamsMenu;
