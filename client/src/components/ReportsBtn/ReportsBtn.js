@@ -1,12 +1,12 @@
 import React from "react";
 import "./ReportsBtn.css";
 
-const ReportsBtn = props => (
-  <span className="reports-btn" {...props}>
-    Reports
-  </span>
+const ReportsBtn = () => (
+  <button type="button" className="btn btn-outline-info" onClick={( window.location = '/staff/reports')}>Reports</button>
 );
 
 export default ReportsBtn
+
+
 
     

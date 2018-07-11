@@ -1,12 +1,10 @@
 import React from "react";
 import "./AddInventoryBtn.css";
 
-const AddInventoryBtn = props => (
-  <span className="addi-btn" {...props}>
-    Add Inventory
-  </span>
+const AddInventoryBtn = () => (
+  <button type="button" className="btn btn-outline-info" onClick={( window.location = '/inventory/add')}>Add</button>
 );
 
 export default AddInventoryBtn;
 
-    
+

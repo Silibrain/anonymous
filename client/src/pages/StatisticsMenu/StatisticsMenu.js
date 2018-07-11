@@ -6,10 +6,7 @@ import GraphContainer from "../../components/GraphContainer/GraphContainer";
 
 
 class StatisticsMenu extends Component {
-    state = {
-      item: {}
-    };
-  
+
     render() {
       return (
         <Wrapper>   
