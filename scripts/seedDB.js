@@ -27,6 +27,14 @@ db.createCollection( "patients",
 
 )
 
+db.createCollection( "procedures", 
+{"name":"procedure" , "type":"surgery" , "location":"palo alto" , "result":"success", "avgtime":15, "capex":1, "opex":4, "entrydate":07/21/2017, "exitdate":07/22/2017,},
+{"name":"procedure" , "type":"surgery" , "location":"berkeley" , "result":"success", "avgtime":20, "capex":2, "opex":3, "entrydate":08/06/2017, "exitdate":08/07/2017,},
+{"name":"procedure" , "type":"surgery" , "location":"san francisco" , "result":"success", "avgtime":25, "capex":3, "opex":2, "entrydate":05/04/2018, "exitdate":05/05/2018,},
+{"name":"procedure" , "type":"surgery" , "location":"redwood city" , "result":"success", "avgtime":30, "capex":4, "opex":1, "entrydate":06/22/2018, "exitdate":06/23/2018,}
+)
+
+
 
 
 
