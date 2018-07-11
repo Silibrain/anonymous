@@ -10,7 +10,6 @@ mongoose.connect(
 );
 
 
-/////practicioners///////
 db.createCollection( "practicioners",
 {"id":1, "name":"Connor" , "specialties":"Nuero Suergon" , "skills":"steady hands", "fees":100, "bio":"nothing about something", "entrydate":05/20/2018 , "exitdate":07/20/2018 , },
 {"name":"Roberto" , "specialties":"Pediatrics" , "skills":"doctor", "fees":200 , "bio":"loren ipsum ipsum lipsum", "entrydate":05/20/2018 , "exitdate":07/20/2018 , },
@@ -33,6 +32,28 @@ db.createCollection( "procedures",
 {"name":"procedure" , "type":"surgery" , "location":"san francisco" , "result":"success", "avgtime":25, "capex":3, "opex":2, "entrydate":05/04/2018, "exitdate":05/05/2018,},
 {"name":"procedure" , "type":"surgery" , "location":"redwood city" , "result":"success", "avgtime":30, "capex":4, "opex":1, "entrydate":06/22/2018, "exitdate":06/23/2018,}
 )
+
+db.createCollection( "staff", 
+{"name":"bob", "title":"nurse", "role":"nursing", "phone":"(415)555-6555", "bio": "bio bio bio", "email":"nurse@gmail.com", "password":"password"},
+{"name":"bobby", "title":"nurse", "role":"nursing", "phone":"(415)555-6555", "bio": "bio bio bio", "email":"nurse@gmail.com", "password":"password"},
+{"name":"bobster", "title":"nurse", "role":"nursing", "phone":"(415)555-6555", "bio": "bio bio bio", "email":"nurse@gmail.com", "password":"password"},
+{"name":"boba", "title":"nurse", "role":"nursing", "phone":"(415)555-6555", "bio": "bio bio bio", "email":"nurse@gmail.com", "password":"password"}
+)
+
+db.createCollection( "users",
+{"name":"rick", "title":"user", "role":"using", "phone":"(415)545-6555", "bio": "bio bio bio", "email":"user@gmail.com", "password":"password"},
+{"name":"morty", "title":"user", "role":"using", "phone":"(415)535-6555", "bio": "bio bio bio", "email":"user@gmail.com", "password":"password"},
+{"name":"jerry", "title":"user", "role":"using", "phone":"(415)525-6555", "bio": "bio bio bio", "email":"user@gmail.com", "password":"password"},
+{"name":"beth", "title":"user", "role":"using", "phone":"(415)556-6555", "bio": "bio bio bio", "email":"user@gmail.com", "password":"password"}
+)
+
+db.createCollection( "inventory",
+{"name":"xanax", "units":200, "unitcost":5, "type":"drug", "entrydate":07/11/2018, "expirydate":07/21/2020, },
+{"name":"knife", "units":20, "unitcost":200, "type":"utensils", "entrydate":07/11/2018, "expirydate":07/21/2020, },
+{"name":"nyquil", "units":2000, "unitcost":8, "type":"drug", "entrydate":07/11/2018, "expirydate":07/21/2020, },
+{"name":"robotussin", "units":2000, "unitcost":10, "type":"drug", "entrydate":07/11/2018, "expirydate":07/21/2020, }
+)
+
 
 
 
