@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 // Enable CORS so that browsers don't block requests.
 app.use((req, res, next) => {
   //access-control-allow-origin http://localhost:3000
-  res.header("Access-Control-Allow-Origin", "http://localhost:1992");
+  res.header("Access-Control-Allow-Origin", "http://localhost:8000");
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",
@@ -57,6 +57,7 @@ app.use(
     }
   })
 );
+
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
@@ -70,7 +71,6 @@ require("./routes/api/inventories.js")(app, passport, axios);
 require("./routes/api/patients.js")(app, passport, axios);
 require("./routes/api/practicioners.js")(app, passport, axios);
 require("./routes/api/procedures.js")(app, passport, axios);
-
 
 // mongoDB connection =========================================================
 // Set up promises with mongoose

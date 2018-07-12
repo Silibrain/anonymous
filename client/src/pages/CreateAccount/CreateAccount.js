@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import UserForm from "../../components/UserForm/UserForm";
 import Wrapper from "../../components/Wrapper/Wrapper";
-
+import List from "../../components/List/List";
 class CreateAccount extends Component {
     state = {
       labels: [
@@ -49,6 +49,12 @@ class CreateAccount extends Component {
     }
    
     render() {
+    let labelResults = "Please enter all fields."
+    if(this.state.showResults){
+      labelResults = this.state.results.map((label, index) =>{
+        return <List key={label._id} name={label.name} title={label.title} role={label.role} phone={label.phone} bio={label.bio} email={label.email} password={label.password} action={this.handlelabelSaved} title="Save" />
+      });
+    }
       return (
         <Wrapper>
      
