@@ -1,7 +1,7 @@
-<h1 align="center">
+<h3 align="center">
   <img align="center" src="./client/public/logo.png" alt="logo" width="350"></a>
   <h1 align="center">So the Doctors can focus on you</h1>
-</h1>
+</h3>
 
 This is an extremely valuable app for Medical staff to be able to keep track of Patients information on a more personal level. 
 Getting a CRM for a small medical practice, it is very expensive, so we wanted to create this as a substitute to allow them to experience the same benefits.
