@@ -4,6 +4,6 @@ A solution for our world's small healthcare providers allowing them the tools fo
 ### Preview Hippocrates on the Heroku Platform [here](https://mysterious-headland-90957.herokuapp.com). 
 
 
-## Technologies Used
+## Built With
 
 MongoDB, React.js, Express, Node.js, JSX, 
