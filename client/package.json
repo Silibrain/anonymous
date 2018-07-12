@@ -2,7 +2,7 @@
   "name": "hippocrates",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8000",
+  "proxy": "http://localhost:1992",
   "dependencies": {
     "axios": "^0.17.1",
     "fetch": "^1.1.0",

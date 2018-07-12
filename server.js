@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 1992;
 const mongoose = require("mongoose");
 const passport = require("passport");
 const flash = require("connect-flash");
@@ -48,7 +48,7 @@ app.use(
   session({
     key: "user_sid",
     resave: true,
-    secret: "mM6MNDxu8WUrLwUZuj6cwQwGg",
+    secret: "IMomsAusXH33TGSF0vAfNMjuu0VPHjpfVBpb",
     resave: false,
     saveUninitialized: false,
     cookie: {
@@ -63,25 +63,22 @@ app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
 // routes ======================================================================
-require("./routes/index.js")(app, passport, axios); // load our routes and pass in our app and fully configured passport
-require("./routes/api/administrators.js")(app, passport, axios);
-require("./routes/api/auth.js")(app, passport, axios);
-require("./routes/api/index.js")(app, passport, axios);
-require("./routes/api/inventories.js")(app, passport, axios);
-require("./routes/api/patients.js")(app, passport, axios);
-require("./routes/api/practicioners.js")(app, passport, axios);
-require("./routes/api/procedures.js")(app, passport, axios);
+require("./routes/routes.js")(app, passport, axios);
+// require("./routes/index.js")(app, passport, axios); // load our routes and pass in our app and fully configured passport
+
 
 // mongoDB connection =========================================================
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
-mongoose.connect(
-  MONGODB_URI || "mongodb://localhost/hippocrates",
-  {
-    useMongoClient: true
-  }
-);
+// mongoose.connect(
+//   MONGODB_URI || "mongodb://localhost/hippocrates",
+//   {
+//     useMongoClient: true
+//   }
+// );
+
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hippocrates");
 
 // launch ======================================================================
 // Start the API server
