@@ -1,6 +1,4 @@
 const express = require("express");
-const app = express();
-const PORT = process.env.PORT || 1992;
 const mongoose = require("mongoose");
 const passport = require("passport");
 const flash = require("connect-flash");
@@ -9,9 +7,11 @@ const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const session = require("express-session");
-
+const routes = require("./routes")
 const MONGODB_URI = require("./config/keys");
 
+const app = express();
+const PORT = process.env.PORT || 1992;
 
 // configuration ===============================================================
 
@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 // Enable CORS so that browsers don't block requests.
 app.use((req, res, next) => {
   //access-control-allow-origin http://localhost:3000
-  res.header("Access-Control-Allow-Origin", "http://localhost:8000");
+  res.header("Access-Control-Allow-Origin", "http://localhost:1992");
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",
@@ -69,15 +69,9 @@ require("./routes/routes.js")(app, passport, axios);
 
 // mongoDB connection =========================================================
 // Set up promises with mongoose
-mongoose.Promise = global.Promise;
+app.use(routes);
+// mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
-// mongoose.connect(
-//   MONGODB_URI || "mongodb://localhost/hippocrates",
-//   {
-//     useMongoClient: true
-//   }
-// );
-
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hippocrates");
 
 // launch ======================================================================

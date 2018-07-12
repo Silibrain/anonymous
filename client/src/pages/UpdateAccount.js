@@ -1,18 +1,12 @@
 import React, { Component } from "react";
-<<<<<<< HEAD:client/src/pages/CreateAccount/CreateAccount.js
-import API from "../../utils/API";
-import UserForm from "../../components/UserForm/UserForm";
-import Wrapper from "../../components/Wrapper/Wrapper";
-import List from "../../components/List/List";
-=======
 import API from "../utils/helpers";
 import NavBar from "../components/Panels/NavBar";
 import Footer from "../components/Panels/Footer";
 import Wrapper from "../components/Panels/Wrapper";
 import UserForm from "../components/Forms/UserForm/UserForm";
+import List from "../components/Panels/List/List";
 
 
->>>>>>> 0b9189d504b001b1673480695ab670f027b2066f:client/src/pages/UpdateAccount.js
 class CreateAccount extends Component {
     state = {
       labels: [
