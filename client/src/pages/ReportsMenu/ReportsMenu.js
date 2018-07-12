@@ -17,33 +17,105 @@ import reports from "../../utils/subLedgeAPI/reports";
 class ReportsMenu extends Component {
   state = {
     item: {
-      id:accountId
+      id: accountId
     },
-      results: {},
-      show: false,
-      error:""
-    };
-  }
+    results: {},
+    show: false,
+    error: ""
+  };
+
+  state = {
+    labels: [{ id: "bookId", val: "" }, { id: "accountId", val: "" }],
+    results: {},
+    show: false,
+    error: ""
+  };
+}
+
+class ReportsMenu extends Component {
+  state = {
+    item: {
+      id: booksId
+    },
+    results: {},
+    show: false,
+    error: ""
+  };
 
   state = {
     labels: [
-      {id:"bookId", val:""},
-      {id:"accountId", val:""}
+      { id: "", val: "" } // Fill in id name for all books
     ],
-      results: {},
-      show: false,
-      error:""
-    };
+    resutls: {},
+    show: false,
+    error: ""
+  };
+}
 
-  render() {
-    return (
-      <Wrapper>
-        <BSBtn />
-        <ISBtn />
-        <CSBtn />
-      </Wrapper>
-    );
+class ReportsMenu extends Component {
+  state = {
+    item: {
+      id: categoriesId
+    },
+    results: {},
+    show: false,
+    error: ""
   };
 
+  state = {
+    labels: [
+      { id: "booksId", val: "" },
+      { id: "categoriesId", val: "" } // Fill in id name for all books
+    ],
+    resutls: {},
+    show: false,
+    error: ""
+  };
+}
+
+class ReportsMenu extends Component {
+  state = {
+    item: {
+      id: journal_entriesId
+    },
+    results: {},
+    show: false,
+    error: ""
+  };
+
+  state = {
+    labels: [
+      { id: "booksId", val: "" },
+      { id: "journal_entriesId", val: "" } // Fill in id name for all books
+    ],
+    resutls: {},
+    show: false,
+    error: ""
+  };
+}
+
+class ReportsMenu extends Component {
+  state = {
+    item: {
+      id: orgsId
+    },
+    results: {},
+    show: false,
+    error: ""
+  };
+
+  state = {
+    labels: [
+      { id: "booksId", val: "" },
+      { id: "orgs", val: "" } // VERIFY THE PROPER ID NAMES FOR ORGS
+    ],
+    resutls: {},
+    show: false,
+    error: ""
+  };
+}
+
+render();
+return <Wrapper />;
 
 export default ReportsMenu;
