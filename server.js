@@ -1,6 +1,4 @@
 const express = require("express");
-const app = express();
-const PORT = process.env.PORT || 1992;
 const mongoose = require("mongoose");
 const passport = require("passport");
 const flash = require("connect-flash");
@@ -9,9 +7,11 @@ const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const session = require("express-session");
-
+const routes = require("./routes")
 const MONGODB_URI = require("./config/keys");
 
+const app = express();
+const PORT = process.env.PORT || 1992;
 
 // configuration ===============================================================
 
@@ -57,6 +57,7 @@ app.use(
     }
   })
 );
+
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
@@ -66,18 +67,11 @@ require("./routes/routes.js")(app, passport, axios);
 // require("./routes/index.js")(app, passport, axios); // load our routes and pass in our app and fully configured passport
 
 
-
 // mongoDB connection =========================================================
 // Set up promises with mongoose
-mongoose.Promise = global.Promise;
+app.use(routes);
+// mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
-// mongoose.connect(
-//   MONGODB_URI || "mongodb://localhost/hippocrates",
-//   {
-//     useMongoClient: true
-//   }
-// );
-
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hippocrates");
 
 // launch ======================================================================
