@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="./client/public/logo.png" alt="logo" width="450"></a>
+  <img src="./client/public/logo.png" alt="logo" width="350"></a>
 </h1>
 
 <h3 align="center">So the Doctors can focus on you</h3>
@@ -32,7 +32,7 @@ yarn start
 ```
 to intialize the app. It will launch the application at `http://localhost:3000` and you are now ready to search for random New York Times articles
 
-### mongoDB :herb:
+### mongoDB
 In order for the app to render locally, you will need to have mongoDB installed on your computer. Depending on your operating system, the installation proccess will be different. You can find more info on installing mongoDB through their documentation.
 ```
 https://docs.mongodb.com/manual/installation/
@@ -57,7 +57,7 @@ https://docs.mongodb.com/manual/installation/
 * [react-router-dom](https://www.npmjs.com/package/react-router-dom) - Routing library for React with DOM bindings
 
 
-## Author :key:
+## Development Team
 * **Roberto Baldizon** - [b0bbybaldi](https://github.com/b0bbybaldi)
 * **Connor Barnett** - [Connor218](https://github.com/Connor218)
 * **Alexandra Goodwin** - [alexgood1](https://github.com/alexgood1)
