@@ -1,6 +1,6 @@
 <h1 align="center">
-  <img align="center" src="./client/public/logo.png" alt="logo" width="350">
-  So the Doctors can focus on you</a>
+  <img align="center" src="./client/public/logo.png" alt="logo" width="350"></a>
+  <h3 align="center">So the Doctors can focus on you</h3>
 </h1>
 
 This is an extremely valuable app for Medical staff to be able to keep track of Patients information on a more personal level. 
