@@ -6,4 +6,4 @@ A solution for our world's small healthcare providers allowing them the tools fo
 
 ## Built With
 
-MongoDB, React.js, Express, Node.js, JSX, 
+mongoDB, React.js, Express.js, Node.js, JSX, 
