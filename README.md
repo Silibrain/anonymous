@@ -1,6 +1,6 @@
 <h3 align="center">
   <img align="center" src="./client/public/logo.png" alt="logo" width="350"></a>
-  <h1 align="center">So the Doctors can focus on you</h1>
+  <h1 align="center">So the Doctors can focus on YOU</h1>
 </h3>
 <h3></h3>
 
