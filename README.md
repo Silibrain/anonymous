@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="./client/public/logo.png" alt="logo" width="350">
+  <img align="center" src="./client/public/logo.png" alt="logo" width="350">
   So the Doctors can focus on you</a>
 </h1>
 
