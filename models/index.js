@@ -3,6 +3,5 @@ module.exports = {
   Patient: require("./patient"),
   Practicioner: require("./practicioner"),
   Procedure: require("./procedure"),
-  Staff: require("./staff"),
   User: require("./user")
 };

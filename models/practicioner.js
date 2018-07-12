@@ -1,16 +1,37 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 
-const practicionerSchema = new Schema({
-  name: { type: String, required: true },
-  specialties: { type: String, required: true },
-  skills: { type: String, required: true },
-  fees: { type: Number, required: true },
-  bio: { type: String},
-  entrydate: { type: Date, default: Date.now },
-  exitdate: { type: Date},
+const practicionerSchema = mongoose.Schema({
+  id:{
+    type: String
+  },
+  name:{ 
+    type: String
+  },
+  specialties:{ 
+    type: String 
+  },
+  skills:{ 
+    type: String 
+  },
+  fees:{ 
+    type: String 
+  },
+  bio:{ 
+    type: String
+  },
+  firstyear: { 
+    type: Number 
+  },
+  lastyear: { 
+    type: Number
+  }
 });
 
-const Practicioner = mongoose.model("Practicioner", practicionerSchema);
+module.exports = mongoose.model("Practicioner", practicionerSchema);
 
-module.exports = Practicioner;
+
+
+
+
+
+

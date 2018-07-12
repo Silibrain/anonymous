@@ -1,22 +1,48 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 
-const patientSchema = new Schema({
-  name: { type: String, required: true },
-  age: { type: Number, required: true },
-  weight: { type: Number, required: true },
-  height: { type: Number, required: true },
-  temperature: { type: Number, required: true },
-  pulse: { type: Number, required: true },
-  respiratoryrate: { type: Number, required: true },
-  pressure: { type: Number, required: true },
-  symptoms: { type: String, required: true },
-  diagnosis: { type: String},
-  drugs: { type: String},
-  checkindate: { type: Date, default: Date.now },
-  checkoutdate: { type: Date},
+const patientSchema = mongoose.Schema({
+  id:{
+    type: String
+  },
+  name:{ 
+    type: String 
+  },
+  age:{ 
+    type: Number 
+  },
+  weight:{ 
+    type: Number 
+  },
+  height:{ 
+    type: Number 
+  },
+  temperature:{ 
+    type: Number 
+  },
+  pulse:{ 
+    type: Number 
+  },
+  respiratoryrate:{ 
+    type: Number 
+  },
+  pressure:{ 
+    type: Number 
+  },
+  symptoms:{ 
+    type: String 
+  },
+  diagnosis:{ 
+    type: String
+  },
+  drugs:{ 
+    type: String
+  },
+  firstyear: { 
+    type: Number 
+  },
+  lastyear: { 
+    type: Number
+  }
 });
 
-const Patient = mongoose.model("Patient", patientSchema);
-
-module.exports = Patient;
+module.exports = mongoose.model("Patient", patientSchema);
