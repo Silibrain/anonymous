@@ -6,4 +6,4 @@ A solution for our world's small healthcare providers allowing them the tools fo
 
 ## Technologies Used
 
-![mernstack](https://user-images.githubusercontent.com/35353393/42621137-d7d383fe-8571-11e8-8184-ba54c5a196ac.png)
+MongoDB, React.js, Express, Node.js, JSX, 
