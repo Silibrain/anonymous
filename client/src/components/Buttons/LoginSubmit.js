@@ -1,7 +1,7 @@
 import React from "react";
 
 const LoginSubmit = props => {
-  if (props.type === "login") {
+  if (props.type === "signin") {
     return (
       <button className="btn btns" onClick={props.onClick}>
         Login

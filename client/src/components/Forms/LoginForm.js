@@ -7,7 +7,8 @@ class LoginForm extends Component {
     type: "",
     email: "",
     password: "",
-    confirm: ""
+    confirm: "",
+    match: false
   };
 
   changeState = newState => {
@@ -23,28 +24,33 @@ class LoginForm extends Component {
       case "password":
         if (value === this.state.confirm && value !== "") {
           this.setState({
-            [name]: value
+            [name]: value,
+            match: true
           });
         } else {
           this.setState({
-            [name]: value
+            [name]: value,
+            match: false
           });
         }
         break;
       case "confirm":
         if (value === this.state.password && value !== "") {
           this.setState({
-            [name]: value
+            [name]: value,
+            match: true
           });
         } else {
           this.setState({
-            [name]: value
+            [name]: value,
+            match: false
           });
         }
         break;
       default:
         this.setState({
-          [name]: value
+          [name]: value,
+          match: false
         });
     }
   };
@@ -62,6 +68,16 @@ class LoginForm extends Component {
   };
 
   render() {
+    let check = null;
+    if (this.state.match) {
+      check = <i className="fa fa-check" />;
+    } else {
+      check = <i className="fa fa-times" />;
+    }
+    let action = null;
+    if (this.state.type !== null) {
+      action = `/${this.state.type}`;
+    }
 
     let confirm = null;
     if (this.state.type === "signup") {
@@ -82,7 +98,7 @@ class LoginForm extends Component {
     }
     if (this.state.type !== "") {
       return (
-        <form method="POST"  className="clearfix">
+        <form method="POST"  action={action} className="clearfix">
           <div className="form-group">
             <label htmlFor="Email">Email Address</label>
             <input
@@ -117,7 +133,7 @@ class LoginForm extends Component {
     } else {
       return (
         <form className="home-btn-wrap">
-          <LoginBtn type="login" onClick={() => this.changeState("login")} />
+          <LoginBtn type="signin" onClick={() => this.changeState("signin")} />
           <LoginBtn type="signup" onClick={() => this.changeState("signup")} />
         </form>
       );
