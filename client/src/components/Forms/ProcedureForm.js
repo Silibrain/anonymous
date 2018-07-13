@@ -11,16 +11,18 @@ import {
 import helpers from "../../utils/helpers.js";
 import Modal from "react-responsive-modal";
 
-class InventoryForm extends Component {
+class ProcedureForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
             id: "",
             name: "",
-            units: "",
-            unitcost: "",
             type: "",
-            expiryyear: "",
+            location: "",
+            result: "",
+            avgtime: "",
+            capex: "",
+            opex: "",
             open: false
         };
 
@@ -46,11 +48,13 @@ class InventoryForm extends Component {
                 console.log("create item", res);
                 this.setState({
                     id: "",
-                    name: "",
-                    units: "",
-                    unitcost: "",
-                    type: "",
-                    expiryyear: "",
+            name: "",
+            type: "",
+            location: "",
+            result: "",
+            avgtime: "",
+            capex: "",
+            opex: "",
                     create: true
                 });
             })
@@ -58,10 +62,12 @@ class InventoryForm extends Component {
                 this.setState({
                     id: "",
                     name: "",
-                    units: "",
-                    unitcost: "",
                     type: "",
-                    expiryyear: "",
+                    location: "",
+                    result: "",
+                    avgtime: "",
+                    capex: "",
+                    opex: "",
                     create: false
                 });
             });
@@ -92,13 +98,13 @@ class InventoryForm extends Component {
                             componentClass="h3"
                             onClick={this.handleClick}
                         >
-                            Inventory
+                            Procedure
             </Panel.Title>
                     </Panel.Heading>
                     <Panel.Body>
                         <form onSubmit={this.preventDefault}>
                             <FormGroup controlId="formBasicText">
-                                <ControlLabel>What is the name of the item/drug/supply?</ControlLabel>
+                                <ControlLabel>What is the name of the procedure?</ControlLabel>
                                 <FormControl
                                     type="text"
                                     value={this.state.name}
@@ -106,42 +112,62 @@ class InventoryForm extends Component {
                                     placeholder={this.state.name}
                                     onChange={this.handleChange}
                                 />
-                                <ControlLabel>How many units are you entering?</ControlLabel>
-                                <FormControl
-                                    type="number"
-                                    value={this.state.units}
-                                    name="units"
-                                    placeholder={this.state.units}
-                                    onChange={this.handleChange}
-                                />
-                            </FormGroup>
-                            <FormGroup>
-                                <ControlLabel>What is the cost per unit of each?</ControlLabel>
-                                <FormControl
-                                    type="number"
-                                    value={this.state.unitcost}
-                                    name="unitcost"
-                                    placeholder={this.state.unitcost}
-                                    onChange={this.handleChange}
-                                />
-                            </FormGroup>
-                            <FormGroup>
-                                <ControlLabel>What is the type or category of each?</ControlLabel>
+                                <ControlLabel>What type of procedure is this?</ControlLabel>
                                 <FormControl
                                     type="text"
                                     value={this.state.type}
-                                    name="units"
+                                    name="specialties"
                                     placeholder={this.state.type}
                                     onChange={this.handleChange}
                                 />
                             </FormGroup>
                             <FormGroup>
-                                <ControlLabel>What is the expiration year of each?</ControlLabel>
+                                <ControlLabel>Where is this procedure performed?</ControlLabel>
+                                <FormControl
+                                    type="text"
+                                    value={this.state.location}
+                                    name="location"
+                                    placeholder={this.state.location}
+                                    onChange={this.handleChange}
+                                />
+                            </FormGroup>
+                            <FormGroup>
+                                <ControlLabel>Does the patient have any exam results available?</ControlLabel>
+                                <FormControl
+                                    type="text"
+                                    value={this.state.result}
+                                    name="result"
+                                    placeholder={this.state.result}
+                                    onChange={this.handleChange}
+                                />
+                            </FormGroup>
+                            <FormGroup>
+                                <ControlLabel>How long does the procedure take?</ControlLabel>
                                 <FormControl
                                     type="number"
-                                    value={this.state.expiryyear}
-                                    name="expiryyear"
-                                    placeholder={this.state.expiryyear}
+                                    value={this.state.avgtime}
+                                    name="avgtime"
+                                    placeholder={this.state.avgtime}
+                                    onChange={this.handleChange}
+                                />
+                            </FormGroup>
+                            <FormGroup>
+                                <ControlLabel>What is the initial investment for this procedure?</ControlLabel>
+                                <FormControl
+                                    type="number"
+                                    value={this.state.capex}
+                                    name="capex"
+                                    placeholder={this.state.capex}
+                                    onChange={this.handleChange}
+                                />
+                            </FormGroup>
+                            <FormGroup>
+                                <ControlLabel>What are the continued expenses associated with this procedure?</ControlLabel>
+                                <FormControl
+                                    type="number"
+                                    value={this.state.opex}
+                                    name="opex"
+                                    placeholder={this.state.opex}
                                     onChange={this.handleChange}
                                 />
                             </FormGroup>
@@ -164,9 +190,9 @@ class InventoryForm extends Component {
                     little
                 >
                     {this.state.create ? (
-                        <h2>You have successfully entered inventory</h2>
+                        <h2>You have successfully entered a procedure</h2>
                     ) : (
-                            <h2>Oh no! The inventory was not properly entered</h2>
+                            <h2>Oh no! The procedure was not properly entered</h2>
                         )}
                 </Modal>
             </div>
@@ -174,4 +200,4 @@ class InventoryForm extends Component {
     }
 }
 
-export default InventoryForm;
+export default ProcedureForm;
