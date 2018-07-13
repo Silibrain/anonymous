@@ -59,7 +59,7 @@ class CreateAccount extends Component {
     let labelResults = "Please enter all fields."
     if(this.state.showResults){
       labelResults = this.state.results.map((label, index) =>{
-        return <List key={label._id} name={label.name} title={label.title} role={label.role} phone={label.phone} bio={label.bio} email={label.email} password={label.password} action={this.handlelabelSaved} title="Save" />
+        return <List key={label._id} name={label.name} title={label.title} role={label.role} phone={label.phone} bio={label.bio} email={label.email} password={label.password} action={this.handlelabelSaved}/>
       });
     }
       return (

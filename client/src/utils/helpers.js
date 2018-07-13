@@ -168,6 +168,7 @@ export default {
     axios
       .post("/patient")
       .then(request => {
+        console.log("hello route save patient")
         if (request.data.name) {
           let patientObj = t.state.patient;
           patientObj.name = request.data.name;

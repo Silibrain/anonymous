@@ -39,7 +39,7 @@ class ProcedureForm extends Component {
 
     formSubmit = () => {
         helpers
-            .saveInventory(this)
+            .saveProcedure(this)
             // this.state.reset()
             // this.state.reset()
             .then(res => {

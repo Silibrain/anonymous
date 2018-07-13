@@ -41,8 +41,9 @@ class PatientForm extends Component {
     };
 
     formSubmit = () => {
+        console.log(this)
         helpers
-            .saveInventory(this)
+            .savePatient(this)
             // this.state.reset()
             // this.state.reset()
             .then(res => {
@@ -58,8 +59,8 @@ class PatientForm extends Component {
                     pressure: "",
                     symptoms: "",
                     diagnosis: "",
-                    drugs: "",
-                    create: true
+                    drugs: ""
+                   
                 });
             })
             .catch(err => {
@@ -74,8 +75,8 @@ class PatientForm extends Component {
                     pressure: "",
                     symptoms: "",
                     diagnosis: "",
-                    drugs: "",
-                    create: false
+                    drugs: ""
+                 
                 });
             });
     };
@@ -83,6 +84,7 @@ class PatientForm extends Component {
 
     tt = () => {
         this.formSubmit();
+        console.log(this)
     };
 
     render() {
