@@ -80,8 +80,6 @@ export default {
           inventoryObj.units = response.data.units;
           inventoryObj.unitcost = response.data.unitcost;
           inventoryObj.type = response.data.type;
-          inventoryObj.firstyear = response.data.firstyear;
-          inventoryObj.lastyear = response.data.lastyear;
           inventoryObj.expiryyear= response.data.expiryyear;
 
           t.setState({
@@ -112,8 +110,6 @@ export default {
           inventoryObj.units = request.data.units;
           inventoryObj.unitcost = request.data.unitcost;
           inventoryObj.type = request.data.type;
-          inventoryObj.firstyear = request.data.firstyear;
-          inventoryObj.lastyear = request.data.lastyear;
           inventoryObj.expiryyear= request.data.expiryyear;
 
           t.setState({
@@ -150,8 +146,6 @@ export default {
           patientObj.symptoms = response.data.symptoms;
           patientObj.diagnosis = response.data.diagnosis;
           patientObj.drugs = response.data.drugs;
-          patientObj.firstyear = response.data.firstyear;
-          patientObj.lastyear = response.data.lastyear;
 
           t.setState({
             loadingPatient: false,
@@ -187,8 +181,6 @@ export default {
           patientObj.symptoms = request.data.symptoms;
           patientObj.diagnosis = request.data.diagnosis;
           patientObj.drugs = request.data.drugs;
-          patientObj.firstyear = request.data.firstyear;
-          patientObj.lastyear = request.data.lastyear;
 
           t.setState({
             loadingPatient: false,
@@ -218,8 +210,6 @@ export default {
           practicionerObj.skills = response.data.skills;
           practicionerObj.fees = response.data.fees;
           practicionerObj.bio = response.data.bio;
-          practicionerObj.firstyear= response.data.firstyear;
-          practicionerObj.lastyear = response.data.lastyear;
 
           t.setState({
             loadingPracticioner: false,
@@ -249,8 +239,6 @@ export default {
           practicionerObj.skills = request.data.skills;
           practicionerObj.fees = request.data.fees;
           practicionerObj.bio = request.data.bio;
-          practicionerObj.firstyear= request.data.firstyear;
-          practicionerObj.lastyear = request.data.lastyear;
 
           t.setState({
             loadingPracticioner: false,
@@ -282,8 +270,6 @@ export default {
           procedureObj.avgtime = response.data.avgtime;
           procedureObj.capex = response.data.capex;
           procedureObj.opex = response.data.opex;
-          procedureObj.firstyear = response.data.firstyear;
-          procedureObj.lastyear = response.data.lastyear;
 
           t.setState({
             loadingProcedure: false,
@@ -315,8 +301,6 @@ export default {
           procedureObj.avgtime = request.data.avgtime;
           procedureObj.capex = request.data.capex;
           procedureObj.opex = request.data.opex;
-          procedureObj.firstyear = request.data.firstyear;
-          procedureObj.lastyear = request.data.lastyear;
 
           t.setState({
             loadingProcedure: false,

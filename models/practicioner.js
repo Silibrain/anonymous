@@ -18,12 +18,6 @@ const practicionerSchema = mongoose.Schema({
   },
   bio:{ 
     type: String
-  },
-  firstyear: { 
-    type: Number 
-  },
-  lastyear: { 
-    type: Number
   }
 });
 

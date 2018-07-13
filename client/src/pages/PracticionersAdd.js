@@ -3,7 +3,7 @@ import API from "../utils/helpers";
 import NavBar from "../components/Panels/NavBar";
 import Footer from "../components/Panels/Footer";
 import Wrapper from "../components/Panels/Wrapper";
-import UserForm from "../components/Forms/UserForm/UserForm";
+import PracticionerForm from "../components/Forms/PracticionerForm";
 import Jumbotron from "../components/Panels/Jumbotron";
 import List from "../components/Panels/List/List";
 
@@ -14,9 +14,7 @@ class PracticionersAdd extends Component {
       {id: "Specialties", val:""},
       {id: "Skills", val: ""},
       {id: "Fees", val:""},
-      {id: "Bio", val:""},
-      {id: "Entry Date", val: ""},
-      {id: "Exit Date", val:""},
+      {id: "Bio", val:""}
     ],
     results:[],
     show: false,
@@ -41,9 +39,7 @@ class PracticionersAdd extends Component {
           {id: "Specialties", val:""},
           {id: "Skills", val: ""},
           {id: "Fees", val:""},
-          {id: "Bio", val:""},
-          {id: "Entry Date", val: ""},
-          {id: "Exit Date", val:""},
+          {id: "Bio", val:""}
         ],
         results: res.data.response.docs,
         showResults: true
@@ -62,9 +58,7 @@ class PracticionersAdd extends Component {
       specialties: practicioner.specialties,
       skills: practicioner.skills,
       fees: practicioner.fees,
-      bio: practicioner.bio,
-      entryDate: practicioner.entryDate,
-      exitDate: practicioner.exitDate,
+      bio: practicioner.bio
     })
     .then(res => alert('Practicioner saved!'))
     .catch(err => console.log(err));
@@ -81,7 +75,7 @@ class PracticionersAdd extends Component {
       <Wrapper>
          <NavBar />
       <Jumbotron title="Add Practicioner"></Jumbotron>
-      <UserForm submit={this.handleFormSubmit} changed={this.handleInputChange} labels={this.state.labels} />
+      <PracticionerForm />
       <Footer />
       </Wrapper>
     );

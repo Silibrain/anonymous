@@ -9,7 +9,6 @@ import {
 } from "react-bootstrap";
 
 import helpers from "../../utils/helpers.js";
-import Modal from "react-responsive-modal";
 
 class PatientForm extends Component {
     constructor(props) {
@@ -25,8 +24,7 @@ class PatientForm extends Component {
             pressure: "",
             symptoms: "",
             diagnosis: "",
-            drugs: "",
-            open: false
+            drugs: ""
         };
 
     }
@@ -85,19 +83,9 @@ class PatientForm extends Component {
 
     tt = () => {
         this.formSubmit();
-        this.onOpenModal();
-    };
-
-    onOpenModal = () => {
-        this.setState({ open: true });
-    };
-
-    onCloseModal = () => {
-        this.setState({ open: false });
     };
 
     render() {
-        const { open } = this.state;
         return (
             <div>
                 <Panel>
@@ -230,20 +218,6 @@ class PatientForm extends Component {
                         </form>
                     </Panel.Body>
                 </Panel>
-
-                <Modal
-                    classNames="text-center"
-                    open={open}
-                    onClose={this.onCloseModal}
-                    classNames={{ overlay: "custom-overlay", modal: "custom-modal" }}
-                    little
-                >
-                    {this.state.create ? (
-                        <h2>You have successfully entered a patient</h2>
-                    ) : (
-                            <h2>Oh no! The patient was not properly entered</h2>
-                        )}
-                </Modal>
             </div>
         );
     }

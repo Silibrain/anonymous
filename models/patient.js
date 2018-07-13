@@ -14,7 +14,7 @@ const patientSchema = mongoose.Schema({
     type: Number 
   },
   height:{ 
-    type: Number 
+    type: String 
   },
   temperature:{ 
     type: Number 
@@ -26,7 +26,7 @@ const patientSchema = mongoose.Schema({
     type: Number 
   },
   pressure:{ 
-    type: Number 
+    type: String 
   },
   symptoms:{ 
     type: String 
@@ -36,12 +36,6 @@ const patientSchema = mongoose.Schema({
   },
   drugs:{ 
     type: String
-  },
-  firstyear: { 
-    type: Number 
-  },
-  lastyear: { 
-    type: Number
   }
 });
 

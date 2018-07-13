@@ -32,7 +32,7 @@ class ProceduresExamsView extends Component {
   
       if(this.state.procedures.length > 0){
         saved = this.state.procedures.map((procedure, index) => {
-          return <List key={procedure._id} name={procedure.name} age={procedure.type} weight={procedure.location} height={procedure.result} temperature={procedure.avgtime} pulse={procedure.capex} respiratory={procedure.opex} respiratory={procedure.entryDate} respiratory={procedure.exitDate} action={this.handleProcedureSaved} title="Save" />
+          return <List key={procedure.id} name={procedure.name} type={procedure.type} location={procedure.location} result={procedure.result} avgtime={procedure.avgtime} capex={procedure.capex} opex={procedure.opex} action={this.handleProcedureSaved} title="Save" />
         });
       }
   
