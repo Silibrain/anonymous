@@ -7,8 +7,7 @@ class LoginForm extends Component {
     type: "",
     email: "",
     password: "",
-    confirm: "",
-    match: false
+    confirm: ""
   };
 
   changeState = newState => {
@@ -24,33 +23,28 @@ class LoginForm extends Component {
       case "password":
         if (value === this.state.confirm && value !== "") {
           this.setState({
-            [name]: value,
-            match: true
+            [name]: value
           });
         } else {
           this.setState({
-            [name]: value,
-            match: false
+            [name]: value
           });
         }
         break;
       case "confirm":
         if (value === this.state.password && value !== "") {
           this.setState({
-            [name]: value,
-            match: true
+            [name]: value
           });
         } else {
           this.setState({
-            [name]: value,
-            match: false
+            [name]: value
           });
         }
         break;
       default:
         this.setState({
-          [name]: value,
-          match: false
+          [name]: value
         });
     }
   };
@@ -68,22 +62,12 @@ class LoginForm extends Component {
   };
 
   render() {
-    let check = null;
-    if (this.state.match) {
-      check = <i className="fa fa-check" />;
-    } else {
-      check = <i className="fa fa-times" />;
-    }
-    let action = null;
-    if (this.state.type !== null) {
-      action = "/${this.state.type}";
-    }
 
     let confirm = null;
     if (this.state.type === "signup") {
       confirm = (
         <div className="form-group">
-          <label htmlFor="Confirm">Confirm Password {check}</label>
+          <label htmlFor="Confirm">Confirm Password</label>
           <input
             type="password"
             className="form-control"
@@ -98,7 +82,7 @@ class LoginForm extends Component {
     }
     if (this.state.type !== "") {
       return (
-        <form method="POST" action={action} className="clearfix">
+        <form method="POST"  className="clearfix">
           <div className="form-group">
             <label htmlFor="Email">Email Address</label>
             <input

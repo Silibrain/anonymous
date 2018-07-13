@@ -7,6 +7,11 @@ const User = require("../models/user");
 module.exports = (app, passport) => {
   //Create Case Routes & Functionality to Tie Doctors, Patients, Inventory, Procedures
 
+  app.get("/", (req, res) => {
+    res.render("https://mysterious-headland-90957.herokuapp.com/"); // load the index.ejs file
+  });
+
+
   //api/Administrators & Controller(User Functionality)
 
   app.get("/user/id", (req, res) => {
@@ -78,8 +83,6 @@ module.exports = (app, passport) => {
           units: req.body.units,
           unitcost: req.body.unitcost,
           type: req.body.type,
-          firstyear: req.body.firstyear,
-          lastyear: req.body.lastyear,
           expiryyear: req.body.expiryyear
         };
 
@@ -120,9 +123,7 @@ module.exports = (app, passport) => {
           pressure: req.body.pressure,
           symptoms: req.body.symptoms,
           diagnosis: req.body.diagnosis,
-          drugs: req.body.drugs,
-          firstyear: req.body.firstyear,
-          lastyear: req.body.lastyear
+          drugs: req.body.drugs
         };
         Patient.create(patientData).then(() => {
           sendNotification();
@@ -155,9 +156,7 @@ module.exports = (app, passport) => {
           specialties: req.body.specialties,
           skills: req.body.skills,
           fees: req.body.fees,
-          bio: req.body.bio,
-          firstyear: req.body.firstyear,
-          lastyear: req.body.lastyear
+          bio: req.body.bio
         };
         Practicioner.create(practicionerData).then(() => {
           sendNotification();
@@ -193,9 +192,7 @@ module.exports = (app, passport) => {
           result: req.body.result,
           avgtime: req.body.avgtime,
           capex: req.body.capex,
-          opex: req.body.opex,
-          firstyear: req.body.firstyear,
-          lastyear: req.body.lastyear
+          opex: req.body.opex
         };
         Procedure.create(procedureData).then(() => {
           sendNotification();
@@ -213,8 +210,8 @@ module.exports = (app, passport) => {
       console.log("session", req.isAuthenticated());
       res.json({ status: false, user: req.user });
     } else {
-      // console.log("user", req.user)
-      // console.log("session",req.isAuthenticated())
+      console.log("user", req.user)
+      console.log("session",req.isAuthenticated())
       res.json({ status: true, user: req.user });
     }
   });
@@ -224,7 +221,7 @@ module.exports = (app, passport) => {
   // show the login form
   app.get("/signin", (req, res) => {
     // render the page and pass in any flash data if it exists
-    res.redirect("/signin", {
+    res.redirect("https://mysterious-headland-90957.herokuapp.com/signin", {
       message: req.flash("loginMessage")
     });
   });
@@ -233,8 +230,8 @@ module.exports = (app, passport) => {
   app.post(
     "/signin",
     passport.authenticate("local-login", {
-      successRedirect: "/menu", // redirect to the secure profile section
-      failureRedirect: "/signin", // redirect back to the signup page if there is an error
+      successRedirect: "https://mysterious-headland-90957.herokuapp.com/menu", // redirect to the secure profile section
+      failureRedirect: "https://mysterious-headland-90957.herokuapp.com/signin", // redirect back to the signup page if there is an error
       failureFlash: true // allow flash messages
     })
   );
@@ -251,8 +248,8 @@ module.exports = (app, passport) => {
   app.post(
     "/signup",
     passport.authenticate("local-signup", {
-      successRedirect: "/menu", // redirect to the secure profile section
-      failureRedirect: "/signup", // redirect back to the signup page if there is an error
+      successRedirect: "https://mysterious-headland-90957.herokuapp.com/menu", // redirect to the secure profile section
+      failureRedirect: "https://mysterious-headland-90957.herokuapp.com/signup", // redirect back to the signup page if there is an error
       failureFlash: true // allow flash messages
     })
   );
@@ -262,7 +259,7 @@ module.exports = (app, passport) => {
   // we will want this protected so you have to be logged in to visit
   // we will use route middleware to verify this (the isLoggedIn function)
   app.get("/menu", isLoggedIn, (req, res) => {
-    res.redirect("/menu"), {
+    res.redirect("https://mysterious-headland-90957.herokuapp.com/menu"), {
       user: req.user // get the user out of session and pass to template
     };
   });
@@ -284,5 +281,5 @@ const isLoggedIn = (req, res, next) => {
   if (req.isAuthenticated()) return next();
 
   // if they aren't redirect them to the home page
-  res.redirect("/");
+  res.redirect("https://mysterious-headland-90957.herokuapp.com/");
 };

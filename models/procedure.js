@@ -24,13 +24,7 @@ const procedureSchema = mongoose.Schema({
   },
   opex: { 
     type: Number 
-  } ,
-  firstyear: { 
-    type: Number 
-  },
-  lastyear: { 
-    type: Number
-  }
+  } 
 });
 
 module.exports = mongoose.model("Procedure", procedureSchema);

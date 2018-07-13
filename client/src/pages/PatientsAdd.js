@@ -3,7 +3,7 @@ import API from "../utils/helpers";
 import NavBar from "../components/Panels/NavBar";
 import Footer from "../components/Panels/Footer";
 import Wrapper from "../components/Panels/Wrapper";
-import UserForm from "../components/Forms/UserForm/UserForm";
+import PatientForm from "../components/Forms/PatientForm";
 import Jumbotron from "../components/Panels/Jumbotron";
 import List from "../components/Panels/List/List";
 
@@ -20,9 +20,7 @@ class PatientsAdd extends Component {
         {id: "Pressure", val:""},
         {id: "Symptoms", val: ""},
         {id: "Diagnosis", val:""},
-        {id: "Drugs", val:""},
-        {id: "Check in Date", val: ""},
-        {id: "Check out Date", val: ""},
+        {id: "Drugs", val:""}
       ],
       results:[],
       show: false,
@@ -53,9 +51,7 @@ class PatientsAdd extends Component {
             {id: "Pressure", val:""},
             {id: "Symptoms", val: ""},
             {id: "Diagnosis", val:""},
-            {id: "Drugs", val:""},
-            {id: "Check in Date", val: ""},
-            {id: "Check out Date", val: ""},
+            {id: "Drugs", val:""}
           ],
           results: res.data.response.docs,
           showResults: true
@@ -80,9 +76,7 @@ class PatientsAdd extends Component {
         pressure: patient.pressure,
         symptoms: patient.symptoms,
         diagnosis: patient.diagnosis,
-        drugs: patient.drugs,
-        inDate: patient.inDate,
-        outDate: patient.outDate,
+        drugs: patient.drugs
       })
       .then(res => alert('Patient saved!'))
       .catch(err => console.log(err));
@@ -99,7 +93,7 @@ class PatientsAdd extends Component {
         <Wrapper>
            <NavBar />
         <Jumbotron title="Add Patient"></Jumbotron>
-        <UserForm submit={this.handleFormSubmit} changed={this.handleInputChange} labels={this.state.labels} />
+        <PatientForm />
         <Footer />
         </Wrapper>
       );

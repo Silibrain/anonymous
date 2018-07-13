@@ -3,7 +3,7 @@ import API from "../utils/helpers";
 import NavBar from "../components/Panels/NavBar";
 import Footer from "../components/Panels/Footer";
 import Wrapper from "../components/Panels/Wrapper";
-import UserForm from "../components/Forms/UserForm/UserForm";
+import ProcedureForm from "../components/Forms/ProcedureForm";
 import Jumbotron from "../components/Panels/Jumbotron";
 import List from "../components/Panels/List/List";
 
@@ -16,9 +16,7 @@ class ProceduresAdd extends Component {
       {id: "Result", val:""},
       {id: "Average Time", val:""},
       {id: "Capex", val: ""},
-      {id: "Opex", val:""},
-      {id: "Entry Date", val:""},
-      {id: "Exit Date", val:""},
+      {id: "Opex", val:""}
     ],
     results:[],
     show: false,
@@ -45,9 +43,7 @@ class ProceduresAdd extends Component {
         {id: "Result", val:""},
         {id: "Average Time", val:""},
         {id: "Capex", val: ""},
-        {id: "Opex", val:""},
-        {id: "Entry Date", val:""},
-        {id: "Exit Date", val:""},
+        {id: "Opex", val:""}
         ],
         results: res.data.response.docs,
         showResults: true
@@ -68,9 +64,7 @@ class ProceduresAdd extends Component {
       result: procedure.fees,
       avgtime: procedure.bio,
       capex: procedure.entryDate,
-      opex: procedure.exitDate,
-      entryDate: procedure.exitDate,
-      exitDate: procedure.exitDate,
+      opex: procedure.exitDate
     })
     .then(res => alert('Procedure saved!'))
     .catch(err => console.log(err));
@@ -87,7 +81,7 @@ class ProceduresAdd extends Component {
       <Wrapper>
          <NavBar />
       <Jumbotron title="Add Procedure"></Jumbotron>
-      <UserForm submit={this.handleFormSubmit} changed={this.handleInputChange} labels={this.state.labels} />
+      <ProcedureForm />
       <Footer />
       </Wrapper>
     );

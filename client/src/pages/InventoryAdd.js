@@ -3,7 +3,7 @@ import API from "../utils/helpers";
 import NavBar from "../components/Panels/NavBar";
 import Footer from "../components/Panels/Footer";
 import Wrapper from "../components/Panels/Wrapper";
-import UserForm from "../components/Forms/UserForm/UserForm";
+import InventoryForm from "../components/Forms/InventoryForm";
 import Jumbotron from "../components/Panels/Jumbotron";
 import List from "../components/Panels/List/List";
 
@@ -14,8 +14,7 @@ class InventoryAdd extends Component {
       {id: "Units", val:""},
       {id: "Unit Cost", val: ""},
       {id: "Type", val:""},
-      {id: "Entry Date", val:""},
-      {id: "Expiry Date", val: ""},
+      {id: "Expiry Year", val: ""}
     ],
     results:[],
     show: false,
@@ -40,8 +39,7 @@ class InventoryAdd extends Component {
         {id: "Units", val:""},
         {id: "Unit Cost", val: ""},
         {id: "Type", val:""},
-        {id: "Entry Date", val:""},
-        {id: "Expiry Date", val: ""},
+        {id: "Expiry Year", val: ""}
         ],
         results: res.data.response.docs,
         showResults: true
@@ -60,8 +58,7 @@ class InventoryAdd extends Component {
       units: inventory.units,
       unitCost: inventory.unitCost,
       type: inventory.type,
-      entryDate: inventory.entryDate,
-      expiryDate: inventory.expiryDate,
+      expiryyear: inventory.expiryyear
     })
     .then(res => alert('Inventory saved!'))
     .catch(err => console.log(err));
@@ -78,7 +75,7 @@ class InventoryAdd extends Component {
       <Wrapper>
          <NavBar />
       <Jumbotron title="Add Inventory"></Jumbotron>
-      <UserForm submit={this.handleFormSubmit} changed={this.handleInputChange} labels={this.state.labels} />
+      <InventoryForm />
       <Footer />
       </Wrapper>
     );
@@ -88,4 +85,3 @@ class InventoryAdd extends Component {
   export default InventoryAdd;
   
 
-  

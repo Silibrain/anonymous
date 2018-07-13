@@ -16,12 +16,6 @@ const inventorySchema = mongoose.Schema({
   type:{ 
     type: String 
   },
-  firstyear: { 
-    type: Number 
-  },
-  lastyear: { 
-    type: Number
-  },
   expiryyear:{ 
     type: Number
   }
