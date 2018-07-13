@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default {
   getStatus: function(t) {
-    axios
+    return axios
       .get("/isloggedin")
       .then(response => {
         // console.log("%%%%%%",response);
@@ -17,7 +17,7 @@ export default {
   },
 
   getUserId: function(t) {
-    axios.get("/user/id").then(userId => {
+    return axios.get("/user/id").then(userId => {
       console.log("userid", userId);
       t.setState({
         currentUser: userId.data
@@ -26,7 +26,7 @@ export default {
   },
 
   getAccountData: function(t) {
-    axios
+    return axios
       .get("/user/account")
       .then(response => {
         if (response.data.email) {
@@ -57,7 +57,7 @@ export default {
 
   updateAccountData: function(t) {
     const userData = t.state.user;
-    axios
+   return axios
       .put("/user/update", userData, {
         headers: { "Content-Type": "application/json" }
       })
@@ -71,7 +71,7 @@ export default {
   },
 
   getInventory: function(t) {
-    axios
+   return axios
       .get("/inventory")
       .then(response => {
         if (response.data.name) {
@@ -102,7 +102,7 @@ export default {
 
   saveInventory: function(t) {
     const inventoryData = t.state;
-    axios
+    return axios
       .post("/inventory", inventoryData)
       .then(request => {
         if (request.data.name) {
@@ -131,7 +131,7 @@ export default {
   },
 
   getPatient: function(t) {
-    axios
+   return axios
       .get("/patient")
       .then(response => {
         if (response.data.name) {
@@ -204,7 +204,7 @@ export default {
   },
 
   getPracticioner: function(t) {
-    axios
+   return axios
       .get("/practicioner")
       .then(response => {
         if (response.data.name) {
@@ -234,7 +234,7 @@ export default {
 
   savePracticioner: function(t) {
     const practicionerData = t.state;
-    axios
+   return axios
       .post("/practicioner", practicionerData)
       .then(request => {
         if (request.data.name) {
@@ -263,7 +263,7 @@ export default {
   },
 
   getProcedure: function(t) {
-    axios
+   return axios
       .get("/procedure")
       .then(response => {
         if (response.data.name) {
@@ -295,7 +295,7 @@ export default {
 
   saveProcedure: function(t) {
     const procedureData = t.state;
-    axios
+   return axios
       .post("/procedure", procedureData )
       .then(request => {
         if (request.data.name) {
@@ -326,7 +326,7 @@ export default {
   },
   
   logout: function () {
-    axios.get("/logout").then(function (res) {
+   return axios.get("/logout").then(function (res) {
       // console.log(res);
       if (res.data) {
         //window.location.reload();
