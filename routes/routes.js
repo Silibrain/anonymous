@@ -41,7 +41,6 @@ module.exports = (app, passport) => {
   app.put("/user/update", (req, res) => {
     if (req.isAuthenticated()) {
       const userId = req.session.passport.user;
-
       User.findOneAndUpdate(
         { _id: userId },
         {
@@ -69,7 +68,6 @@ module.exports = (app, passport) => {
         Inventory.find().then(dbModel => {
           res.json(dbModel);
         })
-          .catch(err => res.status(422).json(err));
       });
     }
   });
@@ -89,7 +87,7 @@ module.exports = (app, passport) => {
         Inventory.create(drugData).then(() => {
           sendNotification();
           res.json(true);
-        }).catch(err => res.status(422).json(err));
+        })
       });
     }
   })
@@ -103,7 +101,7 @@ module.exports = (app, passport) => {
         Patient.find().then(dbModel => {
           res.json(dbModel);
         })
-          .catch(err => res.status(422).json(err));
+
       });
     }
   });
@@ -111,6 +109,7 @@ module.exports = (app, passport) => {
   app.post("/patient", (req, res) => {
     if (req.isAuthenticated()) {
       const userId = req.session.passport.user;
+      console.log("hello save patient route")
       User.findOne({ _id: userId }).then(() => {
         const patientData = {
           name: req.body.name,
@@ -128,7 +127,7 @@ module.exports = (app, passport) => {
         Patient.create(patientData).then(() => {
           sendNotification();
           res.json(true);
-        }).catch(err => res.status(422).json(err));
+        })
       });
     }
   })
