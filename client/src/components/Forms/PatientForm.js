@@ -8,7 +8,7 @@ import {
     Button
 } from "react-bootstrap";
 
-import helpers from "../../utils/helpers.js";
+import helpers from "../../utils/helpers";
 
 class PatientForm extends Component {
     constructor(props) {
@@ -41,7 +41,7 @@ class PatientForm extends Component {
     };
 
     formSubmit = () => {
-        console.log(this)
+        // console.log(this)
         helpers
             .savePatient(this)
             // this.state.reset()
@@ -84,7 +84,7 @@ class PatientForm extends Component {
 
     tt = () => {
         this.formSubmit();
-        console.log(this)
+        // console.log(this)
     };
 
     render() {

@@ -101,8 +101,9 @@ export default {
   },
 
   saveInventory: function(t) {
+    const inventoryData = t.state;
     axios
-      .post("/inventory")
+      .post("/inventory", inventoryData)
       .then(request => {
         if (request.data.name) {
           let inventoryObj = t.state.inventory;
@@ -165,8 +166,10 @@ export default {
   },
 
   savePatient: function(t) {
-    axios
-      .post("/patient")
+    const patientData = t.state;
+    console.log(patientData,'API')
+    return axios
+      .post("/patient", patientData)
       .then(request => {
         console.log("hello route save patient")
         if (request.data.name) {
@@ -230,8 +233,9 @@ export default {
   },
 
   savePracticioner: function(t) {
+    const practicionerData = t.state;
     axios
-      .post("/practicioner")
+      .post("/practicioner", practicionerData)
       .then(request => {
         if (request.data.name) {
           let practicionerObj = t.state.practicioner;
@@ -290,8 +294,9 @@ export default {
   },
 
   saveProcedure: function(t) {
+    const procedureData = t.state;
     axios
-      .post("/procedure")
+      .post("/procedure", procedureData )
       .then(request => {
         if (request.data.name) {
           let procedureObj = t.state.procedure;
