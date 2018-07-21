@@ -17,13 +17,13 @@ const procedureSchema = mongoose.Schema({
     type: String
   },
   avgtime: { 
-    type: Number 
+    type: String 
   },
   capex: { 
-    type: Number 
+    type: String 
   },
   opex: { 
-    type: Number 
+    type: String 
   } 
 });
 

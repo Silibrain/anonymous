@@ -72,32 +72,11 @@ export default {
 
   getInventory: function(t) {
    return axios
-      .get("/inventory")
-      .then(response => {
-        if (response.data.name) {
-          let inventoryObj = t.state.inventory;
-          inventoryObj.name = response.data.name;
-          inventoryObj.units = response.data.units;
-          inventoryObj.unitcost = response.data.unitcost;
-          inventoryObj.type = response.data.type;
-          inventoryObj.expiryyear= response.data.expiryyear;
+   .get("/inventory")
+  },
 
-          t.setState({
-            loadingInventory: false,
-            inventory: inventoryObj
-          });
-
-          if (!t.state.loadingInventory) {
-            t.setState({
-              loading: false
-            });
-          }
-
-        } 
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+  deleteInventory: function(id){
+    return axios.delete("/inventory/"+id)
   },
 
   saveInventory: function(t) {
@@ -133,60 +112,6 @@ export default {
   getPatients: function() {
    return axios
       .get("/patient")
-      // .then(response => {
-      //   let patientsArr=[];
-      //   console.log("this is response:", response)
-      //   // if (response.data) {
-      //     // let patientObj = t.state.patient;
-      //     let patientObj = {};
-      //     response.data.forEach(function(doc,err){
-      //      //console.log("hellodata")
-      //     patientObj.name = doc.name;
-      //     patientObj.age = doc.age;
-      //     patientObj.weight = doc.weight;
-      //     patientObj.height = doc.height;
-      //     patientObj.temperature = doc.temperature;
-      //     patientObj.pulse = doc.pulse;
-      //     patientObj.respiratoryrate = doc.respiratoryrate;
-      //     patientObj.presuure = doc.pressure;
-      //     patientObj.symptoms = doc.symptoms;
-      //     patientObj.diagnosis = doc.diagnosis;
-      //     patientObj.drugs = doc.drugs;
-      //       patientsArr.push(patientObj)
-      //     })
-      //     // let patientObj = t.state.patient;
-      //     // patientObj.name = response.data.name;
-      //     // patientObj.age = response.data.age;
-      //     // patientObj.weight = response.data.weight;
-      //     // patientObj.height = response.data.height;
-      //     // patientObj.temperature = response.data.temperature;
-      //     // patientObj.pulse = response.data.pulse;
-      //     // patientObj.respiratoryrate = response.data.respiratoryrate;
-      //     // patientObj.presuure = response.data.pressure;
-      //     // patientObj.symptoms = response.data.symptoms;
-      //     // patientObj.diagnosis = response.data.diagnosis;
-      //     // patientObj.drugs = response.data.drugs;
-
-      //     console.log(patientsArr)
-
-      //     // t.setState({
-      //     //   loadingPatient: false,
-      //     //   patient: patientObj
-      //     // });
-
-      //     console.log("this is patient Object", patientObj)
-    
-      //     // if (!t.state.loadingPatient) {
-      //     //   t.setState({
-      //     //     loading: false
-      //     //   });
-      //     // }
-      //   // } 
-      // })
-      // .catch(function(error) {
-      //   console.log(error);
-      // });
-      // console.log("this is axios:", axios)
   },
 
   deletePatient: function(id){
@@ -234,30 +159,10 @@ export default {
   getPracticioner: function(t) {
    return axios
       .get("/practicioner")
-      .then(response => {
-        if (response.data.name) {
-          let practicionerObj = t.state.practicioner;
-          practicionerObj.name = response.data.name;
-          practicionerObj.specialties = response.data.specialties;
-          practicionerObj.skills = response.data.skills;
-          practicionerObj.fees = response.data.fees;
-          practicionerObj.bio = response.data.bio;
+  },
 
-          t.setState({
-            loadingPracticioner: false,
-            practicioner: practicionerObj
-          });
-
-          if (!t.state.loadingPracticioner) {
-            t.setState({
-              loading: false
-            });
-          }
-        } 
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+  deletePracticioner: function(id){
+    return axios.delete("/practicioner/"+id)
   },
 
   savePracticioner: function(t) {
@@ -293,32 +198,10 @@ export default {
   getProcedure: function(t) {
    return axios
       .get("/procedure")
-      .then(response => {
-        if (response.data.name) {
-          let procedureObj = t.state.procedure;
-          procedureObj.name = response.data.name;
-          procedureObj.type = response.data.type;
-          procedureObj.location = response.data.location;
-          procedureObj.result = response.data.result;
-          procedureObj.avgtime = response.data.avgtime;
-          procedureObj.capex = response.data.capex;
-          procedureObj.opex = response.data.opex;
+  },
 
-          t.setState({
-            loadingProcedure: false,
-            practicioner: procedureObj
-          });
-
-          if (!t.state.loadingProcedure) {
-            t.setState({
-              loading: false
-            });
-          }
-        } 
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+  deleteProcedure: function(id){
+    return axios.delete("/procedure/"+id)
   },
 
   saveProcedure: function(t) {

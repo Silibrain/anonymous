@@ -8,16 +8,16 @@ const inventorySchema = mongoose.Schema({
     type: String 
   },
   units:{ 
-    type: Number 
+    type: String 
   },
   unitcost:{ 
-    type: Number 
+    type: String 
   },
   type:{ 
     type: String 
   },
   expiryyear:{ 
-    type: Number
+    type: String
   }
 });
 

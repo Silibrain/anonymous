@@ -4,47 +4,66 @@ import NavBar from "../components/Panels/NavBar";
 import Footer from "../components/Panels/Footer";
 import Wrapper from "../components/Panels/Wrapper";
 import Jumbotron from "../components/Panels/Jumbotron";
-import { List} from "../components/List";
+import { List, ListItem } from "../components/List";
+import { Link } from "react-router-dom";
+import DeleteBtn from "../components/Buttons/DeleteBtn";
 
 class ProceduresExamsView extends Component {
   state = {
-    procedures: []
-  };  
+    procedures: [],
+    name: "",
+    type: "",
+    location: "",
+    result: "",
+    avgtime: "",
+    capex: "",
+    opex: ""
+  };
 
-  componentDidMount(){
-      this.getProceduresHandler();
-    }
-  
-    getProceduresHandler(){
-      API.getProcedures()
-      .then(res => this.setState({procedures: res.data}))
-      .catch(err => console.log(err));
-    }
-  
-    deleteProceduresHandler = (event, id) => {
-      API.deleteProcedures(id)
-      .then(res => this.getProceduresHandler())
-      .catch(err => console.log(err));
-    }
-
-    render() {
-      let saved = <p> Currently, no Procedures to Display!</p>
-  
-      if(this.state.procedures.length > 0){
-        saved = this.state.procedures.map((procedure, index) => {
-          return <List key={procedure.id} name={procedure.name} type={procedure.type} location={procedure.location} result={procedure.result} avgtime={procedure.avgtime} capex={procedure.capex} opex={procedure.opex} action={this.handleProcedureSaved} title="Save" />
-        });
-      }
-  
-      return (
-        <Wrapper>
-           <NavBar />
-          <Jumbotron title="Procedures List"></Jumbotron>
-          {saved}
-          <Footer />
-          </Wrapper>
-      ) 
-    }
+  componentDidMount() {
+    this.loadProcedures();
   }
-  
-  export default ProceduresExamsView;
+
+  loadProcedures() {
+    API.getProcedure()
+      .then(res => this.setState({ procedures: res.data, name: "", type: "", location: "", result: "", avgtime: "", capex: "", opex: "" }))
+      .catch(err => console.log(err));
+  }
+
+  deleteProcedure = id => {
+    API.deleteProcedure(id)
+      .then(res => this.loadProcedures())
+      .catch(err => console.log(err));
+  }
+
+  render() {
+    return (
+      <Wrapper>
+        <NavBar />
+
+        <Jumbotron title="Procedures List"></Jumbotron>
+
+        {this.state.procedures.length ? (
+          <List>
+            {this.state.procedures.map(procedure => (
+              <ListItem key={procedure._id}>
+                <Link to={"/procedure/" + procedure._id}>
+                  <strong>
+                    {procedure.name} performed in {procedure.location}
+                  </strong>
+                </Link>
+                <DeleteBtn onClick={() => this.deleteProcedure(procedure._id)} />
+              </ListItem>
+            ))}
+          </List>
+        ) : (
+            <h3>No Results to Display</h3>
+          )}
+
+        <Footer />
+      </Wrapper>
+    )
+  }
+}
+
+export default ProceduresExamsView;
