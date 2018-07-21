@@ -39,14 +39,9 @@
     "passport-local": "^1.0.0",
     "passport-oauth2": "^1.4.0",
     "passport-remember-me": "0.0.1",
-    "rc-time-picker": "^3.3.1",
     "react-bootstrap": "^0.32.1",
-    "react-datepicker": "^1.4.0",
-    "react-google-autocomplete": "^1.0.15",
-    "react-google-maps": "^9.4.5",
     "react-router-dom": "^4.3.1",
     "recompose": "^0.26.0",
-    "twilio": "^3.14.0",
     "validator": "^9.4.1"
   }
 }
