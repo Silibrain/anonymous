@@ -45,7 +45,7 @@ class PatientsView extends Component {
         return (
           <Wrapper>
                <NavBar />
-            <Jumbotron><h1>Patient List</h1></Jumbotron>
+            <Jumbotron title="Patient List"></Jumbotron>
 
             {this.state.patients.length ? (
               <List>

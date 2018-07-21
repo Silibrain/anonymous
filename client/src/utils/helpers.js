@@ -189,6 +189,10 @@ export default {
       // console.log("this is axios:", axios)
   },
 
+  deletePatient: function(id){
+    return axios.delete("/patient/"+id)
+  },
+
   savePatient: function(t) {
     const patientData = t.state;
     console.log(patientData,'API')
