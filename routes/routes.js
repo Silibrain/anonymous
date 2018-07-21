@@ -105,6 +105,19 @@ module.exports = (app, passport) => {
     }
   });
 
+  app.delete("/patient/:id", (req,res) => {
+    if (req.isAuthenticated()) {
+      const userId = req.session.passport.user;
+      User.findOne({ _id: userId }).then(() => {
+        Patient.findById({ _id: req.params.id})
+        .then(dbModel => dbModel.remove())
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+      });
+    }
+
+  });
+
   app.post("/patient", (req, res) => {
     if (req.isAuthenticated()) {
       const userId = req.session.passport.user;
