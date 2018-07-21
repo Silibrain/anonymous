@@ -2,7 +2,6 @@ import Footer from "./Footer";
 import GraphContainer from "./GraphContainer";
 import ItemCard from "./ItemCard ";
 import Jumbotron from "./Jumbotron";
-import List from "./List/List";
 import NavBar from "./NavBar";
 import PatientsCard from "./PatientsCard";
 import PracticionersCard from "./PracticionersCard";
@@ -18,7 +17,6 @@ const panels = {
   GraphContainer: GraphContainer,
   ItemCard: ItemCard, 
   Jumbotron: Jumbotron,
-  List: List,
   NavBar: NavBar,
   PatientsCard: PatientsCard,
   PracticionersCard: PracticionersCard,
@@ -27,7 +25,7 @@ const panels = {
 };
 
 export default panels;
-export { AccountPanel, CalendarPanel, Footer, GraphContainer, ItemCard, Jumbotron, List, NavBar, PatientsCard, PracticionersCard, ReportContainer, Wrapper };
+export { AccountPanel, CalendarPanel, Footer, GraphContainer, ItemCard, Jumbotron, NavBar, PatientsCard, PracticionersCard, ReportContainer, Wrapper };
 
 
 

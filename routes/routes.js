@@ -8,7 +8,7 @@ module.exports = (app, passport) => {
   //Create Case Routes & Functionality to Tie Doctors, Patients, Inventory, Procedures
 
   app.get("/", (req, res) => {
-    res.render("https://mysterious-headland-90957.herokuapp.com/"); // load the index.ejs file
+    res.render("/"); // load the index.ejs file
   });
 
 
@@ -41,7 +41,6 @@ module.exports = (app, passport) => {
   app.put("/user/update", (req, res) => {
     if (req.isAuthenticated()) {
       const userId = req.session.passport.user;
-
       User.findOneAndUpdate(
         { _id: userId },
         {
@@ -69,7 +68,6 @@ module.exports = (app, passport) => {
         Inventory.find().then(dbModel => {
           res.json(dbModel);
         })
-          .catch(err => res.status(422).json(err));
       });
     }
   });
@@ -89,7 +87,7 @@ module.exports = (app, passport) => {
         Inventory.create(drugData).then(() => {
           sendNotification();
           res.json(true);
-        }).catch(err => res.status(422).json(err));
+        })
       });
     }
   })
@@ -100,10 +98,9 @@ module.exports = (app, passport) => {
     if (req.isAuthenticated()) {
       const userId = req.session.passport.user;
       User.findOne({ _id: userId }).then(() => {
-        Patient.find().then(dbModel => {
-          res.json(dbModel);
-        })
-          .catch(err => res.status(422).json(err));
+        Patient.find(req.query)
+        .sort({ date: -1 }).then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
       });
     }
   });
@@ -111,6 +108,7 @@ module.exports = (app, passport) => {
   app.post("/patient", (req, res) => {
     if (req.isAuthenticated()) {
       const userId = req.session.passport.user;
+      console.log("hello save patient route")
       User.findOne({ _id: userId }).then(() => {
         const patientData = {
           name: req.body.name,
@@ -128,7 +126,7 @@ module.exports = (app, passport) => {
         Patient.create(patientData).then(() => {
           sendNotification();
           res.json(true);
-        }).catch(err => res.status(422).json(err));
+        })
       });
     }
   })
@@ -221,7 +219,7 @@ module.exports = (app, passport) => {
   // show the login form
   app.get("/signin", (req, res) => {
     // render the page and pass in any flash data if it exists
-    res.redirect("https://mysterious-headland-90957.herokuapp.com/signin", {
+    res.redirect("/signin", {
       message: req.flash("loginMessage")
     });
   });
@@ -230,9 +228,9 @@ module.exports = (app, passport) => {
   app.post(
     "/signin",
     passport.authenticate("local-login", {
-      successRedirect: "https://mysterious-headland-90957.herokuapp.com/menu", // redirect to the secure profile section
-      failureRedirect: "https://mysterious-headland-90957.herokuapp.com/signin", // redirect back to the signup page if there is an error
-      failureFlash: true // allow flash messages
+      successRedirect: "/patient/add", // redirect to the secure profile section
+      failureRedirect: "/signin", // redirect back to the signup page if there is an error
+      failureFlash: false// allow flash messages
     })
   );
 
@@ -248,9 +246,9 @@ module.exports = (app, passport) => {
   app.post(
     "/signup",
     passport.authenticate("local-signup", {
-      successRedirect: "https://mysterious-headland-90957.herokuapp.com/menu", // redirect to the secure profile section
-      failureRedirect: "https://mysterious-headland-90957.herokuapp.com/signup", // redirect back to the signup page if there is an error
-      failureFlash: true // allow flash messages
+      successRedirect: "/patient/add", // redirect to the secure profile section
+      failureRedirect: "/signup", // redirect back to the signup page if there is an error
+      failureFlash: false // allow flash messages
     })
   );
 
@@ -259,7 +257,7 @@ module.exports = (app, passport) => {
   // we will want this protected so you have to be logged in to visit
   // we will use route middleware to verify this (the isLoggedIn function)
   app.get("/menu", isLoggedIn, (req, res) => {
-    res.redirect("https://mysterious-headland-90957.herokuapp.com/menu"), {
+    res.redirect("/menu"), {
       user: req.user // get the user out of session and pass to template
     };
   });
@@ -281,5 +279,5 @@ const isLoggedIn = (req, res, next) => {
   if (req.isAuthenticated()) return next();
 
   // if they aren't redirect them to the home page
-  res.redirect("https://mysterious-headland-90957.herokuapp.com/");
+  res.redirect("/");
 };

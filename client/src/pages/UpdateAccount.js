@@ -4,7 +4,7 @@ import NavBar from "../components/Panels/NavBar";
 import Footer from "../components/Panels/Footer";
 import Wrapper from "../components/Panels/Wrapper";
 import UserForm from "../components/Forms/UserForm/UserForm";
-import List from "../components/Panels/List/List";
+import { List} from "../components/List";
 
 
 class CreateAccount extends Component {
@@ -59,7 +59,7 @@ class CreateAccount extends Component {
     let labelResults = "Please enter all fields."
     if(this.state.showResults){
       labelResults = this.state.results.map((label, index) =>{
-        return <List key={label._id} name={label.name} title={label.title} role={label.role} phone={label.phone} bio={label.bio} email={label.email} password={label.password} action={this.handlelabelSaved} title="Save" />
+        return <List key={label._id} name={label.name} title={label.title} role={label.role} phone={label.phone} bio={label.bio} email={label.email} password={label.password} action={this.handlelabelSaved}/>
       });
     }
       return (

@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default {
   getStatus: function(t) {
-    axios
+    return axios
       .get("/isloggedin")
       .then(response => {
         // console.log("%%%%%%",response);
@@ -17,7 +17,7 @@ export default {
   },
 
   getUserId: function(t) {
-    axios.get("/user/id").then(userId => {
+    return axios.get("/user/id").then(userId => {
       console.log("userid", userId);
       t.setState({
         currentUser: userId.data
@@ -26,7 +26,7 @@ export default {
   },
 
   getAccountData: function(t) {
-    axios
+    return axios
       .get("/user/account")
       .then(response => {
         if (response.data.email) {
@@ -57,7 +57,7 @@ export default {
 
   updateAccountData: function(t) {
     const userData = t.state.user;
-    axios
+   return axios
       .put("/user/update", userData, {
         headers: { "Content-Type": "application/json" }
       })
@@ -71,7 +71,7 @@ export default {
   },
 
   getInventory: function(t) {
-    axios
+   return axios
       .get("/inventory")
       .then(response => {
         if (response.data.name) {
@@ -101,8 +101,9 @@ export default {
   },
 
   saveInventory: function(t) {
-    axios
-      .post("/inventory")
+    const inventoryData = t.state;
+    return axios
+      .post("/inventory", inventoryData)
       .then(request => {
         if (request.data.name) {
           let inventoryObj = t.state.inventory;
@@ -129,45 +130,72 @@ export default {
       });
   },
 
-  getPatient: function(t) {
-    axios
+  getPatients: function() {
+   return axios
       .get("/patient")
-      .then(response => {
-        if (response.data.name) {
-          let patientObj = t.state.patient;
-          patientObj.name = response.data.name;
-          patientObj.age = response.data.age;
-          patientObj.weight = response.data.weight;
-          patientObj.height = response.data.height;
-          patientObj.temperature = response.data.temperature;
-          patientObj.pulse = response.data.pulse;
-          patientObj.respiratoryrate = response.data.respiratoryrate;
-          patientObj.presuure = response.data.pressure;
-          patientObj.symptoms = response.data.symptoms;
-          patientObj.diagnosis = response.data.diagnosis;
-          patientObj.drugs = response.data.drugs;
+      // .then(response => {
+      //   let patientsArr=[];
+      //   console.log("this is response:", response)
+      //   // if (response.data) {
+      //     // let patientObj = t.state.patient;
+      //     let patientObj = {};
+      //     response.data.forEach(function(doc,err){
+      //      //console.log("hellodata")
+      //     patientObj.name = doc.name;
+      //     patientObj.age = doc.age;
+      //     patientObj.weight = doc.weight;
+      //     patientObj.height = doc.height;
+      //     patientObj.temperature = doc.temperature;
+      //     patientObj.pulse = doc.pulse;
+      //     patientObj.respiratoryrate = doc.respiratoryrate;
+      //     patientObj.presuure = doc.pressure;
+      //     patientObj.symptoms = doc.symptoms;
+      //     patientObj.diagnosis = doc.diagnosis;
+      //     patientObj.drugs = doc.drugs;
+      //       patientsArr.push(patientObj)
+      //     })
+      //     // let patientObj = t.state.patient;
+      //     // patientObj.name = response.data.name;
+      //     // patientObj.age = response.data.age;
+      //     // patientObj.weight = response.data.weight;
+      //     // patientObj.height = response.data.height;
+      //     // patientObj.temperature = response.data.temperature;
+      //     // patientObj.pulse = response.data.pulse;
+      //     // patientObj.respiratoryrate = response.data.respiratoryrate;
+      //     // patientObj.presuure = response.data.pressure;
+      //     // patientObj.symptoms = response.data.symptoms;
+      //     // patientObj.diagnosis = response.data.diagnosis;
+      //     // patientObj.drugs = response.data.drugs;
 
-          t.setState({
-            loadingPatient: false,
-            patient: patientObj
-          });
+      //     console.log(patientsArr)
 
-          if (!t.state.loadingPatient) {
-            t.setState({
-              loading: false
-            });
-          }
-        } 
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+      //     // t.setState({
+      //     //   loadingPatient: false,
+      //     //   patient: patientObj
+      //     // });
+
+      //     console.log("this is patient Object", patientObj)
+    
+      //     // if (!t.state.loadingPatient) {
+      //     //   t.setState({
+      //     //     loading: false
+      //     //   });
+      //     // }
+      //   // } 
+      // })
+      // .catch(function(error) {
+      //   console.log(error);
+      // });
+      // console.log("this is axios:", axios)
   },
 
   savePatient: function(t) {
-    axios
-      .post("/patient")
+    const patientData = t.state;
+    console.log(patientData,'API')
+    return axios
+      .post("/patient", patientData)
       .then(request => {
+        console.log("hello route save patient")
         if (request.data.name) {
           let patientObj = t.state.patient;
           patientObj.name = request.data.name;
@@ -200,7 +228,7 @@ export default {
   },
 
   getPracticioner: function(t) {
-    axios
+   return axios
       .get("/practicioner")
       .then(response => {
         if (response.data.name) {
@@ -229,8 +257,9 @@ export default {
   },
 
   savePracticioner: function(t) {
-    axios
-      .post("/practicioner")
+    const practicionerData = t.state;
+   return axios
+      .post("/practicioner", practicionerData)
       .then(request => {
         if (request.data.name) {
           let practicionerObj = t.state.practicioner;
@@ -258,7 +287,7 @@ export default {
   },
 
   getProcedure: function(t) {
-    axios
+   return axios
       .get("/procedure")
       .then(response => {
         if (response.data.name) {
@@ -289,8 +318,9 @@ export default {
   },
 
   saveProcedure: function(t) {
-    axios
-      .post("/procedure")
+    const procedureData = t.state;
+   return axios
+      .post("/procedure", procedureData )
       .then(request => {
         if (request.data.name) {
           let procedureObj = t.state.procedure;
@@ -320,7 +350,7 @@ export default {
   },
   
   logout: function () {
-    axios.get("/logout").then(function (res) {
+   return axios.get("/logout").then(function (res) {
       // console.log(res);
       if (res.data) {
         //window.location.reload();

@@ -37,7 +37,7 @@ class PracticionerForm extends Component {
 
     formSubmit = () => {
         helpers
-            .saveInventory(this)
+            .savePracticioner(this)
             // this.state.reset()
             // this.state.reset()
             .then(res => {

@@ -48,8 +48,7 @@ class InventoryForm extends Component {
                     units: "",
                     unitcost: "",
                     type: "",
-                    expiryyear: "",
-                    create: true
+                    expiryyear: ""
                 });
             })
             .catch(err => {
@@ -59,8 +58,7 @@ class InventoryForm extends Component {
                     units: "",
                     unitcost: "",
                     type: "",
-                    expiryyear: "",
-                    create: false
+                    expiryyear: ""
                 });
             });
     };
@@ -68,19 +66,9 @@ class InventoryForm extends Component {
 
     tt = () => {
         this.formSubmit();
-        this.onOpenModal();
-    };
-
-    onOpenModal = () => {
-        this.setState({ open: true });
-    };
-
-    onCloseModal = () => {
-        this.setState({ open: false });
     };
 
     render() {
-        const { open } = this.state;
         return (
             <div>
                 <Panel>

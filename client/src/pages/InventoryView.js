@@ -4,7 +4,7 @@ import NavBar from "../components/Panels/NavBar";
 import Footer from "../components/Panels/Footer";
 import Wrapper from "../components/Panels/Wrapper";
 import Jumbotron from "../components/Panels/Jumbotron";
-import List from "../components/Panels/List/List";
+import { List} from "../components/List";
 
 class InventoryView extends Component {
   state = {
