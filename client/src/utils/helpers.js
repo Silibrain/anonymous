@@ -131,38 +131,63 @@ export default {
   },
 
   getPatient: function(t) {
+    console.log(t)
    return axios
       .get("/patient")
       .then(response => {
-        if (response.data.name) {
-          let patientObj = t.state.patient;
-          patientObj.name = response.data.name;
-          patientObj.age = response.data.age;
-          patientObj.weight = response.data.weight;
-          patientObj.height = response.data.height;
-          patientObj.temperature = response.data.temperature;
-          patientObj.pulse = response.data.pulse;
-          patientObj.respiratoryrate = response.data.respiratoryrate;
-          patientObj.presuure = response.data.pressure;
-          patientObj.symptoms = response.data.symptoms;
-          patientObj.diagnosis = response.data.diagnosis;
-          patientObj.drugs = response.data.drugs;
+        var patientsArr=[];
+        console.log("this is response:", response)
+        // if (response.data) {
+          // let patientObj = t.state.patient;
+          let patientObj = {};
+          response.data.forEach(function(doc,err){
+           //console.log("hellodata")
+          patientObj.name = doc.name;
+          patientObj.age = doc.age;
+          patientObj.weight = doc.weight;
+          patientObj.height = doc.height;
+          patientObj.temperature = doc.temperature;
+          patientObj.pulse = doc.pulse;
+          patientObj.respiratoryrate = doc.respiratoryrate;
+          patientObj.presuure = doc.pressure;
+          patientObj.symptoms = doc.symptoms;
+          patientObj.diagnosis = doc.diagnosis;
+          patientObj.drugs = doc.drugs;
+            patientsArr.push(patientObj)
+          })
+          // let patientObj = t.state.patient;
+          // patientObj.name = response.data.name;
+          // patientObj.age = response.data.age;
+          // patientObj.weight = response.data.weight;
+          // patientObj.height = response.data.height;
+          // patientObj.temperature = response.data.temperature;
+          // patientObj.pulse = response.data.pulse;
+          // patientObj.respiratoryrate = response.data.respiratoryrate;
+          // patientObj.presuure = response.data.pressure;
+          // patientObj.symptoms = response.data.symptoms;
+          // patientObj.diagnosis = response.data.diagnosis;
+          // patientObj.drugs = response.data.drugs;
 
-          t.setState({
-            loadingPatient: false,
-            patient: patientObj
-          });
+          console.log(patientsArr)
 
-          if (!t.state.loadingPatient) {
-            t.setState({
-              loading: false
-            });
-          }
-        } 
+          // t.setState({
+          //   loadingPatient: false,
+          //   patient: patientObj
+          // });
+
+          console.log("this is patient Object", patientObj)
+    
+          // if (!t.state.loadingPatient) {
+          //   t.setState({
+          //     loading: false
+          //   });
+          // }
+        // } 
       })
       .catch(function(error) {
         console.log(error);
       });
+      console.log("this is axios:", axios)
   },
 
   savePatient: function(t) {

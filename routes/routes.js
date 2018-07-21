@@ -99,6 +99,7 @@ module.exports = (app, passport) => {
       const userId = req.session.passport.user;
       User.findOne({ _id: userId }).then(() => {
         Patient.find().then(dbModel => {
+         // console.log("hello from dbmodel: ", dbModel) works
           res.json(dbModel);
         })
 

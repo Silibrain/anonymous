@@ -17,7 +17,9 @@ class PatientsView extends Component {
     
       getPatientsHandler(){
         API.getPatient()
-        .then(res => this.setState({patient: res.data}))
+        .then(res =>{
+          console.log(res) 
+          this.setState({patient: res.data})})
         .catch(err => console.log(err));
       }
     
