@@ -4,7 +4,7 @@ import NavBar from "../components/Panels/NavBar";
 import Footer from "../components/Panels/Footer";
 import Wrapper from "../components/Panels/Wrapper";
 import UserForm from "../components/Forms/UserForm/UserForm";
-import List from "../components/Panels/List/List";
+import { List} from "../components/List";
 
 
 class CreateAccount extends Component {

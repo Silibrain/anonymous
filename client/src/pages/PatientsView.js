@@ -4,45 +4,65 @@ import NavBar from "../components/Panels/NavBar";
 import Footer from "../components/Panels/Footer";
 import Wrapper from "../components/Panels/Wrapper";
 import Jumbotron from "../components/Panels/Jumbotron";
-import List from "../components/Panels/List/List";
+import { List, ListItem } from "../components/List";
+import { Link } from "react-router-dom";
+import DeleteBtn from "../components/Buttons/DeleteBtn";
 
 class PatientsView extends Component {
     state = {
-      patient: []
+      patients: [],
+      name: "",
+      age: "",
+      weight: "",
+      height: "",
+      temperature: "",
+      pulse: "",
+      respiratoryrate: "",
+      pressure: "",
+      symptoms: "",
+      diagnosis: "",
+      drugs:""
     };  
 
     componentDidMount(){
-        this.getPatientsHandler();
+        this.loadPatients();
       }
     
-      getPatientsHandler(){
-        API.getPatient()
+      loadPatients(){
+        API.getPatients()
         .then(res =>{
-          console.log(res) 
-          this.setState({patient: res.data})})
+          this.setState({patients: res.data, id: "", name: "", age:"", weight: "", height: "", temperature: "", pulse: "", respiratoryrate: "", pressure: "", symptoms: "", diagnosis: "", drugs: ""})})
         .catch(err => console.log(err));
       }
     
-      deletePatientHandler = (event, id) => {
+      deletePatient = id => {
         API.deletePatient(id)
-        .then(res => this.getPatientsHandler())
+        .then(res => this.loadPatients())
         .catch(err => console.log(err));
       }
 
-      render() {
-        let saved = <p> Currently, no Patients to Display!</p>
-    
-        if(this.state.patient.length > 0){
-          saved = this.state.patient.map((patient, index) => {
-            return <List key={patient._id} name={patient.name} age={patient.age} weight={patient.weight} height={patient.height} temperature={patient.temperature} pulse={patient.pulse} respiratory={patient.respiratory} pressure={patient.pressure} symptoms={patient.symptoms} diagnosis={patient.diagnosis} drugs={patient.drugs} inDate={patient.inDate} outDate={patient.outDate} action={this.handlePatientSaved} title="Save" />
-        });
-        }
-    
+      render() {    
         return (
           <Wrapper>
                <NavBar />
-            <Jumbotron title="Patient List"></Jumbotron>
-            {saved}
+            <Jumbotron><h1>Patient List</h1></Jumbotron>
+
+            {this.state.patients.length ? (
+              <List>
+                {this.state.patients.map(patient => (
+                  <ListItem key={patient._id}>
+                    <Link to={"/patients/" + patient._id}>
+                      <strong>
+                        {patient.name} with {patient.diagnosis}
+                      </strong>
+                    </Link>
+                    <DeleteBtn onClick={() => this.deletePatient(patient._id)} />
+                  </ListItem>
+                ))}
+              </List>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
             <Footer />
             </Wrapper>
         ) 

@@ -98,11 +98,9 @@ module.exports = (app, passport) => {
     if (req.isAuthenticated()) {
       const userId = req.session.passport.user;
       User.findOne({ _id: userId }).then(() => {
-        Patient.find().then(dbModel => {
-         // console.log("hello from dbmodel: ", dbModel) works
-          res.json(dbModel);
-        })
-
+        Patient.find(req.query)
+        .sort({ date: -1 }).then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
       });
     }
   });
