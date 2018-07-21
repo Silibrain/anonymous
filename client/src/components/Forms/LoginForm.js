@@ -124,7 +124,7 @@ class LoginForm extends Component {
             />
           </div>
           {confirm}
-          <button className="btn btns" onClick={this.goBack}>
+          <button className="btn btn-secondary" onClick={this.goBack}>
             Go Back
           </button>
           <LoginSubmit type={this.state.type} />
@@ -133,8 +133,11 @@ class LoginForm extends Component {
     } else {
       return (
         <form className="home-btn-wrap">
+         <br/>
           <LoginBtn type="signin" onClick={() => this.changeState("signin")} />
+          <br/>
           <LoginBtn type="signup" onClick={() => this.changeState("signup")} />
+          <br/>
         </form>
       );
     }

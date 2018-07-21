@@ -65,9 +65,22 @@ module.exports = (app, passport) => {
     if (req.isAuthenticated()) {
       const userId = req.session.passport.user;
       User.findOne({ _id: userId }).then(() => {
-        Inventory.find().then(dbModel => {
-          res.json(dbModel);
-        })
+        Inventory.find(req.query)
+        .sort({ date: -1 }).then(dbModel =>
+          res.json(dbModel))
+          .catch(err => res.status(422).json(err));
+      });
+    }
+  });
+
+  app.delete("/inventory/:id", (req,res) => {
+    if (req.isAuthenticated()) {
+      const userId = req.session.passport.user;
+      User.findOne({ _id: userId }).then(() => {
+        Inventory.findById({ _id: req.params.id})
+        .then(dbModel => dbModel.remove())
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
       });
     }
   });
@@ -115,7 +128,6 @@ module.exports = (app, passport) => {
         .catch(err => res.status(422).json(err));
       });
     }
-
   });
 
   app.post("/patient", (req, res) => {
@@ -150,10 +162,21 @@ module.exports = (app, passport) => {
     if (req.isAuthenticated()) {
       const userId = req.session.passport.user;
       User.findOne({ _id: userId }).then(() => {
-        Practicioner.find().then(dbModel => {
-          res.json(dbModel);
-        })
+        Practicioner.find(req.query)
+        .sort({ date: -1 }).then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
+      });
+    }
+  });
+
+  app.delete("/practicioner/:id", (req,res) => {
+    if (req.isAuthenticated()) {
+      const userId = req.session.passport.user;
+      User.findOne({ _id: userId }).then(() => {
+        Practicioner.findById({ _id: req.params.id})
+        .then(dbModel => dbModel.remove())
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
       });
     }
   });
@@ -184,10 +207,21 @@ module.exports = (app, passport) => {
     if (req.isAuthenticated()) {
       const userId = req.session.passport.user;
       User.findOne({ _id: userId }).then(() => {
-        Procedure.find().then(dbModel => {
-          res.json(dbModel);
-        })
+        Procedure.find(req.query)
+        .sort({ date: -1 }).then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
+      });
+    }
+  });
+
+  app.delete("/procedure/:id", (req,res) => {
+    if (req.isAuthenticated()) {
+      const userId = req.session.passport.user;
+      User.findOne({ _id: userId }).then(() => {
+        Procedure.findById({ _id: req.params.id})
+        .then(dbModel => dbModel.remove())
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
       });
     }
   });
@@ -241,7 +275,7 @@ module.exports = (app, passport) => {
   app.post(
     "/signin",
     passport.authenticate("local-login", {
-      successRedirect: "/patient/add", // redirect to the secure profile section
+      successRedirect: "/home", // redirect to the secure profile section
       failureRedirect: "/signin", // redirect back to the signup page if there is an error
       failureFlash: false// allow flash messages
     })
@@ -259,7 +293,7 @@ module.exports = (app, passport) => {
   app.post(
     "/signup",
     passport.authenticate("local-signup", {
-      successRedirect: "/patient/add", // redirect to the secure profile section
+      successRedirect: "/home", // redirect to the secure profile section
       failureRedirect: "/signup", // redirect back to the signup page if there is an error
       failureFlash: false // allow flash messages
     })

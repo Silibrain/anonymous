@@ -8,22 +8,22 @@ const patientSchema = mongoose.Schema({
     type: String 
   },
   age:{ 
-    type: Number 
+    type: String 
   },
   weight:{ 
-    type: Number 
+    type: String 
   },
   height:{ 
     type: String 
   },
   temperature:{ 
-    type: Number 
+    type: String 
   },
   pulse:{ 
-    type: Number 
+    type: String 
   },
   respiratoryrate:{ 
-    type: Number 
+    type: String 
   },
   pressure:{ 
     type: String 

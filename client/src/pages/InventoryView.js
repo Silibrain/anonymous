@@ -4,48 +4,63 @@ import NavBar from "../components/Panels/NavBar";
 import Footer from "../components/Panels/Footer";
 import Wrapper from "../components/Panels/Wrapper";
 import Jumbotron from "../components/Panels/Jumbotron";
-import { List} from "../components/List";
+import { List, ListItem } from "../components/List";
+import { Link } from "react-router-dom";
+import DeleteBtn from "../components/Buttons/DeleteBtn";
 
 class InventoryView extends Component {
   state = {
-    inventory: []
-  };  
+    inventory: [],
+    name: "",
+    units: "",
+    unitcost: "",
+    type: "",
+    expiryyear: ""
+  };
 
-  componentDidMount(){
-      this.getInventoryHandler();
-    }
-  
-    getInventoryHandler(){
-      API.getInventory()
-      .then(res => this.setState({inventory: res.data}))
-      .catch(err => console.log(err));
-    }
-  
-    deleteInventoryHandler = (event, id) => {
-      API.deleteInventory(id)
-      .then(res => this.getinventoryHandler())
-      .catch(err => console.log(err));
-    }
-
-    render() {
-      let saved = <p> Currently, no Inventory to Display!</p>
-  
-      if(this.state.inventory.length > 0){
-        saved = this.state.inventory.map((inventory, index) => {
-          return <List key={inventory._id} name={inventory.name} units={inventory.units} unitCost={inventory.unitCost} type={inventory.type} entryDate={inventory.entryDate} expiryDate={inventory.pulse} action={this.handleinventorySaved} title="Save" />
-      });
-      }
-  
-      return (
-        <Wrapper>
-             <NavBar />
-          <Jumbotron title="Inventory List"></Jumbotron>
-          {saved}
-          <Footer />
-          </Wrapper>
-      ) 
-    }
+  componentDidMount() {
+    this.loadInventory();
   }
-  
-  export default InventoryView;
-  
+
+  loadInventory() {
+    API.getInventory()
+      .then(res => this.setState({ inventory: res.data, name: "", units: "", unitcost: "", type: "", expiryyear: "" }))
+      .catch(err => console.log(err));
+  }
+
+  deleteInventory = id => {
+    API.deleteInventory(id)
+      .then(res => this.loadInventory())
+      .catch(err => console.log(err));
+  }
+
+  render() {
+
+    return (
+      <Wrapper>
+        <NavBar />
+        <Jumbotron title="Inventory List"></Jumbotron>
+
+        {this.state.inventory.length ? (
+          <List>
+            {this.state.inventory.map(inventory => (
+              <ListItem key={inventory._id}>
+                <Link to={"/inventory/" + inventory._id}>
+                  <strong>
+                    {inventory.units} of {inventory.name}
+                  </strong>
+                </Link>
+                <DeleteBtn onClick={() => this.deleteInventory(inventory._id)} />
+              </ListItem>
+            ))}
+          </List>
+        ) : (
+            <h3>No Results to Display</h3>
+          )}
+        <Footer />
+      </Wrapper>
+    )
+  }
+}
+
+export default InventoryView;

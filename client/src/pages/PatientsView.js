@@ -31,7 +31,7 @@ class PatientsView extends Component {
       loadPatients(){
         API.getPatients()
         .then(res =>{
-          this.setState({patients: res.data, id: "", name: "", age:"", weight: "", height: "", temperature: "", pulse: "", respiratoryrate: "", pressure: "", symptoms: "", diagnosis: "", drugs: ""})})
+          this.setState({patients: res.data, name: "", age:"", weight: "", height: "", temperature: "", pulse: "", respiratoryrate: "", pressure: "", symptoms: "", diagnosis: "", drugs: ""})})
         .catch(err => console.log(err));
       }
     
@@ -51,7 +51,7 @@ class PatientsView extends Component {
               <List>
                 {this.state.patients.map(patient => (
                   <ListItem key={patient._id}>
-                    <Link to={"/patients/" + patient._id}>
+                    <Link to={"/patient/" + patient._id}>
                       <strong>
                         {patient.name} with {patient.diagnosis}
                       </strong>

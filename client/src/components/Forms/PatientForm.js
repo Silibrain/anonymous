@@ -14,6 +14,7 @@ class PatientForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            id: "",
             name: "",
             age: "",
             weight: "",
@@ -49,6 +50,7 @@ class PatientForm extends Component {
             .then(res => {
                 console.log("create item", res);
                 this.setState({
+                    id: "",
                     name: "",
                     age: "",
                     weight: "",
@@ -59,12 +61,13 @@ class PatientForm extends Component {
                     pressure: "",
                     symptoms: "",
                     diagnosis: "",
-                    drugs: ""
-                   
+                    drugs: "",
+                    create: true
                 });
             })
             .catch(err => {
                 this.setState({
+                    id: "",
                     name: "",
                     age: "",
                     weight: "",
@@ -75,8 +78,8 @@ class PatientForm extends Component {
                     pressure: "",
                     symptoms: "",
                     diagnosis: "",
-                    drugs: ""
-                 
+                    drugs: "",
+                    create: false
                 });
             });
     };
@@ -84,6 +87,7 @@ class PatientForm extends Component {
 
     tt = () => {
         this.formSubmit();
+        alert("Patient Saved!");
         // console.log(this)
     };
 
@@ -113,7 +117,7 @@ class PatientForm extends Component {
                                 />
                                 <ControlLabel>How old is the patient?</ControlLabel>
                                 <FormControl
-                                    type="number"
+                                    type="text"
                                     value={this.state.age}
                                     name="age"
                                     placeholder={this.state.age}
@@ -123,7 +127,7 @@ class PatientForm extends Component {
                             <FormGroup>
                                 <ControlLabel>How much does the patient weigh (lbs)?</ControlLabel>
                                 <FormControl
-                                    type="number"
+                                    type="text"
                                     value={this.state.weight}
                                     name="weight"
                                     placeholder={this.state.weight}
@@ -143,7 +147,7 @@ class PatientForm extends Component {
                             <FormGroup>
                                 <ControlLabel>What is the patient's body temperature (F)?</ControlLabel>
                                 <FormControl
-                                    type="number"
+                                    type="text"
                                     value={this.state.temperature}
                                     name="temperature"
                                     placeholder={this.state.temperature}
@@ -153,7 +157,7 @@ class PatientForm extends Component {
                             <FormGroup>
                                 <ControlLabel>What is the patient's pulse (bpm)?</ControlLabel>
                                 <FormControl
-                                    type="number"
+                                    type="text"
                                     value={this.state.pulse}
                                     name="pulse"
                                     placeholder={this.state.pulse}
@@ -163,7 +167,7 @@ class PatientForm extends Component {
                             <FormGroup>
                                 <ControlLabel>What is the patient's respitaroty rate (bpm)?</ControlLabel>
                                 <FormControl
-                                    type="number"
+                                    type="text"
                                     value={this.state.respiratoryrate}
                                     name="respiratoryrate"
                                     placeholder={this.state.respiratoryrate}
@@ -211,7 +215,7 @@ class PatientForm extends Component {
                                 />
                             </FormGroup>
                             <Button
-                                className="submitBtn btn btn-default"
+                                className="btn btn-info"
                                 type="button"
                                 onClick={this.tt}
                             >
