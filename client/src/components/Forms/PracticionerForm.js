@@ -68,6 +68,7 @@ class PracticionerForm extends Component {
 
     tt = () => {
         this.formSubmit();
+        alert("Practicioner Saved!");
     };
 
     render() {
@@ -134,7 +135,7 @@ class PracticionerForm extends Component {
                                 />
                             </FormGroup>
                             <Button
-                                className="submitBtn btn btn-default"
+                                className="btn btn-info"
                                 type="button"
                                 onClick={this.tt}
                             >

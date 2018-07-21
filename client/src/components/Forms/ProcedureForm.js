@@ -46,13 +46,13 @@ class ProcedureForm extends Component {
                 console.log("create item", res);
                 this.setState({
                     id: "",
-            name: "",
-            type: "",
-            location: "",
-            result: "",
-            avgtime: "",
-            capex: "",
-            opex: "",
+                    name: "",
+                    type: "",
+                    location: "",
+                    result: "",
+                    avgtime: "",
+                    capex: "",
+                    opex: "",
                     create: true
                 });
             })
@@ -74,6 +74,7 @@ class ProcedureForm extends Component {
 
     tt = () => {
         this.formSubmit();
+        alert("Procedure Saved!");
     };
 
 
@@ -105,7 +106,7 @@ class ProcedureForm extends Component {
                                 <FormControl
                                     type="text"
                                     value={this.state.type}
-                                    name="specialties"
+                                    name="type"
                                     placeholder={this.state.type}
                                     onChange={this.handleChange}
                                 />
@@ -133,7 +134,7 @@ class ProcedureForm extends Component {
                             <FormGroup>
                                 <ControlLabel>How long does the procedure take?</ControlLabel>
                                 <FormControl
-                                    type="number"
+                                    type="text"
                                     value={this.state.avgtime}
                                     name="avgtime"
                                     placeholder={this.state.avgtime}
@@ -143,7 +144,7 @@ class ProcedureForm extends Component {
                             <FormGroup>
                                 <ControlLabel>What is the initial investment for this procedure?</ControlLabel>
                                 <FormControl
-                                    type="number"
+                                    type="text"
                                     value={this.state.capex}
                                     name="capex"
                                     placeholder={this.state.capex}
@@ -153,7 +154,7 @@ class ProcedureForm extends Component {
                             <FormGroup>
                                 <ControlLabel>What are the continued expenses associated with this procedure?</ControlLabel>
                                 <FormControl
-                                    type="number"
+                                    type="text"
                                     value={this.state.opex}
                                     name="opex"
                                     placeholder={this.state.opex}
@@ -161,7 +162,7 @@ class ProcedureForm extends Component {
                                 />
                             </FormGroup>
                             <Button
-                                className="submitBtn btn btn-default"
+                                className="btn btn-info"
                                 type="button"
                                 onClick={this.tt}
                             >

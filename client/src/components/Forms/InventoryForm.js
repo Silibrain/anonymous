@@ -48,7 +48,8 @@ class InventoryForm extends Component {
                     units: "",
                     unitcost: "",
                     type: "",
-                    expiryyear: ""
+                    expiryyear: "",
+                    create: true
                 });
             })
             .catch(err => {
@@ -58,7 +59,8 @@ class InventoryForm extends Component {
                     units: "",
                     unitcost: "",
                     type: "",
-                    expiryyear: ""
+                    expiryyear: "",
+                    create: false
                 });
             });
     };
@@ -66,6 +68,7 @@ class InventoryForm extends Component {
 
     tt = () => {
         this.formSubmit();
+        alert("Inventory Saved!");
     };
 
     render() {
@@ -94,7 +97,7 @@ class InventoryForm extends Component {
                                 />
                                 <ControlLabel>How many units are you entering?</ControlLabel>
                                 <FormControl
-                                    type="number"
+                                    type="text"
                                     value={this.state.units}
                                     name="units"
                                     placeholder={this.state.units}
@@ -104,7 +107,7 @@ class InventoryForm extends Component {
                             <FormGroup>
                                 <ControlLabel>What is the cost per unit of each?</ControlLabel>
                                 <FormControl
-                                    type="number"
+                                    type="text"
                                     value={this.state.unitcost}
                                     name="unitcost"
                                     placeholder={this.state.unitcost}
@@ -116,7 +119,7 @@ class InventoryForm extends Component {
                                 <FormControl
                                     type="text"
                                     value={this.state.type}
-                                    name="units"
+                                    name="type"
                                     placeholder={this.state.type}
                                     onChange={this.handleChange}
                                 />
@@ -124,7 +127,7 @@ class InventoryForm extends Component {
                             <FormGroup>
                                 <ControlLabel>What is the expiration year of each?</ControlLabel>
                                 <FormControl
-                                    type="number"
+                                    type="text"
                                     value={this.state.expiryyear}
                                     name="expiryyear"
                                     placeholder={this.state.expiryyear}
@@ -132,7 +135,7 @@ class InventoryForm extends Component {
                                 />
                             </FormGroup>
                             <Button
-                                className="submitBtn btn btn-default"
+                                className="btn btn-info"
                                 type="button"
                                 onClick={this.tt}
                             >

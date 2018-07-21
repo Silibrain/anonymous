@@ -24,7 +24,7 @@ class PracticionersView extends Component {
 
   loadPracticioners() {
     API.getPracticioner()
-      .then(res => this.setState({ practicioner: res.data, name: "", specialties: "", skills: "", fees: "", bio: "" }))
+      .then(res => this.setState({ practicioners: res.data, name: "", specialties: "", skills: "", fees: "", bio: "" }))
       .catch(err => console.log(err));
   }
 
@@ -46,7 +46,7 @@ class PracticionersView extends Component {
               <ListItem key={practicioner._id}>
                 <Link to={"/practicioner/" + practicioner._id}>
                   <strong>
-                    {practicioner.name} specialized in {practicioner.specialties}
+                    {practicioner.name} , {practicioner.specialties}
                   </strong>
                 </Link>
                 <DeleteBtn onClick={() => this.deletePracticioner(practicioner._id)} />

@@ -275,7 +275,7 @@ module.exports = (app, passport) => {
   app.post(
     "/signin",
     passport.authenticate("local-login", {
-      successRedirect: "/patient/add", // redirect to the secure profile section
+      successRedirect: "/home", // redirect to the secure profile section
       failureRedirect: "/signin", // redirect back to the signup page if there is an error
       failureFlash: false// allow flash messages
     })
@@ -293,7 +293,7 @@ module.exports = (app, passport) => {
   app.post(
     "/signup",
     passport.authenticate("local-signup", {
-      successRedirect: "/patient/add", // redirect to the secure profile section
+      successRedirect: "/home", // redirect to the secure profile section
       failureRedirect: "/signup", // redirect back to the signup page if there is an error
       failureFlash: false // allow flash messages
     })

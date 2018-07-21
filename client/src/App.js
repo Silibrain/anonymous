@@ -42,7 +42,7 @@ class App extends Component {
         <Route exact path="/signup" component={LogIn} />
         <Route exact path="/update" component={UpdateAccount} />
 
-        <Route exact path="/menu" component={Menu} />
+        <Route exact path="/home" component={Home} />
 
         <Route exact path="/patient/add" component={PatientsAdd} />
         <Route exact path="/practicioner/add" component={PracticionersAdd} />
