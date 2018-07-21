@@ -56,9 +56,9 @@ const Nav = () => (
                   <a className="dropdown-item" href="/procedure/view">View</a>
                 </div>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <a className="nav-link active" href="/staff/reports">Administration</a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
