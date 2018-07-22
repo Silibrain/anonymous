@@ -8,7 +8,7 @@
     "fetch": "^1.1.0",
     "lodash": "^4.17.4",
     "material-ui": "^1.0.0-beta.22",
-    "react": "^16.2.0",
+    "react": "^16.4.1",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.2.0",
     "react-responsive-modal": "^2.0.0",
