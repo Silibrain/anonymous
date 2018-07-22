@@ -68,11 +68,11 @@ class LoginForm extends Component {
   };
 
   render() {
-   
+    // let check = null;
     // if (this.state.match) {
-    //   let check = <i className="fa fa-check" />;
+    //   check = <i className="fa fa-check" />;
     // } else {
-    //    let check = <i className="fa fa-times" />;
+    //   check = <i className="fa fa-times" />;
     // }
     let action = null;
     if (this.state.type !== null) {
