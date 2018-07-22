@@ -12,7 +12,7 @@ class LogIn extends Component {
         <Wrapper>
           <div id="hero" align="center">
             <div className="content">
-              <h1>Hippocrates</h1>
+              <img src="./logo.png" alt="" width="175px"/>
             </div>
             <div className="container">
               <LoginForm />
