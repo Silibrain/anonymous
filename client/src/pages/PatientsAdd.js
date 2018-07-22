@@ -6,20 +6,22 @@ import PatientForm from "../components/Forms/PatientForm";
 import Jumbotron from "../components/Panels/Jumbotron";
 
 class PatientsAdd extends Component {
-    render() {
-      return (
+  render() {
+    return (
+      <div>
+        <NavBar />
         <Wrapper>
-           <NavBar />
-        <Jumbotron title="Add Patient"></Jumbotron>
-        <PatientForm />
-        <Footer />
+          <Jumbotron title="Add Patient"></Jumbotron>
+          <PatientForm />
         </Wrapper>
-      );
-    }
+        <Footer />
+      </div>
+    );
   }
+}
 
 
-  
-  export default PatientsAdd;
+
+export default PatientsAdd;
 
 

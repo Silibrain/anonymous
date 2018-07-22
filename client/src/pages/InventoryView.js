@@ -37,28 +37,29 @@ class InventoryView extends Component {
   render() {
 
     return (
-      <Wrapper>
+      <div>
         <NavBar />
-        <Jumbotron title="Inventory List"></Jumbotron>
-
-        {this.state.inventory.length ? (
-          <List>
-            {this.state.inventory.map(inventory => (
-              <ListItem key={inventory._id}>
-                <Link to={"/inventory/" + inventory._id}>
-                  <strong>
-                    {inventory.units} of {inventory.name}
-                  </strong>
-                </Link>
-                <DeleteBtn onClick={() => this.deleteInventory(inventory._id)} />
-              </ListItem>
-            ))}
-          </List>
-        ) : (
-            <h3>No Results to Display</h3>
-          )}
+        <Wrapper>
+          <Jumbotron title="Inventory List"></Jumbotron>
+          {this.state.inventory.length ? (
+            <List>
+              {this.state.inventory.map(inventory => (
+                <ListItem key={inventory._id}>
+                  <Link to={"/inventory/" + inventory._id}>
+                    <strong>
+                      {inventory.units} of {inventory.name}
+                    </strong>
+                  </Link>
+                  <DeleteBtn onClick={() => this.deleteInventory(inventory._id)} />
+                </ListItem>
+              ))}
+            </List>
+          ) : (
+              <h3>No Results to Display</h3>
+            )}
+        </Wrapper>
         <Footer />
-      </Wrapper>
+      </div>
     )
   }
 }

@@ -36,29 +36,29 @@ class PracticionersView extends Component {
 
   render() {
     return (
-      <Wrapper>
+      <div>
         <NavBar />
-        <Jumbotron title="Practicioners List"></Jumbotron>
-
-        {this.state.practicioners.length ? (
-          <List>
-            {this.state.practicioners.map(practicioner => (
-              <ListItem key={practicioner._id}>
-                <Link to={"/practicioner/" + practicioner._id}>
-                  <strong>
-                    {practicioner.name} , {practicioner.specialties}
-                  </strong>
-                </Link>
-                <DeleteBtn onClick={() => this.deletePracticioner(practicioner._id)} />
-              </ListItem>
-            ))}
-          </List>
-        ) : (
-            <h3>No Results to Display</h3>
-          )}
-
+        <Wrapper>
+          <Jumbotron title="Practicioners List"></Jumbotron>
+          {this.state.practicioners.length ? (
+            <List>
+              {this.state.practicioners.map(practicioner => (
+                <ListItem key={practicioner._id}>
+                  <Link to={"/practicioner/" + practicioner._id}>
+                    <strong>
+                      {practicioner.name} , {practicioner.specialties}
+                    </strong>
+                  </Link>
+                  <DeleteBtn onClick={() => this.deletePracticioner(practicioner._id)} />
+                </ListItem>
+              ))}
+            </List>
+          ) : (
+              <h3>No Results to Display</h3>
+            )}
+        </Wrapper>
         <Footer />
-      </Wrapper>
+      </div>
     )
   }
 }

@@ -38,30 +38,29 @@ class ProceduresExamsView extends Component {
 
   render() {
     return (
-      <Wrapper>
+      <div>
         <NavBar />
-
-        <Jumbotron title="Procedures List"></Jumbotron>
-
-        {this.state.procedures.length ? (
-          <List>
-            {this.state.procedures.map(procedure => (
-              <ListItem key={procedure._id}>
-                <Link to={"/procedure/" + procedure._id}>
-                  <strong>
-                    {procedure.name} performed in {procedure.location}
-                  </strong>
-                </Link>
-                <DeleteBtn onClick={() => this.deleteProcedure(procedure._id)} />
-              </ListItem>
-            ))}
-          </List>
-        ) : (
-            <h3>No Results to Display</h3>
-          )}
-
+        <Wrapper>
+          <Jumbotron title="Procedures List"></Jumbotron>
+          {this.state.procedures.length ? (
+            <List>
+              {this.state.procedures.map(procedure => (
+                <ListItem key={procedure._id}>
+                  <Link to={"/procedure/" + procedure._id}>
+                    <strong>
+                      {procedure.name} performed in {procedure.location}
+                    </strong>
+                  </Link>
+                  <DeleteBtn onClick={() => this.deleteProcedure(procedure._id)} />
+                </ListItem>
+              ))}
+            </List>
+          ) : (
+              <h3>No Results to Display</h3>
+            )}
+        </Wrapper>
         <Footer />
-      </Wrapper>
+      </div>
     )
   }
 }

@@ -6,18 +6,19 @@ import ProcedureForm from "../components/Forms/ProcedureForm";
 import Jumbotron from "../components/Panels/Jumbotron";
 
 class ProceduresAdd extends Component {
-  
+
   render() {
     return (
-      <Wrapper>
-         <NavBar />
-      <Jumbotron title="Add Procedure"></Jumbotron>
-      <ProcedureForm />
-      <Footer />
-      </Wrapper>
+      <div>
+        <NavBar />
+        <Wrapper>
+          <Jumbotron title="Add Procedure"></Jumbotron>
+          <ProcedureForm />
+        </Wrapper>
+        <Footer />
+      </div>
     );
   }
 }
-  
-  export default ProceduresAdd;
-  
+
+export default ProceduresAdd;

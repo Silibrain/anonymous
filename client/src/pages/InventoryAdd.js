@@ -9,16 +9,18 @@ class InventoryAdd extends Component {
 
   render() {
     return (
-      <Wrapper>
-         <NavBar />
-      <Jumbotron title="Add Inventory"></Jumbotron>
-      <InventoryForm />
-      <Footer />
-      </Wrapper>
+      <div>
+        <NavBar />
+        <Wrapper>
+          <Jumbotron title="Add Inventory"></Jumbotron>
+          <InventoryForm />
+        </Wrapper>
+        <Footer />
+      </div>
     );
   }
 }
-  
-  export default InventoryAdd;
-  
+
+export default InventoryAdd;
+
 

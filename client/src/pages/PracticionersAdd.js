@@ -8,14 +8,16 @@ import Jumbotron from "../components/Panels/Jumbotron";
 class PracticionersAdd extends Component {
   render() {
     return (
-      <Wrapper>
-         <NavBar />
-      <Jumbotron title="Add Practicioner"></Jumbotron>
-      <PracticionerForm />
-      <Footer />
-      </Wrapper>
+      <div>
+        <NavBar />
+        <Wrapper>
+          <Jumbotron title="Add Practicioner"></Jumbotron>
+          <PracticionerForm />
+        </Wrapper>
+        <Footer />
+      </div>
     );
   }
 }
-  
-  export default PracticionersAdd;
+
+export default PracticionersAdd;
