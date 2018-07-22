@@ -5,15 +5,17 @@ import NavBar from "../components/Panels/NavBar";
 import Footer from "../components/Panels/Footer";
 
 class ReportsMenu extends Component {
-    render() {
-      return (
+  render() {
+    return (
+      <div>
+        <NavBar />
         <Wrapper>
-         <NavBar />
-        <ReportContainer></ReportContainer>
-        <Footer />
+          <ReportContainer></ReportContainer>
         </Wrapper>
-      );
-    }
+        <Footer />
+      </div>
+    );
   }
-  
-  export default ReportsMenu;
+}
+
+export default ReportsMenu;

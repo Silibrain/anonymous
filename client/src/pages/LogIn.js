@@ -7,22 +7,23 @@ import LoginForm from "../components/Forms/LoginForm";
 class LogIn extends Component {
   render() {
     return (
-        <Wrapper>
+      <div>
         <NavBar />
-        <div id="hero" align="center">
-          <div className="content">
-            <h1>Hippocrates</h1>
+        <Wrapper>
+          <div id="hero" align="center">
+            <div className="content">
+              <h1>Hippocrates</h1>
+            </div>
+            <div className="container">
+              <LoginForm />
+            </div>
           </div>
-          <div className="container">
-            <LoginForm />
-          </div>
-        </div>
-        <div id="aboutApp" align="center" />
-        <Footer />
+          <div id="aboutApp" align="center" />
         </Wrapper>
+        <Footer />
+      </div>
     );
   }
 }
 
 export default LogIn;
-  

@@ -37,6 +37,7 @@ class App extends Component {
       <div className="app">
     <Router>
       <Switch>
+
         <Route exact path="/" component={Home} />
         <Route exact path="/signin" component={LogIn} />
         <Route exact path="/signup" component={LogIn} />
@@ -57,6 +58,7 @@ class App extends Component {
         {/* <Route exact path="/staff/reports" component={ReportsMenu} /> */}
 
         <Route component={NoMatch} />
+     
       </Switch>
   </Router>
   </div>
