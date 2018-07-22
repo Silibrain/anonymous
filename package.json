@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "engines": {
     "node": "v8.11.1",
+    "npm": "5.6.0",
     "yarn": "1.7.0"
   },
   "description": "",
@@ -45,6 +46,7 @@
     "passport-remember-me": "0.0.1",
     "react": "^16.4.1",
     "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
     "recompose": "^0.26.0",
     "validator": "^9.4.1"
