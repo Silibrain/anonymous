@@ -19,7 +19,7 @@ const Nav = () => (
       </div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container">
-          <a className="navbar-brand" href="/"><img src="./favicon.ico" alt="" height="75px"/>Hippocrates<span></span>  </a>
+          <a className="navbar-brand" href="/">Hippocrates<span></span>  </a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
