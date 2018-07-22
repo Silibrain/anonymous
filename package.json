@@ -15,6 +15,7 @@
     "client": "cd client && npm run start",
     "install": "cd client && yarn install",
     "build": "cd client && npm run build",
+    "heroku-prebuild": "yarn install --production=false",
     "heroku-postbuild": "npm run build"
   },
   "author": "",
