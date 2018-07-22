@@ -7,17 +7,15 @@
     "yarn": "1.7.0"
   },
   "description": "",
-  "main": "server.js",
+  "main": "server",
   "scripts": {
-    "server": "node server.js",
-    "client": "node scripts/start-client.js",
-    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
-    "build": "node scripts/build.js",
-    "seed": "node scripts/seedDB.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "installDeps": "yarn && cd client && yarn",
-    "heroku-prebuild": "cd client && yarn install",
-    "heroku-postbuild": "node scripts/build.js"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node ./server",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && yarn install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "author": "",
   "license": "ISC",
@@ -27,9 +25,7 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
-    "bcrypt": "^1.0.3",
     "bcrypt-nodejs": "0.0.3",
-    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
@@ -40,12 +36,9 @@
     "morgan": "^1.9.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "passport-oauth2": "^1.4.0",
-    "passport-remember-me": "0.0.1",
     "react": "^16.4.1",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.1",
-    "react-router-dom": "^4.3.1",
-    "validator": "^9.4.1"
+    "react-router-dom": "^4.3.1"
   }
 }
