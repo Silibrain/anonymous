@@ -11,7 +11,6 @@ const routes = require("./routes")
 const bluebird = require('bluebird');
 const MONGODB_URI = require("./config/keys");
 
-
 const app = express();
 const PORT = process.env.PORT || 1992;
 
@@ -38,7 +37,6 @@ app.use((req, res, next) => {
 });
 
 // Serve up static assets
-
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
