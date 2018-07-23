@@ -8,7 +8,9 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const routes = require("./routes")
+const bluebird = require('bluebird');
 const MONGODB_URI = require("./config/keys");
+
 
 const app = express();
 const PORT = process.env.PORT || 1992;
@@ -36,12 +38,14 @@ app.use((req, res, next) => {
 });
 
 // Serve up static assets
-app.use(express.static("client/build"));
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 // set up our express application
 app.use(morgan("dev")); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
-app.use(bodyParser()); // get information from html forms
 
 // required for passport
 app.use(
@@ -72,7 +76,10 @@ require("./routes/routes.js")(app, passport, axios);
 app.use(routes);
 // mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hippocrates");
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/hippocrates",
+  { promiseLibrary: bluebird }
+);
 
 // launch ======================================================================
 // Start the API server
