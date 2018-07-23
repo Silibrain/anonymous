@@ -6,7 +6,7 @@
     "npm": "5.6.0",
     "yarn": "1.7.0"
   },
-  "description": "",
+  "description": "<h3 align=\"center\">   <img align=\"center\" src=\"./client/public/logo.png\" alt=\"logo\" width=\"250\"></a>   <h1 align=\"center\">So the Doctors can focus on YOU</h1> </h3>",
   "main": "server",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -27,6 +27,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "bcrypt-nodejs": "0.0.3",
+    "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
@@ -41,5 +42,14 @@
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b0bbybaldi/hippocrates.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/b0bbybaldi/hippocrates/issues"
+  },
+  "homepage": "https://github.com/b0bbybaldi/hippocrates#readme"
 }
