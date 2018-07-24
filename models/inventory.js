@@ -1,15 +1,24 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 
-const inventorySchema = new Schema({
-  name: { type: String, required: true },
-  units: { type: Number, required: true },
-  unitcost: { type: Number, required: true },
-  type: { type: String, required: true },
-  entrydate: { type: Date, default: Date.now },
-  expirydate: { type: Date},
+const inventorySchema = mongoose.Schema({
+  id:{
+    type: String
+  },
+  name:{ 
+    type: String 
+  },
+  units:{ 
+    type: String 
+  },
+  unitcost:{ 
+    type: String 
+  },
+  type:{ 
+    type: String 
+  },
+  expiryyear:{ 
+    type: String
+  }
 });
 
-const Inventory = mongoose.model("Inventory", inventorySchema);
-
-module.exports = Inventory;
+module.exports = mongoose.model("Inventory", inventorySchema);

@@ -1,5 +1,3 @@
-
-const Staff = require("../models/staff");
 const Practicioner = require("../models/practicioner");
 const Patient = require("../models/patient");
 const Inventory = require("../models/inventory");
@@ -7,24 +5,15 @@ const Procedure = require("../models/procedure");
 const User = require("../models/user");
 
 module.exports = (app, passport) => {
-  // =====================================
-  // Read Only Pro team library  ========
-  // =====================================
-  app.post("/pro/create", (req, res) => {
-    Pro.create(req.body).then(response => {
-      res.send("created");
-    });
-  });
-  // =====================================
-  // HOME PAGE (with login links) ========
-  // =====================================
+  //Create Case Routes & Functionality to Tie Doctors, Patients, Inventory, Procedures
+
   app.get("/", (req, res) => {
-    window.location = '/'; // load the index.ejs file
+    res.render("/"); // load the index.ejs file
   });
 
-  // =====================================
-  // User Account Endpoints (CRUD)  ========
-  // =====================================
+
+  //api/Administrators & Controller(User Functionality)
+
   app.get("/user/id", (req, res) => {
     if (req.isAuthenticated()) {
       res.json(req.session.passport.user);
@@ -35,17 +24,16 @@ module.exports = (app, passport) => {
     if (req.isAuthenticated()) {
       const userId = req.session.passport.user;
       User.findOne({ _id: userId }).then(user => {
-        var userDate = {
-          email: user.email,
+        var userInfo = {
           name: user.name,
-          title: user.title,
-          role: user.role,
+          email: user.email,
+          password: user.password,
           phone: user.phone,
-          bio: user.bio
+          title: user.title,
+          bio: user.bio,
+          role: user.role
         };
-        // console.log("\n$$$$$$$",user)
-        // console.log("%%%%%%%%%",userDate)
-        res.send(userDate);
+        res.send(userInfo);
       });
     }
   });
@@ -53,16 +41,16 @@ module.exports = (app, passport) => {
   app.put("/user/update", (req, res) => {
     if (req.isAuthenticated()) {
       const userId = req.session.passport.user;
-
       User.findOneAndUpdate(
         { _id: userId },
         {
-            email: user.email,
-            name: user.name,
-            title: user.title,
-            role: user.role,
-            phone: user.phone,
-            bio: user.bio
+          name: req.body.name,
+          email: req.body.email,
+          password: req.body.password,
+          phone: req.body.phone,
+          title: req.body.title,
+          bio: req.body.bio,
+          role: req.body.role
         }
       ).then(user => {
         console.log("\n#######", user);
@@ -71,23 +59,230 @@ module.exports = (app, passport) => {
     }
   });
 
-  // =====================================
-  // LOGIN ===============================
-  // =====================================
-  // show the login form
+  //api/inventories
 
+  app.get("/inventory", (req, res) => {
+    if (req.isAuthenticated()) {
+      const userId = req.session.passport.user;
+      User.findOne({ _id: userId }).then(() => {
+        Inventory.find(req.query)
+        .sort({ date: -1 }).then(dbModel =>
+          res.json(dbModel))
+          .catch(err => res.status(422).json(err));
+      });
+    }
+  });
+
+  app.delete("/inventory/:id", (req,res) => {
+    if (req.isAuthenticated()) {
+      const userId = req.session.passport.user;
+      User.findOne({ _id: userId }).then(() => {
+        Inventory.findById({ _id: req.params.id})
+        .then(dbModel => dbModel.remove())
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+      });
+    }
+  });
+
+  app.post("/inventory", (req, res) => {
+    if (req.isAuthenticated()) {
+      const userId = req.session.passport.user;
+      User.findOne({ _id: userId }).then(() => {
+        const drugData = {
+          name: req.body.name,
+          units: req.body.units,
+          unitcost: req.body.unitcost,
+          type: req.body.type,
+          expiryyear: req.body.expiryyear
+        };
+
+        Inventory.create(drugData).then(() => {
+          sendNotification();
+          res.json(true);
+        })
+      });
+    }
+  })
+
+  //api/patients
+
+  app.get("/patient", (req, res) => {
+    if (req.isAuthenticated()) {
+      const userId = req.session.passport.user;
+      User.findOne({ _id: userId }).then(() => {
+        Patient.find(req.query)
+        .sort({ date: -1 }).then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+      });
+    }
+  });
+
+  app.delete("/patient/:id", (req,res) => {
+    if (req.isAuthenticated()) {
+      const userId = req.session.passport.user;
+      User.findOne({ _id: userId }).then(() => {
+        Patient.findById({ _id: req.params.id})
+        .then(dbModel => dbModel.remove())
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+      });
+    }
+  });
+
+  app.post("/patient", (req, res) => {
+    if (req.isAuthenticated()) {
+      const userId = req.session.passport.user;
+      console.log("hello save patient route")
+      User.findOne({ _id: userId }).then(() => {
+        const patientData = {
+          name: req.body.name,
+          age: req.body.age,
+          weight: req.body.weight,
+          height: req.body.height,
+          temperature: req.body.temperature,
+          pulse: req.body.pulse,
+          respiratoryrate: req.body.respiratoryrate,
+          pressure: req.body.pressure,
+          symptoms: req.body.symptoms,
+          diagnosis: req.body.diagnosis,
+          drugs: req.body.drugs
+        };
+        Patient.create(patientData).then(() => {
+          sendNotification();
+          res.json(true);
+        })
+      });
+    }
+  })
+
+  //api/practicioners
+
+  app.get("/practicioner", (req, res) => {
+    if (req.isAuthenticated()) {
+      const userId = req.session.passport.user;
+      User.findOne({ _id: userId }).then(() => {
+        Practicioner.find(req.query)
+        .sort({ date: -1 }).then(dbModel => res.json(dbModel))
+          .catch(err => res.status(422).json(err));
+      });
+    }
+  });
+
+  app.delete("/practicioner/:id", (req,res) => {
+    if (req.isAuthenticated()) {
+      const userId = req.session.passport.user;
+      User.findOne({ _id: userId }).then(() => {
+        Practicioner.findById({ _id: req.params.id})
+        .then(dbModel => dbModel.remove())
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+      });
+    }
+  });
+
+  app.post("/practicioner", (req, res) => {
+    if (req.isAuthenticated()) {
+      const userId = req.session.passport.user;
+      User.findOne({ _id: userId }).then(() => {
+        const practicionerData = {
+          name: req.body.name,
+          specialties: req.body.specialties,
+          skills: req.body.skills,
+          fees: req.body.fees,
+          bio: req.body.bio
+        };
+        Practicioner.create(practicionerData).then(() => {
+          sendNotification();
+          res.json(true);
+        }).catch(err => res.status(422).json(err));
+      });
+    }
+  })
+
+
+  //api/procedures
+
+  app.get("/procedure", (req, res) => {
+    if (req.isAuthenticated()) {
+      const userId = req.session.passport.user;
+      User.findOne({ _id: userId }).then(() => {
+        Procedure.find(req.query)
+        .sort({ date: -1 }).then(dbModel => res.json(dbModel))
+          .catch(err => res.status(422).json(err));
+      });
+    }
+  });
+
+  app.delete("/procedure/:id", (req,res) => {
+    if (req.isAuthenticated()) {
+      const userId = req.session.passport.user;
+      User.findOne({ _id: userId }).then(() => {
+        Procedure.findById({ _id: req.params.id})
+        .then(dbModel => dbModel.remove())
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+      });
+    }
+  });
+
+  app.post("/procedure", (req, res) => {
+    if (req.isAuthenticated()) {
+      const userId = req.session.passport.user;
+      User.findOne({ _id: userId }).then(() => {
+        const procedureData = {
+          name: req.body.name,
+          type: req.body.type,
+          location: req.body.location,
+          result: req.body.result,
+          avgtime: req.body.avgtime,
+          capex: req.body.capex,
+          opex: req.body.opex
+        };
+        Procedure.create(procedureData).then(() => {
+          sendNotification();
+          res.json(true);
+        }).catch(err => res.status(422).json(err));
+      });
+    }
+  })
+
+  //Check LogIn or Not 
+
+  app.get("/isloggedin", (req, res) => {
+    if (req.user === undefined || !req.user) {
+      //console.log("user", req.user)
+      console.log("session", req.isAuthenticated());
+      res.json({ status: false, user: req.user });
+    } else {
+      console.log("user", req.user)
+      console.log("session",req.isAuthenticated())
+      res.json({ status: true, user: req.user });
+    }
+  });
+
+  //Login
+
+  // show the login form
+  app.get("/signin", (req, res) => {
+    // render the page and pass in any flash data if it exists
+    res.redirect("/signin", {
+      message: req.flash("loginMessage")
+    });
+  });
+
+  // process the login form
   app.post(
     "/signin",
     passport.authenticate("local-login", {
-      successRedirect: window.location = '/menu', // redirect to the secure profile section
-      failureRedirect: window.location = '/signin', // redirect back to the signup page if there is an error
-      failureFlash: true // allow flash messages
+      successRedirect: "/home", // redirect to the secure profile section
+      failureRedirect: "/signin", // redirect back to the signup page if there is an error
+      failureFlash: false// allow flash messages
     })
   );
 
-  // =====================================
-  // SIGNUP ==============================
-  // =====================================
+  //SignUp
+
   // show the signup form
   app.get("/signup", (req, res) => {
     // render the page and pass in any flash data if it exists
@@ -98,26 +293,24 @@ module.exports = (app, passport) => {
   app.post(
     "/signup",
     passport.authenticate("local-signup", {
-      successRedirect: window.location = '/menu', // redirect to the secure profile section
-      failureRedirect: window.location = '/signup', // redirect back to the signup page if there is an error
-      failureFlash: true // allow flash messages
+      successRedirect: "/home", // redirect to the secure profile section
+      failureRedirect: "/signup", // redirect back to the signup page if there is an error
+      failureFlash: false // allow flash messages
     })
   );
 
-  // =====================================
-  // PROFILE SECTION =====================
-  // =====================================
+  //ProfileSelect
+
   // we will want this protected so you have to be logged in to visit
   // we will use route middleware to verify this (the isLoggedIn function)
   app.get("/menu", isLoggedIn, (req, res) => {
-      window.location = '/menu', {
+    res.redirect("/menu"), {
       user: req.user // get the user out of session and pass to template
     };
   });
 
-  // =====================================
-  // LOGOUT ==============================
-  // =====================================
+  //LogOut
+
   app.get("/logout", (req, res) => {
     req.session.destroy(err => {
       req.logout();
@@ -133,5 +326,5 @@ const isLoggedIn = (req, res, next) => {
   if (req.isAuthenticated()) return next();
 
   // if they aren't redirect them to the home page
-  window.location = '/'
+  res.redirect("/");
 };

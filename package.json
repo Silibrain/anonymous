@@ -1,18 +1,22 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "engines": {
+    "node": "v8.11.1",
+    "npm": "5.6.0",
+    "yarn": "1.7.0"
+  },
+  "description": "<h3 align=\"center\">   <img align=\"center\" src=\"./client/public/logo.png\" alt=\"logo\" width=\"250\"></a>   <h1 align=\"center\">So the Doctors can focus on YOU</h1> </h3>",
+  "main": "server",
   "scripts": {
-    "server": "node server.js",
-    "client": "node scripts/start-client.js",
-    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
-    "build": "node scripts/build.js",
-    "seed": "node scripts/seedDB.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "installDeps": "yarn && cd client && yarn",
-    "heroku-prebuild": "cd client && yarn install",
-    "heroku-postbuild": "node scripts/build.js"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node ./server",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && yarn install",
+    "build": "cd client && npm run build",
+    "heroku-prebuild": "yarn install --production=false",
+    "heroku-postbuild": "npm run build"
   },
   "author": "",
   "license": "ISC",
@@ -22,30 +26,30 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
-    "bcrypt": "^1.0.3",
     "bcrypt-nodejs": "0.0.3",
-    "bcryptjs": "^2.4.3",
+    "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "express-validator": "^5.0.3",
-    "lodash": "^4.17.5",
-    "moment": "^2.22.0",
     "mongoose": "^4.13.5",
     "morgan": "^1.9.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "passport-oauth2": "^1.4.0",
-    "passport-remember-me": "0.0.1",
-    "rc-time-picker": "^3.3.1",
+    "react": "^16.4.1",
     "react-bootstrap": "^0.32.1",
-    "react-datepicker": "^1.4.0",
-    "react-google-autocomplete": "^1.0.15",
-    "react-google-maps": "^9.4.5",
-    "recompose": "^0.26.0",
-    "twilio": "^3.14.0",
-    "validator": "^9.4.1"
-  }
+    "react-dom": "^16.4.1",
+    "react-router-dom": "^4.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b0bbybaldi/hippocrates.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/b0bbybaldi/hippocrates/issues"
+  },
+  "homepage": "https://github.com/b0bbybaldi/hippocrates#readme"
 }

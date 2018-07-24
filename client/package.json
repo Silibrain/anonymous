@@ -1,21 +1,15 @@
 {
-  "name": "hippocrates",
+  "name": "login",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8000",
+  "proxy": "http://localhost:1992",
   "dependencies": {
     "axios": "^0.17.1",
-    "fetch": "^1.1.0",
-    "lodash": "^4.17.4",
-    "material-ui": "^1.0.0-beta.22",
-    "react": "^16.2.0",
+    "react": "^16.4.1",
     "react-bootstrap": "^0.32.1",
-    "react-dom": "^16.2.0",
-    "react-google-maps": "^9.4.1",
-    "react-responsive-modal": "^2.0.0",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "^1.1.4",
-    "recompose": "^0.26.0"
+    "react-dom": "^16.4.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -24,5 +18,9 @@
     "eject": "react-scripts eject"
   },
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "devDependencies": {},
+  "keywords": [],
+  "author": ""
 }
