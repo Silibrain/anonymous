@@ -1,0 +1,8 @@
+html,
+body {
+  background-attachment: fixed;
+  background-image: url("./images/heroimg.jpg");
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
