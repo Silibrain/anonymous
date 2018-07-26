@@ -2,7 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "engines": {
-    "node": "v8.11.1",
+    "node": "v9.9.0",
     "npm": "5.6.0",
     "yarn": "1.7.0"
   },
