@@ -18,9 +18,5 @@
     "eject": "react-scripts eject"
   },
   "main": "index.js",
-  "license": "MIT",
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
-  "devDependencies": {},
-  "keywords": [],
-  "author": ""
+  "license": "MIT"
 }

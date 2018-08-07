@@ -45,11 +45,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/b0bbybaldi/hippocrates.git"
+    "url": "git+https://github.com/b0bbybaldi/chicken.git"
   },
   "keywords": [],
   "bugs": {
-    "url": "https://github.com/b0bbybaldi/hippocrates/issues"
+    "url": "https://github.com/b0bbybaldi/chicken/issues"
   },
-  "homepage": "https://github.com/b0bbybaldi/hippocrates#readme"
+  "homepage": "https://github.com/b0bbybaldi/chicken#readme"
 }
