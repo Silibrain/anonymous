@@ -9,24 +9,24 @@ import DeleteBtn from "../components/Buttons/DeleteBtn";
 import ReactModal from "react-modal";
 
 class ProceduresExamsView extends Component {
-  constructor(){
+  constructor() {
     super()
-    this.state ={
-      procedures:[],
-      showModal:false
+    this.state = {
+      procedures: [],
+      showModal: false
     };
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }
 
-  handleOpenModal(){
+  handleOpenModal() {
     this.setState({
       showModal: true
     });
   }
 
-  handleCloseModal(){
-    this.setState({showModal: false});
+  handleCloseModal() {
+    this.setState({ showModal: false });
   }
 
   componentDidMount() {
@@ -55,18 +55,18 @@ class ProceduresExamsView extends Component {
             <List>
               {this.state.procedures.map(procedure => (
                 <ListItem key={procedure._id}>
-                    <strong onClick={this.handleOpenModal}>
-                      {procedure.name} performed in {procedure.location}
-                    </strong>
-                    <ReactModal isOpen={this.state.showModal} contentLabel={procedure._id}>
-                  <h6>Procedure Name: {procedure.name}</h6>
-                  <h6>Procedure Type: {procedure.type}</h6>
-                  <h6>Procedure Location: {procedure.location}</h6>
-                  <h6>Procedure Result: {procedure.result}</h6>
-                  <h6>Procedure Average Time: {procedure.avgtime}</h6>
-                  <h6>Procedure Capital Expenditure: {procedure.capex}</h6>
-                  <h6>Procedure Operational Expenditure: {procedure.opex}</h6>
-                  <button onClick={this.handleCloseModal}>Close</button>
+                  <strong onClick={this.handleOpenModal}>
+                    {procedure.name} performed in {procedure.location}
+                  </strong>
+                  <ReactModal isOpen={this.state.showModal} contentLabel={procedure._id}>
+                    <h6>Procedure Name: {procedure.name}</h6>
+                    <h6>Procedure Type: {procedure.type}</h6>
+                    <h6>Procedure Location: {procedure.location}</h6>
+                    <h6>Procedure Result: {procedure.result}</h6>
+                    <h6>Procedure Average Time: {procedure.avgtime}</h6>
+                    <h6>Procedure Capital Expenditure: {procedure.capex}</h6>
+                    <h6>Procedure Operational Expenditure: {procedure.opex}</h6>
+                    <button onClick={this.handleCloseModal}>Close</button>
                   </ReactModal>
                   <DeleteBtn onClick={() => this.deleteProcedure(procedure._id)} />
                 </ListItem>

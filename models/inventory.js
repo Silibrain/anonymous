@@ -5,19 +5,29 @@ const inventorySchema = mongoose.Schema({
     type: String
   },
   name:{ 
-    type: String 
+    type: String, 
+    required: true,
+    trim: true
   },
   units:{ 
-    type: String 
+    type: Number,
+    required: true,
+    trim: true
   },
   unitcost:{ 
-    type: String 
+    type: Number,
+    required: true,
+    trim: true 
   },
   type:{ 
-    type: String 
+    type: String,
+    required: false,
+    trim: true
   },
   expiryyear:{ 
-    type: String
+    type: String,
+    trim: true,
+    required: true
   }
 });
 

@@ -9,24 +9,24 @@ import DeleteBtn from "../components/Buttons/DeleteBtn";
 import ReactModal from "react-modal";
 
 class PatientsView extends Component {
-  constructor(){
+  constructor() {
     super()
-    this.state ={
-      patients:[],
-      showModal:false
+    this.state = {
+      patients: [],
+      showModal: false
     };
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }
 
-  handleOpenModal(){
+  handleOpenModal() {
     this.setState({
       showModal: true
     });
   }
 
-  handleCloseModal(){
-    this.setState({showModal: false});
+  handleCloseModal() {
+    this.setState({ showModal: false });
   }
 
   componentDidMount() {
@@ -57,22 +57,22 @@ class PatientsView extends Component {
             <List>
               {this.state.patients.map(patient => (
                 <ListItem key={patient._id}>
-                    <strong onClick={this.handleOpenModal}>
-                      {patient.name} with {patient.diagnosis}
-                    </strong>
+                  <strong onClick={this.handleOpenModal}>
+                    {patient.name} with {patient.diagnosis}
+                  </strong>
                   <ReactModal isOpen={this.state.showModal} contentLabel={patient._id}>
-                  <h6>Patient Name: {patient.name}</h6>
-                  <h6>Patient Age: {patient.age}</h6>
-                  <h6>Patient Weight: {patient.weight}</h6>
-                  <h6>Patient Height: {patient.height}</h6>
-                  <h6>Patient Temperature: {patient.temperature}</h6>
-                  <h6>Patient Pulse: {patient.pulse}</h6>
-                  <h6>Patient Respiratory Rate: {patient.respiratoryrate}</h6>
-                  <h6>Patient Pressure: {patient.pressure}</h6>
-                  <h6>Patient Symptoms: {patient.symptoms}</h6>
-                  <h6>Patient Diagnosis: {patient.diagnosis}</h6>
-                  <h6>Patient Drugs: {patient.drugs}</h6>
-                  <button onClick={this.handleCloseModal}>Close</button>
+                    <h6>Patient Name: {patient.name}</h6>
+                    <h6>Patient Age: {patient.age}</h6>
+                    <h6>Patient Weight: {patient.weight}</h6>
+                    <h6>Patient Height: {patient.height}</h6>
+                    <h6>Patient Temperature: {patient.temperature}</h6>
+                    <h6>Patient Pulse: {patient.pulse}</h6>
+                    <h6>Patient Respiratory Rate: {patient.respiratoryrate}</h6>
+                    <h6>Patient Pressure: {patient.pressure}</h6>
+                    <h6>Patient Symptoms: {patient.symptoms}</h6>
+                    <h6>Patient Diagnosis: {patient.diagnosis}</h6>
+                    <h6>Patient Drugs: {patient.drugs}</h6>
+                    <button onClick={this.handleCloseModal}>Close</button>
                   </ReactModal>
 
                   <DeleteBtn onClick={() => this.deletePatient(patient._id)} />

@@ -9,24 +9,24 @@ import DeleteBtn from "../components/Buttons/DeleteBtn";
 import ReactModal from "react-modal";
 
 class PracticionersView extends Component {
-  constructor(){
+  constructor() {
     super()
-    this.state ={
-      practicioners:[],
-      showModal:false
+    this.state = {
+      practicioners: [],
+      showModal: false
     };
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }
 
-  handleOpenModal(){
+  handleOpenModal() {
     this.setState({
       showModal: true
     });
   }
 
-  handleCloseModal(){
-    this.setState({showModal: false});
+  handleCloseModal() {
+    this.setState({ showModal: false });
   }
 
   componentDidMount() {
@@ -55,16 +55,16 @@ class PracticionersView extends Component {
             <List>
               {this.state.practicioners.map(practicioner => (
                 <ListItem key={practicioner._id}>
-                    <strong onClick={this.handleOpenModal}>
-                      {practicioner.name} , {practicioner.specialties}
-                    </strong>
-                    <ReactModal isOpen={this.state.showModal} contentLabel={practicioner._id}>
-                  <h6>Practicioner Name: {practicioner.name}</h6>
-                  <h6>Practicioner Specialties: {practicioner.specialties}</h6>
-                  <h6>Practicioner Skills: {practicioner.skills}</h6>
-                  <h6>Practicioner Fees: {practicioner.fees}</h6>
-                  <h6>Practicioner Bio: {practicioner.bio}</h6>
-                  <button onClick={this.handleCloseModal}>Close</button>
+                  <strong onClick={this.handleOpenModal}>
+                    {practicioner.name} , {practicioner.specialties}
+                  </strong>
+                  <ReactModal isOpen={this.state.showModal} contentLabel={practicioner._id}>
+                    <h6>Practicioner Name: {practicioner.name}</h6>
+                    <h6>Practicioner Specialties: {practicioner.specialties}</h6>
+                    <h6>Practicioner Skills: {practicioner.skills}</h6>
+                    <h6>Practicioner Fees: {practicioner.fees}</h6>
+                    <h6>Practicioner Bio: {practicioner.bio}</h6>
+                    <button onClick={this.handleCloseModal}>Close</button>
                   </ReactModal>
                   <DeleteBtn onClick={() => this.deletePracticioner(practicioner._id)} />
                 </ListItem>
