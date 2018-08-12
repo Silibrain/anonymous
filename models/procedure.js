@@ -5,25 +5,39 @@ const procedureSchema = mongoose.Schema({
     type: String
   },
   name: { 
-    type: String 
+    type: String,
+    required: true,
+    trim: true 
   },
   type: { 
-    type: String 
+    type: String,
+    required: true,
+    trim: true 
   },
   location: { 
-    type: String 
+    type: String,
+    required: true,
+    trim: true 
   },
   result: { 
-    type: String
+    type: String,
+    required: true,
+    trim: true
   },
   avgtime: { 
-    type: String 
+    type: Number,
+    required: true,
+    trim: true 
   },
   capex: { 
-    type: String 
+    type: Number,
+    required: true,
+    trim: true 
   },
   opex: { 
-    type: String 
+    type: Number,
+    required: true,
+    trim: true 
   } 
 });
 

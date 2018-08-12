@@ -5,37 +5,59 @@ const patientSchema = mongoose.Schema({
     type: String
   },
   name:{ 
-    type: String 
+    type: String,
+    required: true,
+    trim: true 
   },
   age:{ 
-    type: String 
+    type: Number,
+    required: true,
+    trim: true 
   },
   weight:{ 
-    type: String 
+    type: Number,
+    required: true,
+    trim: true
   },
   height:{ 
-    type: String 
+    type: Number,
+    required: true,
+    trim: true 
   },
   temperature:{ 
-    type: String 
+    type: Number, 
+    required: true,
+    trim: true
   },
   pulse:{ 
-    type: String 
+    type: Number,
+    required: true,
+    trim: true 
   },
   respiratoryrate:{ 
-    type: String 
+    type: Number,
+    required: true,
+    trim: true 
   },
   pressure:{ 
-    type: String 
+    type: String,
+    required: true,
+    trim: true 
   },
   symptoms:{ 
-    type: String 
+    type: String,
+    required: true,
+    trim: true 
   },
   diagnosis:{ 
-    type: String
+    type: String,
+    required: true,
+    trim: true
   },
   drugs:{ 
-    type: String
+    type: String,
+    required: true,
+    trim: true
   }
 });
 

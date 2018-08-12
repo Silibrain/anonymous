@@ -5,18 +5,29 @@ import Footer from "../components/Panels/Footer";
 import Wrapper from "../components/Panels/Wrapper";
 import Jumbotron from "../components/Panels/Jumbotron";
 import { List, ListItem } from "../components/List";
-import { Link } from "react-router-dom";
 import DeleteBtn from "../components/Buttons/DeleteBtn";
+import ReactModal from "react-modal";
 
 class InventoryView extends Component {
-  state = {
-    inventory: [],
-    name: "",
-    units: "",
-    unitcost: "",
-    type: "",
-    expiryyear: ""
-  };
+  constructor() {
+    super()
+    this.state = {
+      inventory: [],
+      showModal: false
+    };
+    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
+  }
+
+  handleOpenModal() {
+    this.setState({
+      showModal: true
+    });
+  }
+
+  handleCloseModal() {
+    this.setState({ showModal: false });
+  }
 
   componentDidMount() {
     this.loadInventory();
@@ -35,7 +46,6 @@ class InventoryView extends Component {
   }
 
   render() {
-
     return (
       <div>
         <NavBar />
@@ -45,11 +55,17 @@ class InventoryView extends Component {
             <List>
               {this.state.inventory.map(inventory => (
                 <ListItem key={inventory._id}>
-                  <Link to={"/inventory/" + inventory._id}>
-                    <strong>
-                      {inventory.units} of {inventory.name}
-                    </strong>
-                  </Link>
+                  <strong onClick={this.handleOpenModal}>
+                    {inventory.units} of {inventory.name}
+                  </strong>
+                  <ReactModal isOpen={this.state.showModal} contentLabel={inventory._id}>
+                    <h6>Inventory Name: {inventory.name}</h6>
+                    <h6>Inventory Units: {inventory.units}</h6>
+                    <h6>Inventory Unit Cost: {inventory.unitcost}</h6>
+                    <h6>Inventory Type: {inventory.type}</h6>
+                    <h6>Inventory Expiry Year: {inventory.expiryyear}</h6>
+                    <button onClick={this.handleCloseModal}>Close</button>
+                  </ReactModal>
                   <DeleteBtn onClick={() => this.deleteInventory(inventory._id)} />
                 </ListItem>
               ))}

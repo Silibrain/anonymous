@@ -5,19 +5,29 @@ const practicionerSchema = mongoose.Schema({
     type: String
   },
   name:{ 
-    type: String
+    type: String,
+    required: true,
+    trim: true
   },
   specialties:{ 
-    type: String 
+    type: String,
+    required: true,
+    trim: true 
   },
   skills:{ 
-    type: String 
+    type: String,
+    required: true,
+    trim: true 
   },
   fees:{ 
-    type: String 
+    type: Number,
+    required: true,
+    trim: true 
   },
   bio:{ 
-    type: String
+    type: String,
+    required: true,
+    trim: true
   }
 });
 
