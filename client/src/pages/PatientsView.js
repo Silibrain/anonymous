@@ -6,11 +6,11 @@ import Wrapper from "../components/Panels/Wrapper";
 import Jumbotron from "../components/Panels/Jumbotron";
 import { List, ListItem } from "../components/List";
 import DeleteBtn from "../components/Buttons/DeleteBtn";
-import ReactModal from "react-modal";
+import Modal from "react-modal";
 
 class PatientsView extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       patients: [],
       showModal: false
@@ -36,7 +36,20 @@ class PatientsView extends Component {
   loadPatients() {
     API.getPatients()
       .then(res => {
-        this.setState({ patients: res.data, name: "", age: "", weight: "", height: "", temperature: "", pulse: "", respiratoryrate: "", pressure: "", symptoms: "", diagnosis: "", drugs: "" })
+        this.setState({
+          patients: res.data,
+          name: "",
+          age: "",
+          weight: "",
+          height: "",
+          temperature: "",
+          pulse: "",
+          respiratoryrate: "",
+          pressure: "",
+          symptoms: "",
+          diagnosis: "",
+          drugs: ""
+        });
       })
       .catch(err => console.log(err));
   }
@@ -45,14 +58,14 @@ class PatientsView extends Component {
     API.deletePatient(id)
       .then(res => this.loadPatients())
       .catch(err => console.log(err));
-  }
+  };
 
   render() {
     return (
       <div>
         <NavBar />
         <Wrapper>
-          <Jumbotron title="Patient List"></Jumbotron>
+          <Jumbotron title="Patient List" />
           {this.state.patients.length ? (
             <List>
               {this.state.patients.map(patient => (
@@ -60,7 +73,10 @@ class PatientsView extends Component {
                   <strong onClick={this.handleOpenModal}>
                     {patient.name} with {patient.diagnosis}
                   </strong>
-                  <ReactModal isOpen={this.state.showModal} contentLabel={patient._id}>
+                  <Modal
+                    isOpen={this.state.showModal}
+                    contentLabel={patient._id}
+                  >
                     <h6>Patient Name: {patient.name}</h6>
                     <h6>Patient Age: {patient.age}</h6>
                     <h6>Patient Weight: {patient.weight}</h6>
@@ -73,19 +89,19 @@ class PatientsView extends Component {
                     <h6>Patient Diagnosis: {patient.diagnosis}</h6>
                     <h6>Patient Drugs: {patient.drugs}</h6>
                     <button onClick={this.handleCloseModal}>Close</button>
-                  </ReactModal>
+                  </Modal>
 
                   <DeleteBtn onClick={() => this.deletePatient(patient._id)} />
                 </ListItem>
               ))}
             </List>
           ) : (
-              <h3>No Results to Display</h3>
-            )}
+            <h3>No Results to Display</h3>
+          )}
         </Wrapper>
         <Footer />
       </div>
-    )
+    );
   }
 }
 

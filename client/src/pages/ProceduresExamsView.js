@@ -6,11 +6,11 @@ import Wrapper from "../components/Panels/Wrapper";
 import Jumbotron from "../components/Panels/Jumbotron";
 import { List, ListItem } from "../components/List";
 import DeleteBtn from "../components/Buttons/DeleteBtn";
-import ReactModal from "react-modal";
+import Modal from "react-modal";
 
 class ProceduresExamsView extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       procedures: [],
       showModal: false
@@ -35,7 +35,18 @@ class ProceduresExamsView extends Component {
 
   loadProcedures() {
     API.getProcedure()
-      .then(res => this.setState({ procedures: res.data, name: "", type: "", location: "", result: "", avgtime: "", capex: "", opex: "" }))
+      .then(res =>
+        this.setState({
+          procedures: res.data,
+          name: "",
+          type: "",
+          location: "",
+          result: "",
+          avgtime: "",
+          capex: "",
+          opex: ""
+        })
+      )
       .catch(err => console.log(err));
   }
 
@@ -43,14 +54,14 @@ class ProceduresExamsView extends Component {
     API.deleteProcedure(id)
       .then(res => this.loadProcedures())
       .catch(err => console.log(err));
-  }
+  };
 
   render() {
     return (
       <div>
         <NavBar />
         <Wrapper>
-          <Jumbotron title="Procedures List"></Jumbotron>
+          <Jumbotron title="Procedures List" />
           {this.state.procedures.length ? (
             <List>
               {this.state.procedures.map(procedure => (
@@ -58,7 +69,10 @@ class ProceduresExamsView extends Component {
                   <strong onClick={this.handleOpenModal}>
                     {procedure.name} performed in {procedure.location}
                   </strong>
-                  <ReactModal isOpen={this.state.showModal} contentLabel={procedure._id}>
+                  <Modal
+                    isOpen={this.state.showModal}
+                    contentLabel={procedure._id}
+                  >
                     <h6>Procedure Name: {procedure.name}</h6>
                     <h6>Procedure Type: {procedure.type}</h6>
                     <h6>Procedure Location: {procedure.location}</h6>
@@ -67,18 +81,20 @@ class ProceduresExamsView extends Component {
                     <h6>Procedure Capital Expenditure: {procedure.capex}</h6>
                     <h6>Procedure Operational Expenditure: {procedure.opex}</h6>
                     <button onClick={this.handleCloseModal}>Close</button>
-                  </ReactModal>
-                  <DeleteBtn onClick={() => this.deleteProcedure(procedure._id)} />
+                  </Modal>
+                  <DeleteBtn
+                    onClick={() => this.deleteProcedure(procedure._id)}
+                  />
                 </ListItem>
               ))}
             </List>
           ) : (
-              <h3>No Results to Display</h3>
-            )}
+            <h3>No Results to Display</h3>
+          )}
         </Wrapper>
         <Footer />
       </div>
-    )
+    );
   }
 }
 

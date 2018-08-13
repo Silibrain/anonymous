@@ -6,11 +6,11 @@ import Wrapper from "../components/Panels/Wrapper";
 import Jumbotron from "../components/Panels/Jumbotron";
 import { List, ListItem } from "../components/List";
 import DeleteBtn from "../components/Buttons/DeleteBtn";
-import ReactModal from "react-modal";
+import Modal from "react-modal";
 
 class PracticionersView extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       practicioners: [],
       showModal: false
@@ -35,7 +35,16 @@ class PracticionersView extends Component {
 
   loadPracticioners() {
     API.getPracticioner()
-      .then(res => this.setState({ practicioners: res.data, name: "", specialties: "", skills: "", fees: "", bio: "" }))
+      .then(res =>
+        this.setState({
+          practicioners: res.data,
+          name: "",
+          specialties: "",
+          skills: "",
+          fees: "",
+          bio: ""
+        })
+      )
       .catch(err => console.log(err));
   }
 
@@ -43,14 +52,14 @@ class PracticionersView extends Component {
     API.deletePracticioner(id)
       .then(res => this.loadPracticioners())
       .catch(err => console.log(err));
-  }
+  };
 
   render() {
     return (
       <div>
         <NavBar />
         <Wrapper>
-          <Jumbotron title="Practicioners List"></Jumbotron>
+          <Jumbotron title="Practicioners List" />
           {this.state.practicioners.length ? (
             <List>
               {this.state.practicioners.map(practicioner => (
@@ -58,25 +67,32 @@ class PracticionersView extends Component {
                   <strong onClick={this.handleOpenModal}>
                     {practicioner.name} , {practicioner.specialties}
                   </strong>
-                  <ReactModal isOpen={this.state.showModal} contentLabel={practicioner._id}>
+                  <Modal
+                    isOpen={this.state.showModal}
+                    contentLabel={practicioner._id}
+                  >
                     <h6>Practicioner Name: {practicioner.name}</h6>
-                    <h6>Practicioner Specialties: {practicioner.specialties}</h6>
+                    <h6>
+                      Practicioner Specialties: {practicioner.specialties}
+                    </h6>
                     <h6>Practicioner Skills: {practicioner.skills}</h6>
                     <h6>Practicioner Fees: {practicioner.fees}</h6>
                     <h6>Practicioner Bio: {practicioner.bio}</h6>
                     <button onClick={this.handleCloseModal}>Close</button>
-                  </ReactModal>
-                  <DeleteBtn onClick={() => this.deletePracticioner(practicioner._id)} />
+                  </Modal>
+                  <DeleteBtn
+                    onClick={() => this.deletePracticioner(practicioner._id)}
+                  />
                 </ListItem>
               ))}
             </List>
           ) : (
-              <h3>No Results to Display</h3>
-            )}
+            <h3>No Results to Display</h3>
+          )}
         </Wrapper>
         <Footer />
       </div>
-    )
+    );
   }
 }
 export default PracticionersView;
