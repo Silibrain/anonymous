@@ -34,7 +34,7 @@ const Nav = () => (
                 </div>
 
               </li>
-              <li className="nav-item dropdown">
+              {/* <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="/practicioner/view" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Practicioners</a>
                 <div className="dropdown-menu" aria-labelledby="dropdown05">
                   <a className="dropdown-item" href="/practicioner/add">Add</a>
@@ -47,17 +47,20 @@ const Nav = () => (
                   <a className="dropdown-item" href="/inventory/add">Add</a>
                   <a className="dropdown-item" href="/inventory/view">View</a>
                 </div>
-              </li>
-              <li className="nav-item dropdown">
+              </li> */}
+              {/* <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="/procedure/view" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Procedures + Exams</a>
                 <div className="dropdown-menu" aria-labelledby="dropdown07">
                   <a className="dropdown-item" href="/procedure/add">Add</a>
                   <a className="dropdown-item" href="/procedure/view">View</a>
                 </div>
-              </li>
-              {/* <li className="nav-item">
-                <a className="nav-link active" href="/staff/reports">Administration</a>
               </li> */}
+              {/* <li className="nav-item">
+                <a className="nav-link active" href="/staff/reports">Results</a>
+              </li> */}
+              <li className="nav-item">
+                <a className="nav-link active" href="/update">Account</a>
+              </li>
             </ul>
           </div>
         </div>

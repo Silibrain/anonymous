@@ -7,6 +7,14 @@ const userSchema = mongoose.Schema({
     type: String,
     trim: true
   },
+  picturelink: {
+    type: String,
+    trim: true
+  },
+  title:{ 
+    type: String,
+    trim: true 
+  },
   email: {
     type: String,
     trim: true,
@@ -23,7 +31,7 @@ const userSchema = mongoose.Schema({
     type: String,
     trim: true
   },
-  title: {
+  academicdegreeandalmamater: {
     type: String,
     trim: true
   },
@@ -31,7 +39,7 @@ const userSchema = mongoose.Schema({
     type: String,
     trim: true
   },
-  role: {
+  roleandinstitution: {
     type: String,
     trim: true
   }
