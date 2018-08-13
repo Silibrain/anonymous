@@ -127,16 +127,45 @@ export default {
         if (request.data.name) {
           let patientObj = t.state.patient;
           patientObj.name = request.data.name;
+          patientObj.gender = request.data.gender;
+          patientObj.personalhistory = request.data.personalhistory;
+          patientObj.familyhistory = request.data.familyhistory;
+          patientObj.signs = request.data.signs;
+          patientObj.location = request.data.location;
+          patientObj.travels = request.data.travels;
           patientObj.age = request.data.age;
           patientObj.weight = request.data.weight;
           patientObj.height = request.data.height;
-          patientObj.temperature = request.data.temperature;
-          patientObj.pulse = request.data.pulse;
+          patientObj.tempcurr = request.data.tempcurr;
+          patientObj.heartrate = request.data.heartrate;
           patientObj.respiratoryrate = request.data.respiratoryrate;
-          patientObj.presuure = request.data.pressure;
+          patientObj.bloodpressure = request.data.bloodpressure;
+          patientObj.oxygensaturation = request.data.oxygensaturation;
+          patientObj.findings = request.data.findings;
           patientObj.symptoms = request.data.symptoms;
+          patientObj.sodium = request.data.sodium;
+          patientObj.potassium = request.data.potassium;
+          patientObj.chlorine = request.data.chlorine;
+          patientObj.bicarb = request.data.bicarb;
+          patientObj.bun = request.data.bun;
+          patientObj.platelets = request.data.platelets;
+          patientObj.creatinine = request.data.creatinine;
+          patientObj.wbc = request.data.wbc;
+          patientObj.hct = request.data.hct;
+          patientObj.hepatic = request.data.hepatic;
+          patientObj.kidney = request.data.kidney;
+          patientObj.lipids = request.data.lipids;
+          patientObj.specials = request.data.specials;
+          patientObj.glucose = request.data.glucose;
+          patientObj.xray = request.data.xray;
+          patientObj.ctscan = request.data.ctscan;
+          patientObj.mri = request.data.mri;
+          patientObj.ultrasound = request.data.ultrasound;
+          patientObj.pet = request.data.pet;
           patientObj.diagnosis = request.data.diagnosis;
-          patientObj.drugs = request.data.drugs;
+          patientObj.daysintreatment = request.data.daysintreatment;
+          patientObj.drugsintreatment = request.data.drugsintreatment;
+          patientObj.proceduresintreatment = request.data.proceduresintreatment;
 
           t.setState({
             loadingPatient: false,

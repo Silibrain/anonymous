@@ -11,7 +11,7 @@ class PatientsAdd extends Component {
       <div>
         <NavBar />
         <Wrapper>
-          <Jumbotron title="Add Patient"></Jumbotron>
+          <Jumbotron title="Add Case"></Jumbotron>
           <PatientForm />
         </Wrapper>
         <Footer />
