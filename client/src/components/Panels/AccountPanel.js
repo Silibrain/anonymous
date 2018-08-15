@@ -24,7 +24,10 @@ class AccountPanel extends Component {
         name: null,
         email: null,
         phone: null,
-        role: null
+        roleandinstitution: null,
+        picturelink: null,
+        bio: null,
+        degreeandalmamater: null
       }
     };
     this.formSubmit = this.formSubmit.bind(this);
@@ -69,8 +72,17 @@ class AccountPanel extends Component {
     const phoneNumber = document.querySelector("#phone").value.trim();
     if (phoneNumber && phoneNumber.length > 0) userProps.phone = phoneNumber;
 
-    const role = document.querySelector("#role").value.trim();
-    if (role && role.length > 0) userProps.role = role;
+    const roleandinstitution = document.querySelector("#roleandinstitution").value.trim();
+    if (roleandinstitution && roleandinstitution.length > 0) userProps.roleandinstitution = roleandinstitution;
+
+    const picturelink = document.querySelector("#picturelink").value.trim();
+    if (picturelink && picturelink.length > 0) userProps.picturelink = picturelink;
+
+    const degreeandalmamater = document.querySelector("#degreeandalmamater").value.trim();
+    if (degreeandalmamater && degreeandalmamater.length > 0) userProps.degreeandalmamater = degreeandalmamater;
+
+    const bio = document.querySelector("#bio").value.trim();
+    if (bio && bio.length > 0) userProps.bio = bio;
 
     this.setState({
       user: userProps
@@ -88,7 +100,7 @@ class AccountPanel extends Component {
         <div>
           <Panel>
             <Panel.Heading>
-              <Panel.Title componentClass="h3">Account</Panel.Title>
+              <Panel.Title componentClass="h3">Update Account Information</Panel.Title>
             </Panel.Heading>
             <Panel.Body>
               <form
@@ -106,7 +118,7 @@ class AccountPanel extends Component {
                     name="email"
                     placeholder="isaacnewton@gravity.com"
                   />
-                  <ControlLabel>name</ControlLabel>
+                  <ControlLabel>Name</ControlLabel>
                   <FormControl
                     id="name"
                     defaultValue={
@@ -116,7 +128,7 @@ class AccountPanel extends Component {
                     name="name"
                     placeholder="Isaac Newton"
                   />
-                  <ControlLabel>phone</ControlLabel>
+                  <ControlLabel>Phone</ControlLabel>
                   <FormControl
                     defaultValue={
                       this.state.user.phone ? this.state.user.phone : ""
@@ -126,20 +138,50 @@ class AccountPanel extends Component {
                     name="phone"
                     placeholder="9898989898"
                   />
-                  <ControlLabel>role</ControlLabel>
+                  <ControlLabel>Role and Institution</ControlLabel>
                   <FormControl
                        defaultValue={
-                        this.state.user.role ? this.state.user.role : ""
+                        this.state.user.roleandinstitution ? this.state.user.roleandinstitution : ""
                       }
-                      id="role"
+                      id="roleandinstitution"
                       type="text"
-                      name="role"
-                      placeholder="Physicist Coder"
+                      name="roleandinstitution"
+                      placeholder="Coder @Cambridge"
+                  />
+                <ControlLabel>Picture Link</ControlLabel>
+                  <FormControl
+                       defaultValue={
+                        this.state.user.picturelink ? this.state.user.picturelink : ""
+                      }
+                      id="picturelink"
+                      type="text"
+                      name="picturelink"
+                      placeholder="https://upload.wikimedia.org/wikipedia/commons/3/39/GodfreyKneller-IsaacNewton-1689.jpg"
+                  />
+                <ControlLabel>Biography</ControlLabel>
+                  <FormControl
+                       defaultValue={
+                        this.state.user.bio ? this.state.user.bio : ""
+                      }
+                      id="bio"
+                      type="text"
+                      name="bio"
+                      placeholder="First to describe gravity, now coding it..."
+                  />
+                <ControlLabel>Degree and Alma Mater</ControlLabel>
+                  <FormControl
+                       defaultValue={
+                        this.state.user.degreeandalmamater ? this.state.user.degreeandalmamater : ""
+                      }
+                      id="degreeandalmamater"
+                      type="text"
+                      name="degreeandalmamater"
+                      placeholder="PhD in Physics @ Cambridge"
                   />
                 </FormGroup>
                 <hr />
                 <Button
-                  className="submitBtn"
+                  className="btn btn-info"
                   type="button"
                   onClick={this.formSubmit}
                 >

@@ -185,7 +185,7 @@ class PatientForm extends Component {
                             componentClass="h3"
                             onClick={this.handleClick}
                         >
-                            Patient
+                            Patient Case
             </Panel.Title>
                     </Panel.Heading>
                     <Panel.Body>

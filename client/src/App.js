@@ -41,18 +41,14 @@ class App extends Component {
         <Route exact path="/" component={Home} />
         <Route exact path="/signin" component={LogIn} />
         <Route exact path="/signup" component={LogIn} />
-        <Route exact path="/update" component={UpdateAccount} />
+        <Route exact path="/account" component={UpdateAccount} />
 
         <Route exact path="/home" component={Home} />
 
-        <Route exact path="/patient/add" component={PatientsAdd} />
+        <Route exact path="/add" component={PatientsAdd} />
    
-
-        <Route exact path="/patient/view" component={PatientsView} />
-        
-
-        <Route exact path="/staff/reports" component={ReportsMenu} />
-
+        <Route exact path="/view" component={PatientsView} />
+      
         <Route component={NoMatch} />
      
       </Switch>
