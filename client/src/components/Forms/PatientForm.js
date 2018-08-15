@@ -213,6 +213,8 @@ class PatientForm extends Component {
                             <FormGroup>
                                 <ControlLabel>What is the patient's personal medical history?</ControlLabel>
                                 <FormControl
+                                    componentClass="textarea" 
+                                    style={{ height: 100 }} 
                                     type="text"
                                     value={this.state.personalhistory}
                                     name="personalhistory"
@@ -223,6 +225,8 @@ class PatientForm extends Component {
                             <FormGroup>
                                 <ControlLabel>What is the patient's family medical history?</ControlLabel>
                                 <FormControl
+                                    componentClass="textarea" 
+                                    style={{ height: 100 }} 
                                     type="text"
                                     value={this.state.familyhistory}
                                     name="familyhistory"
@@ -233,6 +237,8 @@ class PatientForm extends Component {
                             <FormGroup>
                                 <ControlLabel>What are the patient's medical signs?</ControlLabel>
                                 <FormControl
+                                    componentClass="textarea" 
+                                    style={{ height: 100 }} 
                                     type="text"
                                     value={this.state.signs}
                                     name="signs"
@@ -323,6 +329,8 @@ class PatientForm extends Component {
                             <FormGroup>
                                 <ControlLabel>What are the patient's symptoms?</ControlLabel>
                                 <FormControl
+                                    componentClass="textarea" 
+                                    style={{ height: 100 }} 
                                     type="text"
                                     value={this.state.symptoms}
                                     name="symptoms"
@@ -333,6 +341,8 @@ class PatientForm extends Component {
                             <FormGroup>
                                 <ControlLabel>Where there any relevant findings in the patient's physical examination?</ControlLabel>
                                 <FormControl
+                                    componentClass="textarea" 
+                                    style={{ height: 100 }} 
                                     type="text"
                                     value={this.state.findings}
                                     name="findings"
@@ -453,6 +463,8 @@ class PatientForm extends Component {
                             <FormGroup>
                                 <ControlLabel>Patient's Hepatic Functionality (ALT/AST) Lab Results (µkat/L):</ControlLabel>
                                 <FormControl
+                                    componentClass="textarea" 
+                                    style={{ height: 100 }} 
                                     type="text"
                                     value={this.state.hepatic}
                                     name="hepatic"
@@ -461,7 +473,7 @@ class PatientForm extends Component {
                                 />
                             </FormGroup>
                             <FormGroup>
-                                <ControlLabel>Patient's Kidney Functionslity (GFR) Lab Results (mL/min/1.73 m2):</ControlLabel>
+                                <ControlLabel>Patient's Kidney Functionality (GFR) Lab Results (mL/min/1.73 m2):</ControlLabel>
                                 <FormControl
                                     type="text"
                                     value={this.state.kidney}
@@ -473,6 +485,8 @@ class PatientForm extends Component {
                             <FormGroup>
                                 <ControlLabel>Patient's Lipids (TC, HDL, LDL, TG) Lab Results (mg/dL):</ControlLabel>
                                 <FormControl
+                                    componentClass="textarea" 
+                                    style={{ height: 100 }} 
                                     type="text"
                                     value={this.state.lipids}
                                     name="lipids"
@@ -493,6 +507,8 @@ class PatientForm extends Component {
                             <FormGroup>
                                 <ControlLabel>Patient's Specials Lab Results:</ControlLabel>
                                 <FormControl
+                                    componentClass="textarea" 
+                                    style={{ height: 100 }} 
                                     type="text"
                                     value={this.state.specials}
                                     name="specials"
