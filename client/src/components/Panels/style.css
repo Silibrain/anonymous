@@ -19,7 +19,7 @@
 
 footer {
   text-align: center;
-  position: fixed;
+  /* position: fixed; */
   background: #285597;
   color: #ffffff;
   bottom: 0px;

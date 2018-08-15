@@ -4,6 +4,7 @@ import LoginBtn from "./LoginBtn";
 import LoginSubmit from "./LoginSubmit";
 import SignUpBtn from "./SignUpBtn";
 import ViewPatientsBtn from "./ViewPatientsBtn";
+import Counter from "./Counter";
 
 const buttons = {
   AddPatientsBtn: AddPatientsBtn,
@@ -11,8 +12,9 @@ const buttons = {
   LoginBtn: LoginBtn,
   LoginSubmit: LoginSubmit, 
   SignUpBtn: SignUpBtn,
-  ViewPatientsBtn: ViewPatientsBtn
+  ViewPatientsBtn: ViewPatientsBtn,
+  Counter: Counter
 };
 
 export default buttons;
-export { AddPatientsBtn, DeleteBtn, LoginBtn,LoginSubmit, SignUpBtn, ViewPatientsBtn };
+export { Counter, AddPatientsBtn, DeleteBtn, LoginBtn,LoginSubmit, SignUpBtn, ViewPatientsBtn };
