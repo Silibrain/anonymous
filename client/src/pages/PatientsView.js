@@ -8,6 +8,7 @@ import { List, ListItem } from "../components/List";
 import DeleteBtn from "../components/Buttons/DeleteBtn";
 import ReactModal from "react-modal";
 import Counter from "../components/Buttons/Counter";
+import CommentBox from "../components/Forms/CommentBox";
 
 class PatientsView extends Component {
   constructor() {
@@ -154,6 +155,8 @@ class PatientsView extends Component {
                     <br/>
                     <h4>Surgical Treatment</h4>
                     <h6>Procedures in Treatment: {patient.proceduresintreatment}</h6>
+                    <br/>
+                    <CommentBox/>
                     <br/>
                     <button onClick={this.handleCloseModal}>Close</button>
                   </ReactModal>
