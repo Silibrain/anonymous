@@ -1,5 +1,23 @@
-.LoginBtn {
-  background-color: #5486dd;
+.btn {
+  /* background-color: #3e84bd; */
+  background: rgb(47, 104, 165);
+  border: none;
+  border-radius: 0%;
+  padding: 10px 40px 10px 40px;
+  margin-bottom: 1em;
+  font-size: 16px;
+  font-weight: bold;
+  color: #eeeeee;
+  width: 300px;
+}
+
+.btn:hover {
+  color: rgb(25, 66, 111);
+  background-color: transparent;
+  border: 1.5px solid;
+  border-radius: 0%;
+  border-color: rgb(47, 104, 165);
+  padding: 10px 40px 10px 40px;
 }
 
 .card{
