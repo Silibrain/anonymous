@@ -1,0 +1,32 @@
+.jumbotron,
+.div {
+  margin-bottom: 1em;
+  background: url(./images/jtimg0.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white;
+}
+
+.jumbotron h1 {
+  font-size: 32px;
+}
+
+.jumbotron h2 {
+  font-size: 26px;
+}
+
+footer {
+  text-align: center;
+  position: fixed;
+  background: #285597;
+  color: #ffffff;
+  bottom: 0px;
+  width: 100%;
+  padding: 4px;
+  z-index: -1;
+  margin: 0;
+  align-content: center;
+  margin-top: 5px;
+}

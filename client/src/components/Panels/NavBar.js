@@ -2,18 +2,15 @@ import React from "react";
 import "./style.css";
 
 const Nav = () => (
-    <header role="banner">
-      <div className="top-bar">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-6 col-sm-6 col-5">
-              <ul className="social list-unstyled">
-              </ul>
-            </div>
-            <div className="col-md-6 col-sm-6 col-7 text-right">
-              <p className="mb-0">
-              </p>
-            </div>
+  <header role="banner">
+    <div className="top-bar">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6 col-sm-6 col-5">
+            <ul className="social list-unstyled" />
+          </div>
+          <div className="col-md-6 col-sm-6 col-7 text-right">
+            <p className="mb-0" />
           </div>
         </div>
       </div>
@@ -37,8 +34,9 @@ const Nav = () => (
             </ul>
           </div>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
+  </header>
 );
 
 export default Nav;
