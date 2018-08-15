@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import helpers from "./utils/helpers.js";
-import { Home, InventoryAdd, InventoryView, LogIn,NoMatch, PatientsAdd, PatientsView, PracticionersAdd, PracticionersView, ProceduresAdd, ProceduresExamsView, ReportsMenu, UpdateAccount} from "./pages";
+import { Home, LogIn,NoMatch, PatientsAdd, PatientsView, ReportsMenu, UpdateAccount} from "./pages";
 
 
 
@@ -46,14 +46,10 @@ class App extends Component {
         <Route exact path="/home" component={Home} />
 
         <Route exact path="/patient/add" component={PatientsAdd} />
-        {/* <Route exact path="/practicioner/add" component={PracticionersAdd} />
-        <Route exact path="/inventory/add" component={InventoryAdd} />
-        <Route exact path="/procedure/add" component={ProceduresAdd} /> */}
+   
 
         <Route exact path="/patient/view" component={PatientsView} />
-        {/* <Route exact path="/practicioner/view" component={PracticionersView} />
-        <Route exact path="/inventory/view" component={InventoryView} />
-        <Route exact path="/procedure/view" component={ProceduresExamsView} /> */}
+        
 
         <Route exact path="/staff/reports" component={ReportsMenu} />
 
