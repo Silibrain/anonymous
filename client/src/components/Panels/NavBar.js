@@ -3,7 +3,7 @@ import "./style.css";
 
 const Nav = () => (
   <header role="banner">
-    <div className="top-bar">
+    <nav className="top-bar">
       <div className="container">
         <div className="row">
           <div className="col-md-6 col-sm-6 col-5">
@@ -16,11 +16,9 @@ const Nav = () => (
       </div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container">
-          <img src="./logo.png" alt="" width="100px" />
-          {/* <a className="navbar-brand" href="/"> */}
-          {/* Hippocrates */}
-          {/* <span />{" "} */}
-          {/* </a> */}
+          <a className="navbar-brand" href="/">
+            <img src="./logo.png" alt="" width="100px" />
+          </a>
           <button
             className="navbar-toggler"
             type="button"
@@ -56,7 +54,7 @@ const Nav = () => (
           </div>
         </div>
       </nav>
-    </div>
+    </nav>
   </header>
 );
 
