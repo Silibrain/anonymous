@@ -3,7 +3,7 @@ import "./style.css";
 
 const Nav = () => (
   <header role="banner">
-    <div className="top-bar">
+    <nav className="top-bar">
       <div className="container">
         <div className="row">
           <div className="col-md-6 col-sm-6 col-5">
@@ -34,8 +34,8 @@ const Nav = () => (
             </ul>
           </div>
         </div>
-      </div>
-    </nav>
+        </nav>
+      </nav>
   </header>
 );
 
