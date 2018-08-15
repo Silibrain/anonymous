@@ -160,6 +160,7 @@ class AccountPanel extends Component {
                   />
                 <ControlLabel>Biography</ControlLabel>
                   <FormControl
+                  componentClass="textarea" style={{ height: 100 }} 
                        defaultValue={
                         this.state.user.bio ? this.state.user.bio : ""
                       }
