@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import helpers from "./utils/helpers.js";
-import { Home, LogIn,NoMatch, PatientsAdd, PatientsView, ReportsMenu, UpdateAccount} from "./pages";
+import { Home, LogIn,NoMatch, PatientsAdd, PatientsView, UpdateAccount} from "./pages";
 
 
 
