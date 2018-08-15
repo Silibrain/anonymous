@@ -1,7 +1,4 @@
-const Practicioner = require("../models/practicioner");
 const Patient = require("../models/patient");
-const Inventory = require("../models/inventory");
-const Procedure = require("../models/procedure");
 const User = require("../models/user");
 
 module.exports = (app, passport) => {
@@ -58,52 +55,6 @@ module.exports = (app, passport) => {
       });
     }
   });
-
-  //api/inventories
-
-  app.get("/inventory", (req, res) => {
-    if (req.isAuthenticated()) {
-      const userId = req.session.passport.user;
-      User.findOne({ _id: userId }).then(() => {
-        Inventory.find(req.query)
-        .sort({ date: -1 }).then(dbModel =>
-          res.json(dbModel))
-          .catch(err => res.status(422).json(err));
-      });
-    }
-  });
-
-  app.delete("/inventory/:id", (req,res) => {
-    if (req.isAuthenticated()) {
-      const userId = req.session.passport.user;
-      User.findOne({ _id: userId }).then(() => {
-        Inventory.findById({ _id: req.params.id})
-        .then(dbModel => dbModel.remove())
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
-      });
-    }
-  });
-
-  app.post("/inventory", (req, res) => {
-    if (req.isAuthenticated()) {
-      const userId = req.session.passport.user;
-      User.findOne({ _id: userId }).then(() => {
-        const drugData = {
-          name: req.body.name,
-          units: req.body.units,
-          unitcost: req.body.unitcost,
-          type: req.body.type,
-          expiryyear: req.body.expiryyear
-        };
-
-        Inventory.create(drugData).then(() => {
-          sendNotification();
-          res.json(true);
-        })
-      });
-    }
-  })
 
   //api/patients
 
@@ -181,97 +132,6 @@ module.exports = (app, passport) => {
           sendNotification();
           res.json(true);
         })
-      });
-    }
-  })
-
-  //api/practicioners
-
-  app.get("/practicioner", (req, res) => {
-    if (req.isAuthenticated()) {
-      const userId = req.session.passport.user;
-      User.findOne({ _id: userId }).then(() => {
-        Practicioner.find(req.query)
-        .sort({ date: -1 }).then(dbModel => res.json(dbModel))
-          .catch(err => res.status(422).json(err));
-      });
-    }
-  });
-
-  app.delete("/practicioner/:id", (req,res) => {
-    if (req.isAuthenticated()) {
-      const userId = req.session.passport.user;
-      User.findOne({ _id: userId }).then(() => {
-        Practicioner.findById({ _id: req.params.id})
-        .then(dbModel => dbModel.remove())
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
-      });
-    }
-  });
-
-  app.post("/practicioner", (req, res) => {
-    if (req.isAuthenticated()) {
-      const userId = req.session.passport.user;
-      User.findOne({ _id: userId }).then(() => {
-        const practicionerData = {
-          name: req.body.name,
-          specialties: req.body.specialties,
-          skills: req.body.skills,
-          fees: req.body.fees,
-          bio: req.body.bio
-        };
-        Practicioner.create(practicionerData).then(() => {
-          sendNotification();
-          res.json(true);
-        }).catch(err => res.status(422).json(err));
-      });
-    }
-  })
-
-
-  //api/procedures
-
-  app.get("/procedure", (req, res) => {
-    if (req.isAuthenticated()) {
-      const userId = req.session.passport.user;
-      User.findOne({ _id: userId }).then(() => {
-        Procedure.find(req.query)
-        .sort({ date: -1 }).then(dbModel => res.json(dbModel))
-          .catch(err => res.status(422).json(err));
-      });
-    }
-  });
-
-  app.delete("/procedure/:id", (req,res) => {
-    if (req.isAuthenticated()) {
-      const userId = req.session.passport.user;
-      User.findOne({ _id: userId }).then(() => {
-        Procedure.findById({ _id: req.params.id})
-        .then(dbModel => dbModel.remove())
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
-      });
-    }
-  });
-
-  app.post("/procedure", (req, res) => {
-    if (req.isAuthenticated()) {
-      const userId = req.session.passport.user;
-      User.findOne({ _id: userId }).then(() => {
-        const procedureData = {
-          name: req.body.name,
-          type: req.body.type,
-          location: req.body.location,
-          result: req.body.result,
-          avgtime: req.body.avgtime,
-          capex: req.body.capex,
-          opex: req.body.opex
-        };
-        Procedure.create(procedureData).then(() => {
-          sendNotification();
-          res.json(true);
-        }).catch(err => res.status(422).json(err));
       });
     }
   })
