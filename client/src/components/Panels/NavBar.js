@@ -23,43 +23,16 @@ const Nav = () => (
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
-
           <div className="collapse navbar-collapse" id="navbarsExample05">
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="/patient/view" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Patients</a>
-                <div className="dropdown-menu" aria-labelledby="dropdown04">
-                  <a className="dropdown-item" href="/patient/add">Add</a>
-                  <a className="dropdown-item" href="/patient/view">View</a>
-                </div>
-
-              </li>
-              {/* <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="/practicioner/view" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Practicioners</a>
-                <div className="dropdown-menu" aria-labelledby="dropdown05">
-                  <a className="dropdown-item" href="/practicioner/add">Add</a>
-                  <a className="dropdown-item" href="/practicioner/view">View</a>
-                </div>
-              </li>
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="/inventory/view" id="dropdown06" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Inventory</a>
-                <div className="dropdown-menu" aria-labelledby="dropdown06">
-                  <a className="dropdown-item" href="/inventory/add">Add</a>
-                  <a className="dropdown-item" href="/inventory/view">View</a>
-                </div>
-              </li> */}
-              {/* <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="/procedure/view" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Procedures + Exams</a>
-                <div className="dropdown-menu" aria-labelledby="dropdown07">
-                  <a className="dropdown-item" href="/procedure/add">Add</a>
-                  <a className="dropdown-item" href="/procedure/view">View</a>
-                </div>
-              </li> */}
-              {/* <li className="nav-item">
-                <a className="nav-link active" href="/staff/reports">Results</a>
-              </li> */}
               <li className="nav-item">
-                <a className="nav-link active" href="/update">Account</a>
+                <a className="nav-link active" href="/view"> View Cases </a>
+              </li>
+              <li className="nav-item">
+              <a className="nav-link active" href="/add"> Add Case </a>
+              </li> 
+              <li className="nav-item">
+                <a className="nav-link active" href="/account"> Account </a>
               </li>
             </ul>
           </div>
