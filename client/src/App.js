@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import helpers from "./utils/helpers.js";
-import { Home, LogIn,NoMatch, PatientsAdd, PatientsView, ReportsMenu, UpdateAccount} from "./pages";
+import { Home, LogIn,NoMatch, PatientsAdd, PatientsView, UpdateAccount} from "./pages";
 
 
 
@@ -41,18 +41,14 @@ class App extends Component {
         <Route exact path="/" component={Home} />
         <Route exact path="/signin" component={LogIn} />
         <Route exact path="/signup" component={LogIn} />
-        <Route exact path="/update" component={UpdateAccount} />
+        <Route exact path="/account" component={UpdateAccount} />
 
         <Route exact path="/home" component={Home} />
 
-        <Route exact path="/patient/add" component={PatientsAdd} />
+        <Route exact path="/add" component={PatientsAdd} />
    
-
-        <Route exact path="/patient/view" component={PatientsView} />
-        
-
-        <Route exact path="/staff/reports" component={ReportsMenu} />
-
+        <Route exact path="/view" component={PatientsView} />
+      
         <Route component={NoMatch} />
      
       </Switch>

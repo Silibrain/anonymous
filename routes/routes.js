@@ -24,11 +24,12 @@ module.exports = (app, passport) => {
         var userInfo = {
           name: user.name,
           email: user.email,
+          picturelink: user.picturelink,
           password: user.password,
           phone: user.phone,
-          title: user.title,
+          degreeandalmamater: user.degreeandalmamater,
           bio: user.bio,
-          role: user.role
+          roleandinstitution: user.roleandinstitution
         };
         res.send(userInfo);
       });
@@ -43,11 +44,12 @@ module.exports = (app, passport) => {
         {
           name: req.body.name,
           email: req.body.email,
+          picturelink: req.body.picturelink,
           password: req.body.password,
           phone: req.body.phone,
-          title: req.body.title,
+          degreeandalmamater: req.body.degreeandalmamater,
           bio: req.body.bio,
-          role: req.body.role
+          roleandinstitution: req.body.roleandinstitution
         }
       ).then(user => {
         console.log("\n#######", user);

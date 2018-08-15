@@ -11,10 +11,6 @@ const userSchema = mongoose.Schema({
     type: String,
     trim: true
   },
-  title:{ 
-    type: String,
-    trim: true 
-  },
   email: {
     type: String,
     trim: true,
@@ -31,7 +27,7 @@ const userSchema = mongoose.Schema({
     type: String,
     trim: true
   },
-  academicdegreeandalmamater: {
+  degreeandalmamater: {
     type: String,
     trim: true
   },
