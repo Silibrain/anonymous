@@ -8,7 +8,7 @@ const url =
 export default () => {
   return (
     // <footer className="bg-dark text-white mt-5 p-4 text-center">
-    <footer className="footer fixed-bottom footer-expand-lg">
+    <footer>
       Copyright &copy; {new Date().getFullYear()} Roberto Baldizon, Alexandra
       Goodwin, et al.
       <br />

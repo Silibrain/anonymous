@@ -19,3 +19,7 @@
   border-color: rgb(47, 104, 165);
   padding: 10px 40px 10px 40px;
 }
+
+.card{
+  float: right;
+}

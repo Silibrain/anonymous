@@ -19,9 +19,9 @@
 
 footer {
   text-align: center;
-  position: fixed;
-  background: rgb(47, 104, 165);
-  color: #eeeeee;
+  /* position: fixed; */
+  background: #285597;
+  color: #ffffff;
   bottom: 0px;
   width: 100%;
   padding: 4px;

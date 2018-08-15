@@ -7,6 +7,7 @@ import Jumbotron from "../components/Panels/Jumbotron";
 import { List, ListItem } from "../components/List";
 import DeleteBtn from "../components/Buttons/DeleteBtn";
 import ReactModal from "react-modal";
+import Counter from "../components/Buttons/Counter";
 
 class PatientsView extends Component {
   constructor() {
@@ -103,6 +104,7 @@ class PatientsView extends Component {
                   </strong>
                   <ReactModal isOpen={this.state.showModal} contentLabel={patient._id}>
                     <h2>Case Study ID: {patient._id}</h2>
+                    <Counter/>
                     <br/>
                     <h4>Vitals</h4>
                     <h6>Personal Medical History: {patient.personalhistory}</h6>
