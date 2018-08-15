@@ -1,5 +1,7 @@
-Button {
-    border-style: solid;
-    border-width: 1px;
-    border-color: lightgray;
+button {
+  border-style: solid;
+  border-width: 1px;
+  border-color: lightgray;
+  margin-inline-end: 10px;
+  margin-inline-start: 10px;
 }

@@ -20,8 +20,8 @@
 footer {
   text-align: center;
   position: fixed;
-  background: #285597;
-  color: #ffffff;
+  background: rgb(47, 104, 165);
+  color: #eeeeee;
   bottom: 0px;
   width: 100%;
   padding: 4px;
@@ -29,4 +29,9 @@ footer {
   margin: 0;
   align-content: center;
   margin-top: 5px;
+}
+
+.nav-item {
+  margin-inline-start: 1em;
+  margin-inline-end: 1em;
 }

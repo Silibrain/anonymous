@@ -22,13 +22,14 @@ class LogIn extends Component {
         <Wrapper>
           <div id="hero" align="center">
             <div className="content">
-              <img src="./logo.png" alt="" width="175px" />
+              <div className="title">Hippocrates</div>
+              <span />{" "}
+              <div className="container">
+                <LoginForm />
+              </div>
             </div>
-            <div className="container">
-              <LoginForm />
-            </div>
+            <div id="aboutApp" align="center" />
           </div>
-          <div id="aboutApp" align="center" />
         </Wrapper>
         <Footer />
       </div>
