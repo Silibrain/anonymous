@@ -19,7 +19,7 @@
 
 footer {
   text-align: center;
-  /* position: fixed; */
+  position: fixed;
   background: #285597;
   color: #ffffff;
   bottom: 0px;
@@ -29,4 +29,9 @@ footer {
   margin: 0;
   align-content: center;
   margin-top: 5px;
+}
+
+.nav-item {
+  margin-inline-start: 1em;
+  margin-inline-end: 1em;
 }
