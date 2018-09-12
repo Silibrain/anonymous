@@ -17,7 +17,7 @@ class Home extends Component {
             <div className="content">
               <Jumbotron
                 title="Hippocrates"
-                lead="ERP system for hospitals and healthcare organizations. Manage and connect information from all core areas of your business for effective decision making and business operations. Core functional areas include: EMR patient system, scheduling and procedures tracking, inventory management, accounting, content management system (CMS) for physicians and staff, and real-time data analytics."
+                lead="for professionals to collaborate and keep track of their information while keeping their patients’ identity hidden."
               />
             </div>
             <div className="container" align="center">
