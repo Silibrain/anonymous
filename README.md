@@ -3,13 +3,13 @@
   <h1 align="center">So the Doctors can focus on YOU</h1>
 </h3>
 
-HIPPOCRATES: An ERP that allows our world's small healthcare providers to manage and organize their practices efficiently at a reasonable cost. Thus, Hippocrates provides practitioners and medical staff the tools and the ease to providing patients with personalized health services.
+HIPPOCRATES: A medical record hosting service that allows our world's small healthcare providers to manage and organize their practices efficiently at a reasonable cost. So that those professionals can collaborate and keep track of their information while keeping their patients’ identity hidden. Thus, Hippocrates provides practitioners and medical staff the tools and the ease to providing patients with personalized health services.
 
 * WHAT: This app was created for small healthcare businesses and hospitals, practitioners, and medical staff as a tool for managing and organizing digital records for patient information as well as essential business documentation, patient accounting, and clinic accounts and its inventory. 
 
-* PROBLEM WE TARGETED: A small medical practice with CRM software in use most often means that they are spending an incredibly high amount on annual software licensing and renewal fees and usually an additional fee on one of the software's subscription tier packages (the latter either as a month-to-month expense or as a single yearly fee). 
+* PROBLEM WE TARGETED: A small medical practice with a Medical Record Hosting Service in use most often means that they are spending an incredibly high amount on annual software licensing and renewal fees and usually an additional fee on one of the software's subscription tier packages (the latter either as a month-to-month expense or as a single yearly fee). 
 
-* OUR SOLUTION: Acquiring CRM software for a medical practice is very expensive which is why we created Hippocrates to serve as an alternate solution to the big names in software in use by medical giants. Offering our software at an affordable price aids small healthcare companies with the tools for making better operational decisions and granting those companies access to a solution in efficient clinic and patient information management.
+* OUR SOLUTION: Acquiring a Medical Record Hosting software for a medical practice is very expensive which is why we created Hippocrates to serve as an alternate solution to the big names in software in use by medical giants. Offering our software at an affordable price aids small healthcare companies with the tools for making better operational decisions and granting those companies access to a solution in efficient clinic and patient information management.
 
 ## Deployed Link
 [Preview on Heroku](https://git.heroku.com/mysterious-headland-90957.git)
