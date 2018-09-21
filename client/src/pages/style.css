@@ -11,7 +11,7 @@
 }
 
 div {
-  background: url("./images/drimg4.jpg") no-repeat center center fixed;
+  background: url("./images/bkgrnd.png") no-repeat center center fixed;
   background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
