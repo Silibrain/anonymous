@@ -9,24 +9,28 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <NavBar />
-        <Wrapper className="container">
+        <div className="cover">
+          <NavBar />
           <br />
           <br />
           <div id="hero2" align="center">
             <div className="content">
-              <Jumbotron
-                title="Hippocrates"
-                lead="for professionals to collaborate and keep track of their information while keeping their patients’ identity hidden."
-              />
+              <div className="col-8">
+                <Jumbotron
+                  title="Hippocrates"
+                  lead="Collaborate with professionals and keep track of information while patient identities remain secure and hidden."
+                />
+              </div>
             </div>
-            <div className="container" align="center">
+            <br />
+            <br />
+            <br />
+            <br />
+            {/* <div className="container" align="center">
               <img src="./logo.png" alt="" width="150px" />
-            </div>
+            </div> */}
           </div>
-          <br />
-          <br />
-        </Wrapper>
+        </div>
         <Footer />
       </div>
     );

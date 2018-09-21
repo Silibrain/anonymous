@@ -12,7 +12,7 @@ import CommentBox from "../components/Forms/CommentBox";
 
 class PatientsView extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       patients: [],
       showModal: false
@@ -79,7 +79,7 @@ class PatientsView extends Component {
           daysintreatment: "",
           drugsintreatment: "",
           proceduresintreatment: ""
-        })
+        });
       })
       .catch(err => console.log(err));
   }
@@ -88,25 +88,29 @@ class PatientsView extends Component {
     API.deletePatient(id)
       .then(res => this.loadPatients())
       .catch(err => console.log(err));
-  }
+  };
 
   render() {
     return (
       <div>
         <NavBar />
         <Wrapper>
-          <Jumbotron title="View Cases"></Jumbotron>
+          <Jumbotron title="View Cases" />
           {this.state.patients.length ? (
             <List>
               {this.state.patients.map(patient => (
                 <ListItem key={patient._id}>
                   <strong onClick={this.handleOpenModal}>
-                    {patient.age}-yr-old {patient.gender} diagnosed with {patient.diagnosis}
+                    {patient.age}
+                    -yr-old {patient.gender} diagnosed with {patient.diagnosis}
                   </strong>
-                  <ReactModal isOpen={this.state.showModal} contentLabel={patient._id}>
+                  <ReactModal
+                    isOpen={this.state.showModal}
+                    contentLabel={patient._id}
+                  >
                     <h2>Case Study ID: {patient._id}</h2>
-                    <Counter/>
-                    <br/>
+                    <Counter />
+                    <br />
                     <h4>Vitals</h4>
                     <h6>Personal Medical History: {patient.personalhistory}</h6>
                     <h6>Family Medical History: {patient.familyhistory}</h6>
@@ -123,7 +127,7 @@ class PatientsView extends Component {
                     <h6>Respiratory Rate: {patient.respiratoryrate}</h6>
                     <h6>Blood Pressure: {patient.bloodpressure}</h6>
                     <h6>Oxygen Saturation: {patient.oxygensaturation}</h6>
-                    <br/>
+                    <br />
                     <h4>Labs</h4>
                     <h6>Na: {patient.sodium}</h6>
                     <h6>K: {patient.potassium}</h6>
@@ -138,26 +142,30 @@ class PatientsView extends Component {
                     <h6>Hepatic Functionality: {patient.hepatic}</h6>
                     <h6>Kidney Functionality: {patient.kidney}</h6>
                     <h6>Specials: {patient.specials}</h6>
-                    <br/>
+                    <br />
                     <h4>Radiology</h4>
                     <h6>Ultrasound: {patient.ultrasound}</h6>
                     <h6>X-Ray: {patient.xray}</h6>
                     <h6>CT-Scan: {patient.ctscan}</h6>
                     <h6>MRI: {patient.mri}</h6>
                     <h6>PET/CT: {patient.pet}</h6>
-                    <br/>
+                    <br />
                     <h4>Diagnosis</h4>
                     <h6>{patient.diagnosis}</h6>
-                    <br/>
+                    <br />
                     <h4>Clinical Treatment</h4>
                     <h6>Days in Treatment: {patient.daysintreatment}</h6>
-                    <h6>Medications for Treatment: {patient.drugsintreatment}</h6>
-                    <br/>
+                    <h6>
+                      Medications for Treatment: {patient.drugsintreatment}
+                    </h6>
+                    <br />
                     <h4>Surgical Treatment</h4>
-                    <h6>Procedures in Treatment: {patient.proceduresintreatment}</h6>
-                    <br/>
-                    <CommentBox/>
-                    <br/>
+                    <h6>
+                      Procedures in Treatment: {patient.proceduresintreatment}
+                    </h6>
+                    <br />
+                    <CommentBox />
+                    <br />
                     <button onClick={this.handleCloseModal}>Close</button>
                   </ReactModal>
 
@@ -166,12 +174,14 @@ class PatientsView extends Component {
               ))}
             </List>
           ) : (
-              <h3>No Results to Display</h3>
-            )}
+            <h3>No Results to Display</h3>
+          )}
+          <br />
+          <br />
         </Wrapper>
         <Footer />
       </div>
-    )
+    );
   }
 }
 
