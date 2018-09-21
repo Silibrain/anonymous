@@ -1,38 +1,61 @@
+input {
+  background: rgb(255, 255, 255);
+  opacity: 0.4;
+  border: none;
+  padding: 5px;
+}
+
+button {
+  background: rgb(13, 61, 112);
+  opacity: 0.6;
+  border: none;
+  padding: 5px;
+  padding-left: 1em;
+  padding-right: 1em;
+  color: #ffffff;
+}
+
+button:hover {
+  background: transparent;
+  border: #1761a0;
+  border-radius: 1.5px;
+  border-style: solid;
+}
+
 .list-overflow-container {
-    max-height: 545px;
-    border: 1px #DDDDDD solid;
-    border-radius: 4px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
-  
-  .list-overflow-container ul {
-    margin: 0;
-  }
-  
-  .list-overflow-container li {
-    border-radius: 0px;
-    border-left: none;
-    border-right: none;
-  }
-  
-  .list-overflow-container li * {
-    cursor: pointer;
-  }
-  
-  .list-overflow-container li a {
-    color: #2A878C;
-  }
-  
-  .list-overflow-container li:first-child {
-    border-top: none;
-  }
-  
-  .list-overflow-container li:last-child {
-    border-bottom: none;
-  }
-  
-  a{
-    color:white;
-  }
-  
+  max-height: 545px;
+  border: 1px #dddddd solid;
+  border-radius: 4px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.list-overflow-container ul {
+  margin: 0;
+}
+
+.list-overflow-container li {
+  border-radius: 0px;
+  border-left: none;
+  border-right: none;
+}
+
+.list-overflow-container li * {
+  cursor: pointer;
+}
+
+.list-overflow-container li a {
+  color: #2a878c;
+}
+
+.list-overflow-container li:first-child {
+  border-top: none;
+}
+
+.list-overflow-container li:last-child {
+  border-bottom: none;
+}
+
+a {
+  color: white;
+}

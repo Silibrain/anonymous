@@ -7,19 +7,12 @@ import LoginForm from "../components/Forms/LoginForm";
 // import Styles from "./style.css";
 // import medimg from "client/public/images/medimg.jpg";
 
-// const image = {
-//   background: medimg,
-//   position: "relative",
-//   backgroundSize: "cover",
-//   width: "100%"
-// };
-
 class LogIn extends Component {
   render() {
     return (
-      <div>
-        <NavBar />
+      <div className="container-fluid">
         <Wrapper>
+          <NavBar />
           <div id="hero" align="center">
             <div className="content">
               <div className="title">Hippocrates</div>
@@ -31,6 +24,7 @@ class LogIn extends Component {
             <div id="aboutApp" align="center" />
           </div>
         </Wrapper>
+        <br />
         <Footer />
       </div>
     );

@@ -9,10 +9,25 @@ export default () => {
   return (
     // <footer className="bg-dark text-white mt-5 p-4 text-center">
     <footer>
-      Copyright &copy; {new Date().getFullYear()} Roberto Baldizon, Alexandra
-      Goodwin, et al.
-      <br />
-      <MailchimpSubscribe url={url} />
+      <div className="container" align="center">
+        <div className="row">
+          <div className="col">
+            <img src="./logo.png" alt="" width="150px" />
+          </div>
+          <div className="col">
+            <br />
+            <br />
+            <p>
+              <MailchimpSubscribe url={url} />
+            </p>
+            <p>
+              Copyright &copy; {new Date().getFullYear()} Roberto Baldizon,
+              Alexandra Goodwin, et al.
+            </p>
+            <br />
+          </div>
+        </div>
+      </div>
     </footer>
   );
 };
