@@ -1,8 +1,8 @@
 import React from "react";
 import "./style.css";
-import "./images/medimg2.jpg";
+import "./images/jtimg0.jpg";
 
-const image = "./images/medimg2.jpg";
+const image = "./images/jtimg0.jpg";
 
 const jumbotron = props => (
   <div className="jumbotron jumbotron-fluid">
