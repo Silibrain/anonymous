@@ -44,11 +44,13 @@ footer {
   background: transparent;
   color: #ffffff;
   width: 100%;
-  padding: 4px;
+  padding: 5px;
+  padding-top: 130px;
   z-index: -1;
   margin: 0;
+  margin-bottom: 0%;
   align-content: center;
-  margin-top: -15px;
+  /* margin-top: -15px; */
   margin-bottom: 0%;
   padding-top: 30px;
 }

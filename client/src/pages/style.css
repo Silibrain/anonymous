@@ -1,6 +1,6 @@
 .div:cover {
   /* margin-bottom: 1em; */
-  background: url("./images/jtimg0.jpg") no-repeat center center fixed;
+  /* background: url("./images/jtimg0.jpg") no-repeat center center fixed; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -38,4 +38,22 @@ h1.display-4 {
   font-size: 50px;
   font-family: sans-serif;
   color: #ffffff;
+}
+
+footer {
+  text-align: center;
+  position: fixed sticky;
+  /* background: #86a7d8; */
+  background: transparent;
+  color: #ffffff;
+  width: 100%;
+  padding: 5px;
+  padding-top: 130px;
+  z-index: -1;
+  margin: 0;
+  margin-bottom: 0%;
+  align-content: center;
+  /* margin-top: -15px; */
+  margin-bottom: 0%;
+  padding-top: 30px;
 }
