@@ -5,3 +5,12 @@ button {
   margin-inline-end: 10px;
   margin-inline-start: 10px;
 }
+
+.App, .boxesSpace, .buttonBar, .CommentBox, .CommentInput, .CommentList, .Comment {
+width: 80%;
+height: 50%;
+}
+
+.buttonBar{
+  position: relative;
+}

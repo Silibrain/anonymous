@@ -18,10 +18,10 @@ class Counter extends React.Component {
     return (
       <div className="card text-center">
         <div className="card-header bg-primary text-white">
-          <h5 className="card-title"> Back Case! </h5>
+          <h5 className="card-title"> Validate Case! </h5>
         </div>
         <div className="card-body">
-          <p className="card-text"> # Backers: {this.state.count}</p>
+          <p className="card-text"> # Validators: {this.state.count}</p>
           <button className="btn btn-primary" onClick={this.handleIncrement}>
             Back
           </button>
