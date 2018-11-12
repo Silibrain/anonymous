@@ -1,10 +1,10 @@
 .btn {
   /* background-color: #3e84bd; */
-  background: rgb(13, 61, 112);
-  opacity: 0.6;
+  background: #005043;
+  opacity: 0.8;
   border: none;
   border-radius: 0%;
-  padding: 10px 40px 10px 40px;
+  padding: 20px 40px 20px 40px;
   margin-bottom: 1em;
   font-size: 16px;
   font-weight: bold;
@@ -17,8 +17,8 @@
   background-color: transparent;
   border: 1.5px solid;
   border-radius: 0%;
-  border-color: rgb(13, 61, 112);
-  padding: 10px 40px 10px 40px;
+  border-color: #005043;
+  padding: 20px 40px 20px 40px;
 }
 
 .card {

@@ -10,7 +10,7 @@
   /* height: 600px; */
   width: 100%;
   font-family: Arial, Helvetica, sans-serif;
-  color: white;
+  color: rgb(53, 53, 53);
 }
 
 jumbotron:title {
@@ -42,7 +42,7 @@ footer {
   position: fixed sticky;
   /* background: #86a7d8; */
   background: transparent;
-  color: #ffffff;
+  color: #353535;
   width: 100%;
   padding: 5px;
   padding-top: 130px;
@@ -50,29 +50,35 @@ footer {
   margin: 0;
   margin-bottom: 0%;
   align-content: center;
-  /* margin-top: -15px; */
-  margin-bottom: 0%;
+  margin-top: 15px;
   padding-top: 30px;
+  /* border-top-width: medium;
+  border-top-style: solid;
+  border-top-color: #005043; */
 }
 
 .MailchimpSubscribe:button {
-  background: #000;
-  opacity: 0.6;
+  background: rgb(225, 225, 225);
+  opacity: 0.8;
 }
 
 nav.navbar {
   background: transparent;
-  color: #141414;
+  color: #005043;
   position: sticky;
+  align-self: center;
+}
+
+.navbar-expand-lg .navbar-nav {
+  /* border-width: medium;
+  border-style: solid;
+  border-color: #005043; */
+  align-self: center;
 }
 
 .nav-item {
   margin-inline-start: 1em;
   margin-inline-end: 1em;
-  color: #000;
-}
-
-.wrapper {
-  background-image: url("./images/jtimg0.jpg") no-repeat center center fixed;
-  width: 100;
+  color: #005043;
+  font-size: 40px;
 }

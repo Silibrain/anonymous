@@ -10,11 +10,19 @@ const buttons = {
   AddPatientsBtn: AddPatientsBtn,
   DeleteBtn: DeleteBtn,
   LoginBtn: LoginBtn,
-  LoginSubmit: LoginSubmit, 
+  LoginSubmit: LoginSubmit,
   SignUpBtn: SignUpBtn,
   ViewPatientsBtn: ViewPatientsBtn,
   Counter: Counter
 };
 
 export default buttons;
-export { Counter, AddPatientsBtn, DeleteBtn, LoginBtn,LoginSubmit, SignUpBtn, ViewPatientsBtn };
+export {
+  Counter,
+  AddPatientsBtn,
+  DeleteBtn,
+  LoginBtn,
+  LoginSubmit,
+  SignUpBtn,
+  ViewPatientsBtn
+};

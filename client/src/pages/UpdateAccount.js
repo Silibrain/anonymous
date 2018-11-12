@@ -2,10 +2,8 @@ import React, { Component } from "react";
 import NavBar from "../components/Panels/NavBar";
 import Footer from "../components/Panels/Footer";
 import Wrapper from "../components/Panels/Wrapper";
-import { AccountPanel} from "../components/Panels";
+import { AccountPanel } from "../components/Panels";
 import Jumbotron from "../components/Panels/Jumbotron";
-
-
 
 class CreateAccount extends Component {
   render() {
@@ -13,7 +11,7 @@ class CreateAccount extends Component {
       <div>
         <NavBar />
         <Wrapper>
-          <Jumbotron title="Account"></Jumbotron>
+          <Jumbotron title="Account" />
           <AccountPanel />
         </Wrapper>
         <Footer />
@@ -22,6 +20,4 @@ class CreateAccount extends Component {
   }
 }
 
-  
-  export default CreateAccount;
-  
+export default CreateAccount;

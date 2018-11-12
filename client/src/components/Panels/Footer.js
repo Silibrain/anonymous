@@ -11,9 +11,11 @@ export default () => {
     <footer>
       <div className="container" align="center">
         <div className="row">
-          <div className="col">
-            <img src="./logo.png" alt="" width="150px" />
-          </div>
+          {/* <div className="col">
+            <a className="footer-brand" href="/">
+              <img src="./logo.png" alt="" width="300px" />
+            </a>
+          </div> */}
           <div className="col">
             <br />
             <br />

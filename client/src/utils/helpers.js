@@ -49,7 +49,7 @@ export default {
               loading: false
             });
           }
-        } 
+        }
       })
       .catch(function(error) {
         console.log(error);
@@ -58,7 +58,7 @@ export default {
 
   updateAccountData: function(t) {
     const userData = t.state.user;
-   return axios
+    return axios
       .put("/user/update", userData, {
         headers: { "Content-Type": "application/json" }
       })
@@ -72,17 +72,16 @@ export default {
   },
 
   getPatients: function() {
-   return axios
-      .get("/patient")
+    return axios.get("/patient");
   },
 
-  deletePatient: function(id){
-    return axios.delete("/patient/"+id)
+  deletePatient: function(id) {
+    return axios.delete("/patient/" + id);
   },
 
   savePatient: function(t) {
     const patientData = t.state;
-    console.log(patientData,'API')
+    console.log(patientData, "API");
     return axios
       .post("/patient", patientData)
       .then(request => {
@@ -139,15 +138,15 @@ export default {
               loading: false
             });
           }
-        } 
+        }
       })
       .catch(function(error) {
         console.log(error);
       });
   },
 
-  logout: function () {
-   return axios.get("/logout").then(function (res) {
+  logout: function() {
+    return axios.get("/logout").then(function(res) {
       // console.log(res);
       if (res.data) {
         //window.location.reload();

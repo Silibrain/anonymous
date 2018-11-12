@@ -17,6 +17,7 @@ div {
   -o-background-size: cover;
   -moz-background-size: cover;
   width: 100%;
+  height: 100%;
 }
 
 .jumbotron h1 {
@@ -37,15 +38,14 @@ h1.display-4 {
   align-content: center;
   font-size: 50px;
   font-family: sans-serif;
-  color: #ffffff;
+  color: #005043;
 }
 
 footer {
   text-align: center;
   position: fixed sticky;
-  /* background: #86a7d8; */
   background: transparent;
-  color: #ffffff;
+  color: #969696;
   width: 100%;
   padding: 5px;
   padding-top: 130px;
@@ -53,7 +53,6 @@ footer {
   margin: 0;
   margin-bottom: 0%;
   align-content: center;
-  /* margin-top: -15px; */
   margin-bottom: 0%;
   padding-top: 30px;
 }

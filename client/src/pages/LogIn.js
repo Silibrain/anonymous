@@ -4,6 +4,7 @@ import NavBar from "../components/Panels/NavBar";
 import Footer from "../components/Panels/Footer";
 import Wrapper from "../components/Panels/Wrapper";
 import LoginForm from "../components/Forms/LoginForm";
+import { Jumbotron } from "../components/Panels";
 // import Styles from "./style.css";
 // import medimg from "client/public/images/medimg.jpg";
 
@@ -12,10 +13,10 @@ class LogIn extends Component {
     return (
       <div className="container-fluid">
         <Wrapper>
-          <NavBar />
+          <Jumbotron />
           <div id="hero" align="center">
             <div className="content">
-              <div className="title">Hippocrates</div>
+              <div className="title">MD -Anonymous</div>
               <span />{" "}
               <div className="container">
                 <LoginForm />

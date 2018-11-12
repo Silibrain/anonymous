@@ -8,7 +8,6 @@ module.exports = (app, passport) => {
     res.render("/"); // load the index.ejs file
   });
 
-
   //api/Administrators & Controller(User Functionality)
 
   app.get("/user/id", (req, res) => {
@@ -65,20 +64,21 @@ module.exports = (app, passport) => {
       const userId = req.session.passport.user;
       User.findOne({ _id: userId }).then(() => {
         Patient.find(req.query)
-        .sort({ date: -1 }).then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
+          .sort({ date: -1 })
+          .then(dbModel => res.json(dbModel))
+          .catch(err => res.status(422).json(err));
       });
     }
   });
 
-  app.delete("/patient/:id", (req,res) => {
+  app.delete("/patient/:id", (req, res) => {
     if (req.isAuthenticated()) {
       const userId = req.session.passport.user;
       User.findOne({ _id: userId }).then(() => {
-        Patient.findById({ _id: req.params.id})
-        .then(dbModel => dbModel.remove())
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
+        Patient.findById({ _id: req.params.id })
+          .then(dbModel => dbModel.remove())
+          .then(dbModel => res.json(dbModel))
+          .catch(err => res.status(422).json(err));
       });
     }
   });
@@ -86,7 +86,7 @@ module.exports = (app, passport) => {
   app.post("/patient", (req, res) => {
     if (req.isAuthenticated()) {
       const userId = req.session.passport.user;
-      console.log("hello save patient route")
+      console.log("hello save patient route");
       User.findOne({ _id: userId }).then(() => {
         const patientData = {
           name: req.body.name,
@@ -133,12 +133,12 @@ module.exports = (app, passport) => {
         Patient.create(patientData).then(() => {
           sendNotification();
           res.json(true);
-        })
+        });
       });
     }
-  })
+  });
 
-  //Check LogIn or Not 
+  //Check LogIn or Not
 
   app.get("/isloggedin", (req, res) => {
     if (req.user === undefined || !req.user) {
@@ -146,8 +146,8 @@ module.exports = (app, passport) => {
       console.log("session", req.isAuthenticated());
       res.json({ status: false, user: req.user });
     } else {
-      console.log("user", req.user)
-      console.log("session",req.isAuthenticated())
+      console.log("user", req.user);
+      console.log("session", req.isAuthenticated());
       res.json({ status: true, user: req.user });
     }
   });
@@ -168,7 +168,7 @@ module.exports = (app, passport) => {
     passport.authenticate("local-login", {
       successRedirect: "/home", // redirect to the secure profile section
       failureRedirect: "/signin", // redirect back to the signup page if there is an error
-      failureFlash: false// allow flash messages
+      failureFlash: false // allow flash messages
     })
   );
 
@@ -195,9 +195,10 @@ module.exports = (app, passport) => {
   // we will want this protected so you have to be logged in to visit
   // we will use route middleware to verify this (the isLoggedIn function)
   app.get("/menu", isLoggedIn, (req, res) => {
-    res.redirect("/menu"), {
-      user: req.user // get the user out of session and pass to template
-    };
+    res.redirect("/menu"),
+      {
+        user: req.user // get the user out of session and pass to template
+      };
   });
 
   //LogOut
