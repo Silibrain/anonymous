@@ -16,6 +16,9 @@ div {
   -moz-background-size: cover;
   width: 100%;
   height: 100%;
+  font-family: pt-sans, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .jumbotron h1 {
@@ -28,29 +31,19 @@ div {
 
 h1.display-4 {
   padding: 1em;
-}
-
-.title {
-  margin-top: 50px;
-  margin-bottom: 50px;
   align-content: center;
-  font-size: 50px;
-  font-family: sans-serif;
+  font-size: 64px;
+  font-family: pt-sans, sans-serif;
+  font-weight: 700;
+  font-style: normal;
   color: #3a5f93;
 }
 
-footer {
-  text-align: center;
-  position: fixed sticky;
-  background: transparent;
-  color: #969696;
-  width: 100%;
-  padding: 5px;
-  padding-top: 130px;
-  z-index: -1;
-  margin: 0;
-  margin-bottom: 0%;
+.lead {
   align-content: center;
-  margin-bottom: 0%;
-  padding-top: 30px;
+  font-size: 26px;
+  font-family: pt-sans, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #2b2b2b;
 }

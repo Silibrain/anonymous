@@ -6,11 +6,20 @@ button {
   margin-inline-start: 10px;
 }
 
-.App, .boxesSpace, .buttonBar, .CommentBox, .CommentInput, .CommentList, .Comment {
-width: 80%;
-height: 50%;
+.App,
+.boxesSpace,
+.buttonBar,
+.CommentBox,
+.CommentInput,
+.CommentList,
+.Comment {
+  width: 80%;
+  height: 50%;
+  font-family: pt-sans, sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
-.buttonBar{
+.buttonBar {
   position: relative;
 }
