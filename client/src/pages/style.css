@@ -1,6 +1,4 @@
 .div:cover {
-  /* margin-bottom: 1em; */
-  /* background: url("./images/jtimg0.jpg") no-repeat center center fixed; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -38,7 +36,7 @@ h1.display-4 {
   align-content: center;
   font-size: 50px;
   font-family: sans-serif;
-  color: #005043;
+  color: #3a5f93;
 }
 
 footer {

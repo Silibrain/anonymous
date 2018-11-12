@@ -16,7 +16,7 @@ class LogIn extends Component {
           <Jumbotron />
           <div id="hero" align="center">
             <div className="content">
-              <div className="title">MD -Anonymous</div>
+              <div className="title">MD Anonymous</div>
               <span />{" "}
               <div className="container">
                 <LoginForm />

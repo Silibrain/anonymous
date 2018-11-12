@@ -1,6 +1,5 @@
 .btn {
-  /* background-color: #3e84bd; */
-  background: #005043;
+  background: #3a5f93;
   opacity: 0.8;
   border: none;
   border-radius: 0%;
@@ -17,7 +16,7 @@
   background-color: transparent;
   border: 1.5px solid;
   border-radius: 0%;
-  border-color: #005043;
+  border-color: #3a5f93;
   padding: 20px 40px 20px 40px;
 }
 

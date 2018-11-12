@@ -17,7 +17,7 @@ class Home extends Component {
             <div className="content">
               <div className="col-8">
                 <Jumbotron
-                  title="Anonymous"
+                  title="MD Anonymous"
                   lead="Collaborate with professionals and keep track of information while patient identities remain secure and hidden."
                 />
               </div>

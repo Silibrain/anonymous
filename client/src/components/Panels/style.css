@@ -1,13 +1,4 @@
 .jumbotron {
-  /* margin-bottom: 1em;
-  background-image: url("./images/jtimg0.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: contain;
-  
-  opacity: 0.1; */
-  /* height: 600px; */
   width: 100%;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(53, 53, 53);
@@ -16,10 +7,6 @@
 jumbotron:title {
   padding: 1em;
 }
-
-/* .container {
-  background-image: url(./images/Case-Study2.png) no-repeat center center fixed;
-} */
 
 div:container {
   background: url("./images/jtimg0.jpg") no-repeat center center fixed;
@@ -40,7 +27,6 @@ div:container {
 footer {
   text-align: center;
   position: fixed sticky;
-  /* background: #86a7d8; */
   background: transparent;
   color: #353535;
   width: 100%;
@@ -52,9 +38,6 @@ footer {
   align-content: center;
   margin-top: 15px;
   padding-top: 30px;
-  /* border-top-width: medium;
-  border-top-style: solid;
-  border-top-color: #005043; */
 }
 
 .MailchimpSubscribe:button {
@@ -64,21 +47,18 @@ footer {
 
 nav.navbar {
   background: transparent;
-  color: #005043;
+  color: #3a5f93;
   position: sticky;
   align-self: center;
 }
 
 .navbar-expand-lg .navbar-nav {
-  /* border-width: medium;
-  border-style: solid;
-  border-color: #005043; */
   align-self: center;
 }
 
 .nav-item {
   margin-inline-start: 1em;
   margin-inline-end: 1em;
-  color: #005043;
+  color: #3a5f93;
   font-size: 40px;
 }

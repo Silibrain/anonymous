@@ -7,7 +7,7 @@ input {
 }
 
 button {
-  background: #005043;
+  background: #3a5f93;
   opacity: 0.8;
   border: none;
   padding: 10px;
@@ -18,7 +18,7 @@ button {
 
 button:hover {
   background: transparent;
-  border: #005043;
+  border: #3a5f93;
   border-radius: 1.5px;
   border-style: solid;
 }
@@ -46,7 +46,7 @@ button:hover {
 }
 
 .list-overflow-container li a {
-  color: #2a878c;
+  color: #3a5f93;
 }
 
 .list-overflow-container li:first-child {
