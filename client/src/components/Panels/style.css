@@ -25,6 +25,7 @@ div:container {
   -webkit-background-size: cover;
   -o-background-size: cover;
   -moz-background-size: cover;
+  height: auto;
 }
 
 .jumbotron h1 {
@@ -42,7 +43,7 @@ footer {
   color: #353535;
   width: 100%;
   padding: 5px;
-  padding-top: 80px;
+  padding-top: 30px;
   z-index: -1;
   margin: 0;
   margin-bottom: 0%;
