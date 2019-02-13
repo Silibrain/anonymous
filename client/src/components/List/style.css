@@ -21,6 +21,7 @@ button:hover {
   border: #3a5f93;
   border-radius: 1.5px;
   border-style: solid;
+  color: #3a5f93;
 }
 
 .list-overflow-container {
@@ -58,9 +59,19 @@ button:hover {
 }
 
 a {
-  color: rgb(45, 45, 45);
+  color: #2d2d2d;
   font-size: 20px;
   font-family: pt-sans, sans-serif;
   font-weight: 700;
   font-style: normal;
+  text-shadow: 0.3px 0.2px 0.2px #26262677;
+}
+
+a:hover {
+  border-top: none;
+  border-left: 2.5px #3a5f93 solid;
+  border-right: none;
+  border-bottom: none;
+  /* background: #fefefe6d; */
+  color: #3a5f93;
 }

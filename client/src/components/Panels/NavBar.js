@@ -17,7 +17,7 @@ const Nav = () => (
         <nav className="navbar navbar-expand-lg">
           <div className="container-fluid">
             <a className="navbar-brand" href="/">
-              <img src="./logo.png" alt="" width="170px" />
+              <img src="./logoex.png" alt="" width="170px" />
             </a>
             <button
               className="navbar-toggler"
@@ -35,19 +35,19 @@ const Nav = () => (
                 <li className="nav-item">
                   <a className="nav-link active" href="/view">
                     {" "}
-                    View Cases{" "}
+                    VIEW CASES{" "}
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link active" href="/add">
                     {" "}
-                    Add Case{" "}
+                    ADD CASE{" "}
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link active" href="/account">
                     {" "}
-                    Account{" "}
+                    ACCOUNT{" "}
                   </a>
                 </li>
               </ul>

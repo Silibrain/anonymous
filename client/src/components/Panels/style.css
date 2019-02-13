@@ -64,10 +64,15 @@ nav.navbar {
   color: #3a5f93;
   position: sticky;
   align-self: center;
+  text-align: center;
 }
 
 .navbar-expand-lg .navbar-nav {
   align-self: center;
+}
+
+.navbar-brand:hover {
+  border: none;
 }
 
 .nav-item {

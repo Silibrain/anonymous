@@ -12,7 +12,7 @@
 }
 
 .btn:hover {
-  color: rgb(255, 255, 255);
+  color: #3a5f93;
   background-color: transparent;
   border: 1.5px solid;
   border-radius: 0%;
@@ -23,7 +23,7 @@
 .card {
   float: right;
   width: 30%;
-  margin-right:10%;
+  margin-right: 10%;
 }
 
 .card-title {
