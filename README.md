@@ -13,7 +13,7 @@ MD-ANONYMOUS: A medical record hosting service that allows our world's small hea
 
 ## Deployed Link
 
-[Preview on Heroku](https://git.heroku.com/mysterious-headland-90957.git)
+[Preview on Heroku](https://mdanonymous.herokuapp.com/)
 
 ## Getting Started
 
