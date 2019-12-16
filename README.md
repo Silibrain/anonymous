@@ -1,5 +1,5 @@
 <h3 align="center">
-  <img align="center" src="./client/public/logoex.png" alt="logo" width="250"></a>
+  <img align="center" src="./client/public/logo.png" alt="logo" width="250"></a>
   <h1 align="center">So the Doctors can focus on YOU</h1>
 </h3>
 
