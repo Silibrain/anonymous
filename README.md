@@ -3,7 +3,7 @@
   <h1 align="center">So the Doctors can focus on YOU</h1>
 </h3>
 
-MD-ANONYMOUS: A medical record hosting service that allows our world's small healthcare providers to manage and organize their practices efficiently at a reasonable cost. So that those professionals can collaborate and keep track of their information while keeping their patients’ identity hidden. Thus, Hippocrates provides practitioners and medical staff the tools and the ease to providing patients with personalized health services.
+MD-ANONYMOUS: A medical record hosting service that allows our world's small healthcare providers to manage and organize their practices efficiently at a reasonable cost. So that those professionals can collaborate and keep track of their information while keeping their patients’ identity hidden. Thus, MD-Anonymous provides practitioners and medical staff the tools and the ease to providing patients with personalized health services.
 
 - WHAT: This app was created for small healthcare businesses and hospitals, practitioners, and medical staff as a tool for managing and organizing digital records for patient information as well as essential business documentation, patient accounting, and clinic accounts and its inventory.
 
@@ -55,7 +55,7 @@ For the app to render locally you will need mongoDB installed on your computer. 
 https://docs.mongodb.com/manual/installation/
 ```
 
-## Hippocrates is Built With
+## MD-Anonymous is Built With
 
 - HTML5 & CSS3
 - [Bootstrap](https://getbootstrap.com/) - CSS framework
@@ -84,4 +84,4 @@ https://docs.mongodb.com/manual/installation/
 
 ## Acknowledgements
 
-A huge thank you to Jerome and TA's Amber, Sasha, and Ricky of UC Berkekely Coding Bootcamp for the guidance and mentorship.
+A huge thank you to UC Berkekely Coding Bootcamp Staff for the guidance and mentorship.
